@@ -10,4 +10,9 @@ import grails.rest.*
 )
 class User {
 
+    String code
+
+    String toString() {
+        code
+    }
 }

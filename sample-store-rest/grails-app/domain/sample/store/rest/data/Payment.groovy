@@ -10,4 +10,9 @@ import grails.rest.*
 )
 class Payment {
 
+    String code
+
+    String toString() {
+        code
+    }
 }

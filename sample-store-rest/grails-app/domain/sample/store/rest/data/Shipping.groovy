@@ -10,4 +10,9 @@ import grails.rest.*
 )
 class Shipping {
 
+    String code
+
+    String toString() {
+        code
+    }
 }

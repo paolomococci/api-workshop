@@ -10,4 +10,9 @@ import grails.rest.*
 )
 class Cart {
 
+    String code
+
+    String toString() {
+        code
+    }
 }

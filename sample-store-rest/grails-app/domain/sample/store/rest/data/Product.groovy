@@ -10,4 +10,9 @@ import grails.rest.*
 )
 class Product {
 
+    String code
+
+    String toString() {
+        code
+    }
 }

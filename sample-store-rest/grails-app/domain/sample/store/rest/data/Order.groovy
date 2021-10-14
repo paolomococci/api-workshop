@@ -10,4 +10,9 @@ import grails.rest.*
 )
 class Order {
 
+    String code
+
+    String toString() {
+        code
+    }
 }
