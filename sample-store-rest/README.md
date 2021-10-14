@@ -13,4 +13,5 @@ create-domain-resource sample.store.rest.data.User
 create-domain-resource sample.store.rest.data.Product
 create-domain-resource sample.store.rest.data.Cart
 create-domain-resource sample.store.rest.data.Order
+create-domain-resource sample.store.rest.data.Payment
 ```
