@@ -1,1 +1,0 @@
-# Example of store REST application developed thanks to the Grails framework
