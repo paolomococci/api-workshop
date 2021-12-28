@@ -16,7 +16,7 @@ public class SampleResourceTest {
 
         given()
           .when().get("/sample")
-          .then()
-             .statusCode(200);
+          .then().statusCode(200)
+                .body("$.size()", is(6));
     }
 }
