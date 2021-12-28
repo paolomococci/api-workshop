@@ -15,6 +15,15 @@ public class SampleResource {
             Collections.synchronizedMap(new LinkedHashMap<>())
     );
 
+    public SampleResource() {
+        samples.add(new Sample("one", "someone"));
+        samples.add(new Sample("two", "someone"));
+        samples.add(new Sample("three", "someone"));
+        samples.add(new Sample("four", "someone"));
+        samples.add(new Sample("five", "someone"));
+        samples.add(new Sample("six", "someone"));
+    }
+
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String sample() {
