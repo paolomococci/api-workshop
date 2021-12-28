@@ -1,5 +1,7 @@
 # openapi-sample
 
+Web application developed thanks to the Quarkus.
+
 ## Scaffolding
 
 ```shell
