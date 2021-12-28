@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 
 @QuarkusTest
 public class SampleResourceTest {
@@ -17,6 +18,9 @@ public class SampleResourceTest {
         given()
           .when().get("/sample")
           .then().statusCode(200)
-                .body("$.size()", is(6));
+                .body(
+                        "$.size()", is(6),
+                        "name", containsInAnyOrder("one", "two", "three", "four", "five", "six")
+                );
     }
 }
