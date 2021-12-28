@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class SampleResourceTest {
 
     @Test
-    public void sampleEndpointTest() {
+    public void readEndpointTest() {
 
         given()
           .when().get("/sample")
