@@ -4,9 +4,16 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 @Path("/sample")
 public class SampleResource {
+
+    private Set<Sample> samples = Collections.newSetFromMap(
+            Collections.synchronizedMap(new LinkedHashMap<>())
+    );
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
