@@ -24,7 +24,7 @@ public class SampleResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Set<Sample> readAll() {
+    public Set<Sample> read() {
         return this.samples;
     }
 
