@@ -20,7 +20,8 @@ public class SampleResourceTest {
           .then().statusCode(200)
                 .body(
                         "$.size()", is(6),
-                        "name", containsInAnyOrder("one", "two", "three", "four", "five", "six")
+                        "name", containsInAnyOrder("one", "two", "three", "four", "five", "six"),
+                        "definition", containsInAnyOrder("someone", "someone", "someone", "someone", "someone", "someone")
                 );
     }
 }
