@@ -35,4 +35,13 @@ public class SampleResource {
         this.samples.add(sample);
         return this.samples;
     }
+
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Set<Sample> delete(Sample sample) {
+        this.samples.removeIf(
+                temp -> temp.getName().contentEquals(sample.getName())
+        );
+        return this.samples;
+    }
 }
