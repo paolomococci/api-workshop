@@ -11,7 +11,7 @@ import java.util.Set;
 @Path("/sample")
 public class SampleResource {
 
-    private Set<Sample> samples = Collections.newSetFromMap(
+    private final Set<Sample> samples = Collections.newSetFromMap(
             Collections.synchronizedMap(new LinkedHashMap<>())
     );
 
