@@ -1,6 +1,7 @@
 # openapi-sample
 
 Web application developed thanks to the Quarkus.
+It could be said that this is a "relaxed" version of CRUD application.
 
 ## Scaffolding
 
