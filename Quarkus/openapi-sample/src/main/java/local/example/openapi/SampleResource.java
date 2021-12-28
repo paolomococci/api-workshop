@@ -11,11 +11,11 @@ import java.util.Set;
 @Path("/sample")
 public class SampleResource {
 
-    public SampleResource() {
-        Set<Sample> samples = Collections.newSetFromMap(
-                Collections.synchronizedMap(new LinkedHashMap<>())
-        );
+    private final Set<Sample> samples = Collections.newSetFromMap(
+            Collections.synchronizedMap(new LinkedHashMap<>())
+    );
 
+    public SampleResource() {
         samples.add(new Sample("one", "someone"));
         samples.add(new Sample("two", "someone"));
         samples.add(new Sample("three", "someone"));
@@ -25,8 +25,8 @@ public class SampleResource {
     }
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String sample() {
-        return "Sample at work!";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Set<Sample> readAll() {
+        return this.samples;
     }
 }
