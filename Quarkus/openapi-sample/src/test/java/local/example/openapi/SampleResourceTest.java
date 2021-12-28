@@ -17,7 +17,6 @@ public class SampleResourceTest {
         given()
           .when().get("/sample")
           .then()
-             .statusCode(200)
-             .body(is("Sample at work!"));
+             .statusCode(200);
     }
 }
