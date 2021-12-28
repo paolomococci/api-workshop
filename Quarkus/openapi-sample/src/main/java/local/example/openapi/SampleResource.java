@@ -1,8 +1,6 @@
 package local.example.openapi;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -27,6 +25,14 @@ public class SampleResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Set<Sample> readAll() {
+        return this.samples;
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Set<Sample> create(Sample sample) {
+        this.samples.add(sample);
         return this.samples;
     }
 }
