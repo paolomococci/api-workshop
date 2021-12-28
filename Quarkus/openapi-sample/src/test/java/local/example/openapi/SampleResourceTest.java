@@ -48,10 +48,24 @@ public class SampleResourceTest {
 
     @Test
     @Order(3)
+    public void updateEndpointTest() {
+
+        given()
+                .body("{\"name\":\"seven\",\"definition\":\"something\"}")
+                .header("Content-Type", MediaType.APPLICATION_JSON)
+                .when().put("/sample").then().statusCode(HttpStatus.SC_OK).body(
+                        "$.size()", is(7),
+                        "name", containsInAnyOrder("one", "two", "three", "four", "five", "six", "seven"),
+                        "definition", containsInAnyOrder("someone", "someone", "someone", "someone", "someone", "someone", "something")
+                );
+    }
+
+    @Test
+    @Order(4)
     public void deleteEndpointTest() {
 
         given()
-                .body("{\"name\":\"seven\",\"definition\":\"someone\"}")
+                .body("{\"name\":\"seven\",\"definition\":\"something\"}")
                 .header("Content-Type", MediaType.APPLICATION_JSON)
                 .when().delete("/sample").then().statusCode(HttpStatus.SC_OK).body(
                         "$.size()", is(6),
