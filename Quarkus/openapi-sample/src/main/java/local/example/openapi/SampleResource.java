@@ -36,8 +36,20 @@ public class SampleResource {
         return this.samples;
     }
 
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Set<Sample> update(Sample sample ) {
+        this.samples.removeIf(
+                temp -> temp.getName().contentEquals(sample.getName())
+        );
+        this.samples.add(sample);
+        return this.samples;
+    }
+
     @DELETE
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     public Set<Sample> delete(Sample sample) {
         this.samples.removeIf(
                 temp -> temp.getName().contentEquals(sample.getName())
