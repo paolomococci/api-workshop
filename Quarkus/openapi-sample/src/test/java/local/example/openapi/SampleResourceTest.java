@@ -25,8 +25,7 @@ public class SampleResourceTest {
 
         given()
           .when().get("/sample")
-          .then().statusCode(HttpStatus.SC_OK)
-                .body(
+          .then().statusCode(HttpStatus.SC_OK).body(
                         "$.size()", is(6),
                         "name", containsInAnyOrder("one", "two", "three", "four", "five", "six"),
                         "definition", containsInAnyOrder("someone", "someone", "someone", "someone", "someone", "someone")
@@ -44,6 +43,20 @@ public class SampleResourceTest {
                         "$.size()", is(7),
                         "name", containsInAnyOrder("one", "two", "three", "four", "five", "six", "seven"),
                         "definition", containsInAnyOrder("someone", "someone", "someone", "someone", "someone", "someone", "someone")
+                );
+    }
+
+    @Test
+    @Order(3)
+    public void deleteEndpointTest() {
+
+        given()
+                .body("{\"name\":\"seven\",\"definition\":\"someone\"}")
+                .header("Content-Type", MediaType.APPLICATION_JSON)
+                .when().delete("/sample").then().statusCode(HttpStatus.SC_OK).body(
+                        "$.size()", is(6),
+                        "name", containsInAnyOrder("one", "two", "three", "four", "five", "six"),
+                        "definition", containsInAnyOrder("someone", "someone", "someone", "someone", "someone", "someone")
                 );
     }
 }
