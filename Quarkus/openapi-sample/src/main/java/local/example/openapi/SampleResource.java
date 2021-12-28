@@ -11,11 +11,11 @@ import java.util.Set;
 @Path("/sample")
 public class SampleResource {
 
-    private final Set<Sample> samples = Collections.newSetFromMap(
-            Collections.synchronizedMap(new LinkedHashMap<>())
-    );
-
     public SampleResource() {
+        Set<Sample> samples = Collections.newSetFromMap(
+                Collections.synchronizedMap(new LinkedHashMap<>())
+        );
+
         samples.add(new Sample("one", "someone"));
         samples.add(new Sample("two", "someone"));
         samples.add(new Sample("three", "someone"));
