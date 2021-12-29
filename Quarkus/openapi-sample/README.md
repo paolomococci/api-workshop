@@ -15,7 +15,7 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.6.1.Final:create -DprojectGroupId
 ./gradlew quarkusDev
 ```
 
-## POST
+## Create
 
 ```shell
 curl -X 'POST' \
@@ -25,13 +25,13 @@ curl -X 'POST' \
   -d '{"name":"seven","definition":"sample number seven"}'
 ```
 
-## GET
+## Read
 
 ```shell
 curl -X 'GET' 'http://127.0.0.1:8080/sample' -H 'accept: application/json'
 ```
 
-## PUT
+## Update
 
 ```shell
 curl -X 'PUT' \
@@ -41,7 +41,7 @@ curl -X 'PUT' \
   -d '{"name":"two","definition":"sample number two"}'
 ```
 
-## DELETE
+## Delete
 
 ```shell
 curl -X 'DELETE' \
