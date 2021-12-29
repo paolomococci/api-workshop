@@ -14,3 +14,9 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.6.1.Final:create -DprojectGroupId
 ```shell
 ./gradlew quarkusDev
 ```
+
+## GET
+
+```shell
+curl -X 'GET' 'http://127.0.0.1:8080/sample' -H 'accept: application/json'
+```
