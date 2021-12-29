@@ -22,7 +22,7 @@ curl -X 'POST' \
   'http://127.0.0.1:8080/sample' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -d '{"name": "seven","definition": "sample number seven"}'
+  -d '{"name":"seven","definition":"sample number seven"}'
 ```
 
 ## GET
@@ -38,5 +38,15 @@ curl -X 'PUT' \
   'http://127.0.0.1:8080/sample' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
-  -d '{"name": "two","definition": "sample number two"}'
+  -d '{"name":"two","definition":"sample number two"}'
+```
+
+## DELETE
+
+```shell
+curl -X 'DELETE' \
+  'http://127.0.0.1:8080/sample' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{"name":"one","definition":""}'
 ```
