@@ -1,0 +1,88 @@
+openapi: "3.0.3"
+info:
+  version: 0.0.1-SNAPSHOT
+  title: Growing
+  license:
+    name: MIT
+servers:
+  - url: http://localhost:8080/
+
+paths:
+  /growing:
+    get:
+      tags:
+      - Growing Resource
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Growing'
+    put:
+      tags:
+      - Growing Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Growing'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Growing'
+    post:
+      tags:
+      - Growing Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Growing'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Growing'
+    delete:
+      tags:
+      - Growing Resource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Growing'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                uniqueItems: true
+                type: array
+                items:
+                  $ref: '#/components/schemas/Growing'
+components:
+  schemas:
+    Growing:
+      type: object
+      properties:
+        name:
+          type: string
+        definition:
+          type: string
+
