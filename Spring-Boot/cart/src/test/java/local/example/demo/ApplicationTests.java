@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 class ApplicationTests {
 
-	private static final String CARTS_PATH = "/carts/";
+	private static final String CARTS_PATH = "/api/v1/carts/";
 
 	@Autowired
 	private MockMvc mockMvc;
