@@ -20,14 +20,6 @@ class ApplicationTests {
 	private MockMvc mockMvc;
 
 	@Test
-	void readTest()
-			throws Exception {
-		this.mockMvc
-				.perform(get(GROWING_PATH+1))
-				.andExpect(status().isNotImplemented());
-	}
-
-	@Test
 	void readAllTest()
 			throws Exception {
 		this.mockMvc
