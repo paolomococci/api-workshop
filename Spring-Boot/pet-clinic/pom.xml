@@ -132,6 +132,9 @@
 								${project.basedir}/src/main/resources/api/pet-clinic.yaml
 							</inputSpec>
 							<generatorName>spring</generatorName>
+							<output>
+								${project.basedir}/generate
+							</output>
 							<apiPackage>local.example.demo.api</apiPackage>
 							<modelPackage>local.example.demo.model</modelPackage>
 							<supportingFilesToGenerate>
