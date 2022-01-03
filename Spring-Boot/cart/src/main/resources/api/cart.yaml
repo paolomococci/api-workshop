@@ -1080,7 +1080,7 @@ components:
           description: product Name
           type: string
         description:
-          description: prodcut's description
+          description: product's description
           type: string
         imageUrl:
           description: product image's URL
