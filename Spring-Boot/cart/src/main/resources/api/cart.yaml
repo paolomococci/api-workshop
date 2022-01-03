@@ -883,7 +883,7 @@ components:
           description: house of flat number
           type: string
         residency:
-          description: socieity or building name
+          description: society or building name
           type: string
         street:
           description: street name
