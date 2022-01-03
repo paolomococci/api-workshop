@@ -33,8 +33,7 @@ build/
 .vscode/
 
 # Furthermore
+generate/
 .mvn/
 mvnw
 mvnw.cmd
-VERSION
-org/
