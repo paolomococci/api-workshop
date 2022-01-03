@@ -33,9 +33,7 @@ build/
 .vscode/
 
 # Furthermore
+generate/
 .mvn/
 mvnw
 mvnw.cmd
-pet-clinic.yaml-default.sha256
-VERSION
-org/
