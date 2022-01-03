@@ -14,6 +14,8 @@ public class ApplicationCardPathTests {
     @Autowired
     private MockMvc mockMvc;
 
+    private static final String API_V1_BASE_PATH = "/api/v1/cards/";
+
     @Test
     void readTest()
             throws Exception {
