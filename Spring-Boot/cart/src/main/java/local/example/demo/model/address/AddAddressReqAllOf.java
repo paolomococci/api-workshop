@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-public class AddAddressReqAllOf   {
+public class AddAddressReqAllOf {
 
   @JsonProperty("userId")
   private String userId;
