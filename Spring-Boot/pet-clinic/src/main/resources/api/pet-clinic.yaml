@@ -63,7 +63,7 @@ paths:
         - name: patientId
           in: path
           required: true
-          description: The id of the patientt to retrieve
+          description: The id of the patient to retrieve
           schema:
             type: string
       responses:
