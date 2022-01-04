@@ -26,7 +26,6 @@ public interface PatientsApiDelegate {
     default ResponseEntity<List<Patient>> listOfLittlePatients(Integer limit) {
         // TODO
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
     }
 
     /**
@@ -40,7 +39,6 @@ public interface PatientsApiDelegate {
     default ResponseEntity<Patient> showPatientById(String patientId) {
         // TODO
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
     }
 
     /**
