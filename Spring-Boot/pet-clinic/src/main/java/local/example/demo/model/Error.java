@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class Error {
+
   @JsonProperty("code")
   private Integer code;
 
