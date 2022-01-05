@@ -62,4 +62,10 @@ public class CartController
         // TODO
         return ResponseEntity.ok(Collections.emptyList());
     }
+
+    @Override
+    public ResponseEntity<List<Item>> getCartItemsByCustomerId(String customerId) {
+        // TODO
+        return ResponseEntity.of(Optional.empty());
+    }
 }
