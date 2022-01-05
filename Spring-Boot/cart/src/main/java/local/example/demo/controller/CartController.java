@@ -1,8 +1,9 @@
 package local.example.demo.controller;
 
 import local.example.demo.api.ApplicationApi;
-
+import local.example.demo.model.cart.Cart;
 import local.example.demo.model.item.Item;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +28,7 @@ public class CartController
             @Valid Item item
     ) {
         loggerFactory.info("Request for customer ID: {}\nItem: {}", customerId, item);
+        // TODO
         return ResponseEntity.ok(Collections.emptyList());
     }
 
@@ -35,11 +37,13 @@ public class CartController
             String customerId,
             @Valid Item item
     ) {
+        // TODO
         return ResponseEntity.ok(Collections.emptyList());
     }
     
     @Override
     public ResponseEntity<Void> deleteCart(String customerId) {
+        // TODO
         return ResponseEntity.of(Optional.empty());
     }
 
@@ -48,6 +52,14 @@ public class CartController
             String customerId,
             String itemId
     ) {
+        // TODO
         return ResponseEntity.of(Optional.empty());
+    }
+
+    @Override
+    public ResponseEntity<List<Cart>> getCartByCustomerId(String customerId) {
+        loggerFactory.info("Request for customer ID: {}", customerId);
+        // TODO
+        return ResponseEntity.ok(Collections.emptyList());
     }
 }
