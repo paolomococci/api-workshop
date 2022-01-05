@@ -13,6 +13,7 @@ import javax.validation.Valid;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class CartController
@@ -35,5 +36,18 @@ public class CartController
             @Valid Item item
     ) {
         return ResponseEntity.ok(Collections.emptyList());
+    }
+    
+    @Override
+    public ResponseEntity<Void> deleteCart(String customerId) {
+        return ResponseEntity.of(Optional.empty());
+    }
+
+    @Override
+    public ResponseEntity<Void> deleteItemFromCart(
+            String customerId,
+            String itemId
+    ) {
+        return ResponseEntity.of(Optional.empty());
     }
 }
