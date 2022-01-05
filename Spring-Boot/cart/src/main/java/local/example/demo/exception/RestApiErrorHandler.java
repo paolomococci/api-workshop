@@ -10,6 +10,7 @@ import org.springframework.context.MessageSource;
 public class RestApiErrorHandler {
 
     private static final Logger loggerFactory = LoggerFactory.getLogger(RestApiErrorHandler.class);
+
     private final MessageSource messageSource;
 
     public RestApiErrorHandler(MessageSource messageSource) {
