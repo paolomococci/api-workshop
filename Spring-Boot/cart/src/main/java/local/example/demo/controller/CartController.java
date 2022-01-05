@@ -42,7 +42,9 @@ public class CartController
     }
     
     @Override
-    public ResponseEntity<Void> deleteCart(String customerId) {
+    public ResponseEntity<Void> deleteCart(
+            String customerId
+    ) {
         // TODO
         return ResponseEntity.of(Optional.empty());
     }
@@ -57,14 +59,27 @@ public class CartController
     }
 
     @Override
-    public ResponseEntity<List<Cart>> getCartByCustomerId(String customerId) {
+    public ResponseEntity<List<Cart>> getCartByCustomerId(
+            String customerId
+    ) {
         loggerFactory.info("Request for customer ID: {}", customerId);
         // TODO
         return ResponseEntity.ok(Collections.emptyList());
     }
 
     @Override
-    public ResponseEntity<List<Item>> getCartItemsByCustomerId(String customerId) {
+    public ResponseEntity<List<Item>> getCartItemsByCustomerId(
+            String customerId
+    ) {
+        // TODO
+        return ResponseEntity.of(Optional.empty());
+    }
+
+    @Override
+    public ResponseEntity<List<Item>> getCartItemsByItemId(
+            String customerId,
+            String itemId
+    ) {
         // TODO
         return ResponseEntity.of(Optional.empty());
     }
