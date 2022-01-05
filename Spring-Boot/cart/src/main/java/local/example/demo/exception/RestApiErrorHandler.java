@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.context.MessageSource;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -39,6 +40,30 @@ public class RestApiErrorHandler {
         ).setUrl(
                 httpServletRequest.getRequestURL().toString()
         ).setRequestMethod(httpServletRequest.getMethod());
+
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
+    public ResponseEntity<Error> handleHttpMediaTypeNotSupportedException(
+            HttpServletRequest httpServletRequest,
+            HttpMediaTypeNotSupportedException httpMediaTypeNotSupportedException,
+            Locale locale
+    ) {
+        httpMediaTypeNotSupportedException.printStackTrace();
+
+        Error error = ErrorUtil.createError(
+                ErrorCode.HTTP_MEDIA_TYPE_NOT_SUPPORTED.getErrorMessageKey(),
+                ErrorCode.HTTP_MEDIA_TYPE_NOT_SUPPORTED.getErrorCode(),
+                HttpStatus.UNSUPPORTED_MEDIA_TYPE.value()
+        ).setUrl(
+                httpServletRequest.getRequestURL().toString()
+        ).setRequestMethod(httpServletRequest.getMethod());
+
+        loggerFactory.info(
+                "HttpMediaTypeNotSupportedException httpServletRequest.getMethod() "
+                        + httpServletRequest.getMethod()
+        );
 
         return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
