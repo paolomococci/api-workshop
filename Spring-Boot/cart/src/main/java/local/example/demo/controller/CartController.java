@@ -28,4 +28,12 @@ public class CartController
         loggerFactory.info("Request for customer ID: {}\nItem: {}", customerId, item);
         return ResponseEntity.ok(Collections.emptyList());
     }
+
+    @Override
+    public ResponseEntity<List<Item>> addOrReplaceItemsByCustomerId(
+            String customerId,
+            @Valid Item item
+    ) {
+        return ResponseEntity.ok(Collections.emptyList());
+    }
 }
