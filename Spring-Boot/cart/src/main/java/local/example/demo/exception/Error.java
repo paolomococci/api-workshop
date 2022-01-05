@@ -1,12 +1,14 @@
 package local.example.demo.exception;
 
+import org.apache.logging.log4j.util.Strings;
+
 public class Error {
 
     private String errorCode;
     private String message;
     private Integer status;
     private String url = "Unavailable";
-    private String reqMethod = "Unavailable";
+    private String requestMethod = "Unavailable";
 
     public String getErrorCode() {
         return errorCode;
@@ -36,15 +38,21 @@ public class Error {
         return url;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public Error setUrl(String url) {
+        if (Strings.isNotBlank(url)) {
+            this.url = url;
+        }
+        return this;
     }
 
-    public String getReqMethod() {
-        return reqMethod;
+    public String getRequestMethod() {
+        return requestMethod;
     }
 
-    public void setReqMethod(String reqMethod) {
-        this.reqMethod = reqMethod;
+    public Error setRequestMethod(String requestMethod) {
+        if (Strings.isNotBlank(requestMethod)) {
+            this.requestMethod = requestMethod;
+        }
+        return this;
     }
 }
