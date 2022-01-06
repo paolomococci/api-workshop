@@ -22,12 +22,10 @@ import java.util.Locale;
 @ControllerAdvice
 public class RestApiErrorHandler {
 
-    private static final Logger loggerFactory = LoggerFactory.getLogger(RestApiErrorHandler.class);
-
-    private final MessageSource messageSource;
+    private static final Logger loggerFactory = LoggerFactory
+            .getLogger(RestApiErrorHandler.class);
 
     public RestApiErrorHandler(MessageSource messageSource) {
-        this.messageSource = messageSource;
     }
 
     @ExceptionHandler(Exception.class)
