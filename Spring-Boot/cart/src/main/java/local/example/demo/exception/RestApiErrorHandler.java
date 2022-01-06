@@ -122,8 +122,27 @@ public class RestApiErrorHandler {
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public HttpStatus handleHttpMessageNotReadableException() {
-        return HttpStatus.NOT_IMPLEMENTED;
+    public ResponseEntity<Error> handleHttpMessageNotReadableException(
+            HttpServletRequest httpServletRequest,
+            HttpMessageNotReadableException httpMessageNotReadableException,
+            Locale locale
+    ) {
+        httpMessageNotReadableException.printStackTrace();
+
+        Error error = ErrorUtil.createError(
+                ErrorCode.HTTP_MESSAGE_NOT_READABLE.getErrorMessageKey(),
+                ErrorCode.HTTP_MESSAGE_NOT_READABLE.getErrorCode(),
+                HttpStatus.NOT_ACCEPTABLE.value()
+        ).setUrl(
+                httpServletRequest.getRequestURL().toString()
+        ).setRequestMethod(httpServletRequest.getMethod());
+
+        loggerFactory.info(
+                "HttpMessageNotReadableException httpServletRequest.getMethod() "
+                        + httpServletRequest.getMethod()
+        );
+
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(JsonParseException.class)
