@@ -146,7 +146,26 @@ public class RestApiErrorHandler {
     }
 
     @ExceptionHandler(JsonParseException.class)
-    public HttpStatus handleJsonParseException() {
-        return HttpStatus.NOT_IMPLEMENTED;
+    public ResponseEntity<Error> handleJsonParseException(
+            HttpServletRequest httpServletRequest,
+            JsonParseException jsonParseException,
+            Locale locale
+    ) {
+        jsonParseException.printStackTrace();
+
+        Error error = ErrorUtil.createError(
+                ErrorCode.JSON_PARSE_ERROR.getErrorMessageKey(),
+                ErrorCode.JSON_PARSE_ERROR.getErrorCode(),
+                HttpStatus.NOT_ACCEPTABLE.value()
+        ).setUrl(
+                httpServletRequest.getRequestURL().toString()
+        ).setRequestMethod(httpServletRequest.getMethod());
+
+        loggerFactory.info(
+                "JsonParseException httpServletRequest.getMethod() "
+                        + httpServletRequest.getMethod()
+        );
+
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
