@@ -12,8 +12,10 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("${openapi.cart.base-path:}")
-public record ApplicationApiController(ApplicationApiDelegate delegate)
+public class ApplicationApiController
         implements ApplicationApi {
+
+    private final ApplicationApiDelegate delegate;
 
     public ApplicationApiController(
             @Autowired(required = false) ApplicationApiDelegate delegate
