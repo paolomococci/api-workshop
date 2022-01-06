@@ -87,7 +87,7 @@ public class RestApiErrorHandler {
                 HttpStatus.UNSUPPORTED_MEDIA_TYPE.value()
         ).setUrl(
                 httpServletRequest.getRequestURL().toString()
-        ).setRequestMethod(httpServletRequest.getMethod());;
+        ).setRequestMethod(httpServletRequest.getMethod());
 
         loggerFactory.info(
                 "HttpMessageNotWritableException httpServletRequest.getMethod() "
@@ -98,8 +98,27 @@ public class RestApiErrorHandler {
     }
 
     @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
-    public HttpStatus handleHttpMediaTypeNotAcceptableException() {
-        return HttpStatus.NOT_IMPLEMENTED;
+    public ResponseEntity<Error> handleHttpMediaTypeNotAcceptableException(
+            HttpServletRequest httpServletRequest,
+            HttpMediaTypeNotAcceptableException httpMediaTypeNotAcceptableException,
+            Locale locale
+    ) {
+        httpMediaTypeNotAcceptableException.printStackTrace();
+
+        Error error = ErrorUtil.createError(
+                ErrorCode.HTTP_MEDIA_TYPE_NOT_ACCEPTABLE.getErrorMessageKey(),
+                ErrorCode.HTTP_MEDIA_TYPE_NOT_ACCEPTABLE.getErrorCode(),
+                HttpStatus.UNSUPPORTED_MEDIA_TYPE.value()
+        ).setUrl(
+                httpServletRequest.getRequestURL().toString()
+        ).setRequestMethod(httpServletRequest.getMethod());
+
+        loggerFactory.info(
+                "HttpMediaTypeNotAcceptableException httpServletRequest.getMethod() "
+                        + httpServletRequest.getMethod()
+        );
+
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
