@@ -74,8 +74,27 @@ public class RestApiErrorHandler {
     }
 
     @ExceptionHandler(HttpMessageNotWritableException.class)
-    public HttpStatus handleHttpMessageNotWritableException() {
-        return HttpStatus.NOT_IMPLEMENTED;
+    public ResponseEntity<Error> handleHttpMessageNotWritableException(
+            HttpServletRequest httpServletRequest,
+            HttpMessageNotWritableException httpMessageNotWritableException,
+            Locale locale
+    ) {
+        httpMessageNotWritableException.printStackTrace();
+
+        Error error = ErrorUtil.createError(
+                ErrorCode.HTTP_MESSAGE_NOT_WRITABLE.getErrorMessageKey(),
+                ErrorCode.HTTP_MESSAGE_NOT_WRITABLE.getErrorCode(),
+                HttpStatus.UNSUPPORTED_MEDIA_TYPE.value()
+        ).setUrl(
+                httpServletRequest.getRequestURL().toString()
+        ).setRequestMethod(httpServletRequest.getMethod());;
+
+        loggerFactory.info(
+                "HttpMessageNotWritableException httpServletRequest.getMethod() "
+                        + httpServletRequest.getMethod()
+        );
+
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
