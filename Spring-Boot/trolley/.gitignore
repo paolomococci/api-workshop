@@ -37,6 +37,7 @@ out/
 .vscode/
 
 # And
+migration/
 gradle/
 gradlew
 gradlew.bat
