@@ -21,8 +21,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	
 	//implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.1'
-	//implementation 'org.flywaydb:flyway-core:8.3.0'
-	
+	//implementation 'org.flywaydb:flyway-core:8.4.0'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
