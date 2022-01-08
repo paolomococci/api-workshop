@@ -1,4 +1,11 @@
 package local.example.trolley.api.repository;
 
-public interface CartRepo {
+import local.example.trolley.api.model.Cart;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource
+public interface CartRepo
+        extends CrudRepository<Cart, Long> {
 }
