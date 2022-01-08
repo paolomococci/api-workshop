@@ -1,4 +1,11 @@
 package local.example.trolley.api.repository;
 
-public interface OrderRepo {
+import local.example.trolley.api.model.Order;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource
+public interface OrderRepo
+        extends CrudRepository<Order, Long> {
 }
