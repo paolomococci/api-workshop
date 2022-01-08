@@ -2,14 +2,29 @@ package local.example.trolley.api.model;
 
 import lombok.Getter;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "ITEMS")
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
+    )
+    @Column(
+            name = "ID",
+            updatable = false,
+            nullable = false
+    )
+    @Type(type = "uuid-char")
     @Getter
-    private long id;
+    private UUID id;
 }
