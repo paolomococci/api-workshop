@@ -1,4 +1,5 @@
 package local.example.trolley.api.exception;
 
-public class GenericAlreadyExistsException {
+public class GenericAlreadyExistsException
+        extends RuntimeException {
 }
