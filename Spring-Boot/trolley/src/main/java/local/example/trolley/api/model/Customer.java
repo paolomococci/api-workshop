@@ -2,12 +2,10 @@ package local.example.trolley.api.model;
 
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "CUSTOMERS")
 public class Customer {
 
     @Id
