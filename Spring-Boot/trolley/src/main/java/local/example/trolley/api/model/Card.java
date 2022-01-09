@@ -29,6 +29,15 @@ public class Card {
     @Getter
     private UUID id;
 
+    @Column(name = "NUMBER")
+    private String number;
+
+    @Column(name = "EXPIRES")
+    private String expires;
+
+    @Column(name = "CSC")
+    private String csc;
+
     @Column(name = "REGISTERED")
     private Timestamp registered;
 }
