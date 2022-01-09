@@ -2,12 +2,11 @@ package local.example.trolley.api.model;
 
 import lombok.Getter;
 
-import org.hibernate.annotations.ColumnDefault;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
+import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -39,4 +38,9 @@ public class Order {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "REGISTERED")
     private Timestamp registered;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATED")
+    private Timestamp updated;
 }
