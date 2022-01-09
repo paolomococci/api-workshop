@@ -7,6 +7,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Entity
@@ -27,4 +28,7 @@ public class Supplier {
     @Type(type = "uuid-char")
     @Getter
     private UUID id;
+
+    @Column(name = "REGISTERED")
+    private Timestamp registered;
 }
