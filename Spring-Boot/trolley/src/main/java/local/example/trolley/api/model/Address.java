@@ -2,6 +2,7 @@ package local.example.trolley.api.model;
 
 import lombok.Getter;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
@@ -53,6 +54,8 @@ public class Address {
     @Column(name = "RESIDENTIAL")
     private boolean residential;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "REGISTERED")
     private Timestamp registered;
 }
