@@ -3,6 +3,7 @@ package local.example.trolley.api.model;
 import lombok.Getter;
 
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
@@ -34,6 +35,8 @@ public class Customer {
     @ColumnDefault(value = "false")
     private boolean active;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "REGISTERED")
     private Timestamp registered;
 }
