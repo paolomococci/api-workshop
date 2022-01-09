@@ -1,35 +1,23 @@
 package local.example.trolley.api.model;
 
-import lombok.Getter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.UpdateTimestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-import java.sql.Timestamp;
-import java.util.UUID;
+import local.example.trolley.api.template.EntityTemplate;
 
+@Data
 @Entity
 @Table(name = "ADDRESSES")
-public class Address {
-
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(
-            name = "ID",
-            updatable = false,
-            nullable = false
-    )
-    @Type(type = "uuid-char")
-    @Getter
-    private UUID id;
+@EqualsAndHashCode(callSuper = true)
+public class Address
+        extends EntityTemplate
+        implements Serializable {
 
     @Column(name = "COUNTRY")
     private String country;
@@ -54,14 +42,4 @@ public class Address {
 
     @Column(name = "RESIDENTIAL")
     private boolean residential;
-
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "REGISTERED")
-    private Timestamp registered;
-
-    @UpdateTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "UPDATED")
-    private Timestamp updated;
 }
