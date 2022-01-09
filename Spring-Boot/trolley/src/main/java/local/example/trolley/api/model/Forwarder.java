@@ -1,46 +1,20 @@
 package local.example.trolley.api.model;
 
-import lombok.Getter;
+import local.example.trolley.api.template.EntityTemplate;
+import org.hibernate.annotations.ColumnDefault;
 
-import org.hibernate.annotations.*;
-
-import javax.persistence.*;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-
-import java.sql.Timestamp;
-import java.util.UUID;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "FORWARDERS")
-public class Forwarder {
-
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(
-            name = "ID",
-            updatable = false,
-            nullable = false
-    )
-    @Type(type = "uuid-char")
-    @Getter
-    private UUID id;
+public class Forwarder
+        extends EntityTemplate
+        implements Serializable {
 
     @Column(name = "ACTIVE")
     @ColumnDefault(value = "false")
     private boolean active;
-
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "REGISTERED")
-    private Timestamp registered;
-
-    @UpdateTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "UPDATED")
-    private Timestamp updated;
 }
