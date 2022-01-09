@@ -7,6 +7,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Entity
@@ -27,4 +28,16 @@ public class Authorization {
     @Type(type = "uuid-char")
     @Getter
     private UUID id;
+
+    @Column(name = "MESSAGE")
+    private String message;
+
+    @Column(name = "ERROR")
+    private String error;
+
+    @Column(name = "AUTHORIZED")
+    private boolean authorized;
+
+    @Column(name = "REGISTERED")
+    private Timestamp registered;
 }
