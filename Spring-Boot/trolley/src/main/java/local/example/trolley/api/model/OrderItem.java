@@ -5,6 +5,7 @@ import lombok.Getter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 
@@ -34,4 +35,9 @@ public class OrderItem {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "REGISTERED")
     private Timestamp registered;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "UPDATED")
+    private Timestamp updated;
 }
