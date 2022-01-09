@@ -2,13 +2,16 @@ package local.example.trolley.api.template;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.UUID;
 
 @MappedSuperclass
@@ -32,14 +35,14 @@ public abstract class EntityTemplate {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "REGISTERED", nullable = false)
     @Getter
-    private Timestamp registered;
+    private Date registered;
 
     @UpdateTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "UPDATED", nullable = false)
     @Getter
     @Setter
-    private Timestamp updated;
+    private Date updated;
 
     @PrePersist
     protected void onInit() {
