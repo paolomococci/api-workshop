@@ -1,35 +1,18 @@
 package local.example.trolley.api.model;
 
-import lombok.Getter;
+import local.example.trolley.api.template.EntityTemplate;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.UpdateTimestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-import javax.persistence.*;
-
-import java.sql.Timestamp;
-import java.util.UUID;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "AUTHORIZATIONS")
-public class Authorization {
-
-    @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(
-            name = "ID",
-            updatable = false,
-            nullable = false
-    )
-    @Type(type = "uuid-char")
-    @Getter
-    private UUID id;
+public class Authorization
+        extends EntityTemplate
+        implements Serializable {
 
     @Column(name = "MESSAGE")
     private String message;
@@ -39,14 +22,4 @@ public class Authorization {
 
     @Column(name = "AUTHORIZED")
     private boolean authorized;
-
-    @CreationTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "REGISTERED")
-    private Timestamp registered;
-
-    @UpdateTimestamp
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "UPDATED")
-    private Timestamp updated;
 }
