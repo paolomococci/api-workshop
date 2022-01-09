@@ -2,6 +2,7 @@ package local.example.trolley.api.model;
 
 import lombok.Getter;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
@@ -28,6 +29,10 @@ public class Item {
     @Type(type = "uuid-char")
     @Getter
     private UUID id;
+
+    @Column(name = "AVAILABLE")
+    @ColumnDefault(value = "false")
+    private boolean available;
 
     @Column(name = "REGISTERED")
     private Timestamp registered;
