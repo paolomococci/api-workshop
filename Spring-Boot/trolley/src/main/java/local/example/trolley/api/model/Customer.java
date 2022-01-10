@@ -37,8 +37,4 @@ public class Customer
     @Basic(optional = false)
     @NotNull(message = "the phone field cannot be null")
     private String phone;
-
-    @Column(name = "ACTIVE")
-    @ColumnDefault(value = "false")
-    private boolean active;
 }
