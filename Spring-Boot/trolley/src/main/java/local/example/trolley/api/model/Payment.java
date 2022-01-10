@@ -21,6 +21,13 @@ public class Payment
         extends EntityTemplate
         implements Serializable {
 
+    @Column(name = "APPROVED")
+    @ColumnDefault(value = "false")
+    private boolean approved;
+
+    @Column(name = "MESSAGE")
+    private String message;
+
     @Column(name = "PAID")
     @ColumnDefault(value = "false")
     private boolean paid;
