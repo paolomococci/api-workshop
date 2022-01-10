@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -20,6 +21,9 @@ import java.io.Serializable;
 public class Item
         extends EntityTemplate
         implements Serializable {
+
+    @Column(name = "PRICE")
+    private BigDecimal price;
 
     @Column(name = "AVAILABLE")
     @ColumnDefault(value = "false")
