@@ -25,6 +25,9 @@ public class Item
     @Column(name = "PRICE")
     private BigDecimal price;
 
+    @Column(name = "quantity")
+    private Integer quantity;
+
     @Column(name = "AVAILABLE")
     @ColumnDefault(value = "false")
     private boolean available;
