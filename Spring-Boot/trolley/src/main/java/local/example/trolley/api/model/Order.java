@@ -7,12 +7,12 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Entity
@@ -28,4 +28,40 @@ public class Order
     @Column(name = "PROCESSED")
     @ColumnDefault(value = "false")
     private boolean processed;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="CUSTOMER_ID", nullable=false)
+    private User customer;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "ADDRESS_ID",
+            referencedColumnName = "ID",
+            insertable=false,
+            updatable=false
+    )
+    private Address address;
+
+    @OneToOne(cascade = CascadeType.ALL )
+    @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
+    private Payment payment;
+
+    @OneToOne
+    @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
+    private Shipment shipment;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "CARD_ID", referencedColumnName = "ID")
+    private Card card;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "ORDER_ITEM",
+            joinColumns = @JoinColumn(name = "ORDER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
+    )
+    private List<Item> items = Collections.emptyList();
+
+    @OneToOne(mappedBy = "order")
+    private Authorization authorization;
 }
