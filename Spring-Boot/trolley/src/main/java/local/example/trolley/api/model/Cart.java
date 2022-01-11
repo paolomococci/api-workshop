@@ -7,11 +7,11 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Entity
@@ -24,4 +24,16 @@ public class Cart
     @Column(name = "JOINED")
     @ColumnDefault(value = "true")
     private boolean joined;
+
+    @OneToOne
+    @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
+    private User user;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "CART_ITEM",
+            joinColumns = @JoinColumn(name = "CART_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
+    )
+    private List<Item> items = Collections.emptyList();
 }
