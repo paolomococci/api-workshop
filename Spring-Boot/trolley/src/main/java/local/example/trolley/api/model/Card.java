@@ -5,11 +5,10 @@ import local.example.trolley.api.template.EntityTemplate;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -27,4 +26,15 @@ public class Card
 
     @Column(name = "CSC")
     private String csc;
+
+    @OneToOne
+    @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
+    private User user;
+
+    @OneToMany(
+            mappedBy = "card",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private List<Order> orders;
 }
