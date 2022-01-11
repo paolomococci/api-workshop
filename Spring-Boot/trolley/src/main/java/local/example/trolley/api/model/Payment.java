@@ -9,6 +9,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import java.io.Serializable;
@@ -31,4 +32,7 @@ public class Payment
     @Column(name = "PAID")
     @ColumnDefault(value = "false")
     private boolean paid;
+
+    @OneToOne(mappedBy = "payment")
+    private Order order;
 }
