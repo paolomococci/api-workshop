@@ -7,13 +7,12 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Entity
@@ -41,4 +40,33 @@ public class User
     @Column(name = "ACTIVE")
     @ColumnDefault(value = "false")
     private boolean active;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(
+            name = "USER_ADDRESS",
+            joinColumns = @JoinColumn(name = "USER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ADDRESS_ID")
+    )
+    private List<Address> addresses = Collections.emptyList();
+
+    @OneToMany(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private List<Card> cards;
+
+    @OneToOne(
+            mappedBy = "user",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private Cart cart;
+
+    @OneToMany(
+            mappedBy = "userEntity",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private List<Order> orders;
 }
