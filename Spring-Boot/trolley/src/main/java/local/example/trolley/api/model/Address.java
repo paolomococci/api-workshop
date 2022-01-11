@@ -1,15 +1,14 @@
 package local.example.trolley.api.model;
 
+import local.example.trolley.api.template.EntityTemplate;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
-
-import local.example.trolley.api.template.EntityTemplate;
+import java.util.List;
 
 @Data
 @Entity
@@ -42,4 +41,11 @@ public class Address
 
     @Column(name = "RESIDENTIAL")
     private boolean residential;
+
+    @OneToMany(
+            mappedBy = "address",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private List<Order> orders;
 }
