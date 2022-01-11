@@ -5,9 +5,7 @@ import local.example.trolley.api.template.EntityTemplate;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
@@ -27,4 +25,8 @@ public class Authorization
 
     @Column(name = "AUTHORIZED")
     private boolean authorized;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ORDER_ID", referencedColumnName = "ID")
+    private Order order;
 }
