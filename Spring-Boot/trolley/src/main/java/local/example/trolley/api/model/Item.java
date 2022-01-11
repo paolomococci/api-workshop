@@ -7,12 +7,11 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Entity
@@ -31,4 +30,14 @@ public class Item
     @Column(name = "AVAILABLE")
     @ColumnDefault(value = "false")
     private boolean available;
+
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
+    private Product product;
+
+    @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
+    private List<Cart> cart;
+
+    @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
+    private List<Order> orders;
 }
