@@ -7,14 +7,13 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Entity
@@ -44,4 +43,15 @@ public class Product
     @Column(name = "AVAILABLE")
     @ColumnDefault(value = "false")
     private boolean available;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "PRODUCT_TAG",
+            joinColumns = @JoinColumn(name = "PRODUCT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "TAG_ID")
+    )
+    private List<Tag> tags = Collections.emptyList();
+
+    @OneToMany(mappedBy = "product")
+    private List<Item> items;
 }
