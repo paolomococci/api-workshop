@@ -2,10 +2,7 @@ package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -21,6 +18,9 @@ public class Employee
     private String username;
     private LocalDate birthday;
     private LocalDate recruited;
+
+    @Enumerated(EnumType.STRING)
+    private Level level;
 
     public String getName() {
         return name;
