@@ -48,4 +48,12 @@ public class Expertise
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }
