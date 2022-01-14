@@ -3,11 +3,18 @@ package local.example.nimble.api.model;
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
 @Entity
 public class Employee
         extends PanacheEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id;
 
     private String name;
     private String surname;
