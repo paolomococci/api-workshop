@@ -11,7 +11,7 @@ public class Employee
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    private Long id;
 
     private String name;
     private String surname;
@@ -60,5 +60,13 @@ public class Employee
 
     public void setRecruited(LocalDate recruited) {
         this.recruited = recruited;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 }
