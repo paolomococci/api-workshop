@@ -84,6 +84,14 @@ public class Employee
         this.recruited = recruited;
     }
 
+    public List<Expertise> getExpertise() {
+        return expertise;
+    }
+
+    public void setExpertise(List<Expertise> expertise) {
+        this.expertise = expertise;
+    }
+
     public Level getLevel() {
         return level;
     }
