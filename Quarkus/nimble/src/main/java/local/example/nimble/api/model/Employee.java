@@ -4,21 +4,43 @@ import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
+@Table(name = "EMPLOYEE")
 public class Employee
         extends PanacheEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ID")
     private Long id;
 
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "SURNAME")
     private String surname;
+
+    @Column(name = "USERNAME")
     private String username;
+
+    @Column(name = "BIRTHDAY")
     private LocalDate birthday;
+
+    @Column(name = "RECRUITED")
     private LocalDate recruited;
 
+    @Column(name = "EXPERTISE")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "EMPLOYEE_EXPERTISE",
+            joinColumns = @JoinColumn(name = "EMPLOYEE_ID"),
+            inverseJoinColumns = @JoinColumn(name = "EXPERTISE_ID")
+    )
+    List<Expertise> expertise;
+
+    @Column(name = "LEVEL")
     @Enumerated(EnumType.STRING)
     private Level level;
 
