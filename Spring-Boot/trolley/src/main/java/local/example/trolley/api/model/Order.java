@@ -22,7 +22,7 @@ public class Order
         extends EntityTemplate
         implements Serializable {
 
-    @Column(name = "total")
+    @Column(name = "TOTAL")
     private BigDecimal total;
 
     @Column(name = "PROCESSED")
