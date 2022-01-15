@@ -78,4 +78,15 @@ public class ExpertiseResource {
                         .onItem().ifNull().continueWith(Response.noContent().status(Response.Status.NOT_FOUND)::build)
         );
     }
+
+    @DELETE
+    @Path(value = "{id}")
+    public Uni<Response> delete(@RestPath Long id) {
+        return Panache.withTransaction(
+                () -> Expertise.deleteById(id)
+        ).map(
+                temp -> temp ? Response.ok().status(Response.Status.NO_CONTENT).build()
+                        : Response.ok().status(Response.Status.NOT_FOUND).build()
+        );
+    }
 }
