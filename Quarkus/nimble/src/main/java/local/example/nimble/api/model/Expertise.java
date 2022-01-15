@@ -61,4 +61,8 @@ public class Expertise
     public static Uni<Expertise> findByName(String name) {
         return find("name", name).firstResult();
     }
+
+    public static Uni<List<Expertise>> findDescription(String description) {
+        return list("description", description);
+    }
 }
