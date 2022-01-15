@@ -105,6 +105,10 @@ public class Employee
         return list("name", name);
     }
 
+    public static Uni<List<Employee>> findBySurname(String surname) {
+        return list("surname", surname);
+    }
+
     public static Uni<Employee> findByUsername(String username) {
         return find("username", username).firstResult();
     }
