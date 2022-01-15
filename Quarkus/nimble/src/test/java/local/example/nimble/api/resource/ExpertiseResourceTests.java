@@ -10,9 +10,9 @@ import static org.hamcrest.CoreMatchers.is;
 public class ExpertiseResourceTests {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testProbeEndpoint() {
         given()
-                .when().get("/api/v1/expertise")
+                .when().get("/api/v1/expertise/probe")
                 .then()
                 .statusCode(200)
                 .body(is("expertise"));
