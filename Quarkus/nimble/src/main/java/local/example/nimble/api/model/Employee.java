@@ -113,7 +113,6 @@ public class Employee
     }
 
     public static Uni<List<Employee>> findByExpertise(Expertise expertise) {
-        // TODO
         return list("expertise", expertise);
     }
 }
