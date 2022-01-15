@@ -11,11 +11,6 @@ import java.util.List;
 public class Expertise
         extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
-    private Long id;
-
     @Column(name = "NAME", unique = true)
     private String name;
 
