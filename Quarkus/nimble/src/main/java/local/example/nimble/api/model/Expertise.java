@@ -1,6 +1,7 @@
 package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+import io.smallrye.mutiny.Uni;
 
 import javax.persistence.*;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Expertise
     @Column(name = "ID")
     private Long id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME", unique = true)
     private String name;
 
     @Column(name = "DESCRIPTION")
@@ -55,5 +56,9 @@ public class Expertise
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    public static Uni<Expertise> findByName(String name) {
+        return find("name", name).firstResult();
     }
 }
