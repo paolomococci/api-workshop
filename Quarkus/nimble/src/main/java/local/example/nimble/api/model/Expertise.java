@@ -22,7 +22,7 @@ public class Expertise
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @Column(name = "EMPLOYEE")
+    @Column(name = "EMPLOYEES")
     @ManyToMany(mappedBy = "expertise")
     private List<Employee> employees;
 
