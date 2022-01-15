@@ -12,6 +12,7 @@ import java.net.HttpURLConnection;
 public class ExpertiseResource {
 
     @GET
+    @Path(value = "/probe")
     @Produces(MediaType.TEXT_PLAIN)
     @ResponseStatus(HttpURLConnection.HTTP_OK)
     public String probe() {
