@@ -54,4 +54,31 @@ public class EmployeeResource {
     public Uni<Employee> read(@RestPath Long id) {
         return Employee.findById(id);
     }
+
+    @PUT
+    @Path(value = "{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<Response> update(
+            @RestPath Long id,
+            Employee employee
+    ) {
+        if (employee == null || employee.id != null)
+            throw new WebApplicationException("Unprocessable Entity", 422);
+
+        return Panache.withTransaction(
+                () -> Employee.<Employee> findById(id)
+                        .onItem().ifNotNull().invoke(
+                                temp -> {
+                                    temp.setName(employee.getName());
+                                    temp.setSurname(employee.getSurname());
+                                    temp.setUsername(employee.getUsername());
+                                    temp.setBirthday(employee.getBirthday());
+                                    temp.setRecruited(employee.getRecruited());
+                                }
+                        )
+                        .onItem().ifNotNull().transform(temp -> Response.ok(temp).build())
+                        .onItem().ifNull().continueWith(Response.noContent().status(Response.Status.NOT_FOUND)::build)
+        );
+    }
 }
