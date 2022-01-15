@@ -12,6 +12,7 @@ import java.net.HttpURLConnection;
 public class EmployeeResource {
 
     @GET
+    @Path(value = "/probe")
     @Produces(MediaType.TEXT_PLAIN)
     @ResponseStatus(HttpURLConnection.HTTP_OK)
     public String probe() {
