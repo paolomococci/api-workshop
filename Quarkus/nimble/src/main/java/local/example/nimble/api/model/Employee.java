@@ -12,11 +12,6 @@ import java.util.List;
 public class Employee
         extends PanacheEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID")
-    private Long id;
-
     @Column(name = "NAME")
     private String name;
 
