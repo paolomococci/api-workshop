@@ -6,6 +6,7 @@ import io.smallrye.mutiny.Uni;
 import local.example.nimble.api.model.Expertise;
 
 import org.jboss.resteasy.reactive.ResponseStatus;
+import org.jboss.resteasy.reactive.RestPath;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -33,5 +34,14 @@ public class ExpertiseResource {
     @ResponseStatus(HttpURLConnection.HTTP_OK)
     public Uni<List<Expertise>> readAll(){
         return Expertise.listAll(Sort.by("name"));
+    }
+
+    @GET
+    @Path(value = "{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @ResponseStatus(HttpURLConnection.HTTP_OK)
+    public Uni<Expertise> read(@RestPath Long id) {
+        return Expertise.findById(id);
     }
 }
