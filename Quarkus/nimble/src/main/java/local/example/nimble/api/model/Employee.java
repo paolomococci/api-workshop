@@ -1,6 +1,7 @@
 package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+import io.smallrye.mutiny.Uni;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -22,7 +23,7 @@ public class Employee
     @Column(name = "SURNAME")
     private String surname;
 
-    @Column(name = "USERNAME")
+    @Column(name = "USERNAME", unique = true)
     private String username;
 
     @Column(name = "BIRTHDAY")
@@ -98,5 +99,9 @@ public class Employee
 
     public void setLevel(Level level) {
         this.level = level;
+    }
+
+    public static Uni<Employee> findByUsername(String username) {
+        return find("username", username).firstResult();
     }
 }
