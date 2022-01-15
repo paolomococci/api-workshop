@@ -10,9 +10,9 @@ import static org.hamcrest.CoreMatchers.is;
 public class EmployeeResourceTests {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testProbeEndpoint() {
         given()
-                .when().get("/api/v1/employees")
+                .when().get("/api/v1/employees/probe")
                 .then()
                 .statusCode(200)
                 .body(is("employees"));
