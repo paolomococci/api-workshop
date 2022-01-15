@@ -104,4 +104,8 @@ public class Employee
     public static Uni<Employee> findByUsername(String username) {
         return find("username", username).firstResult();
     }
+
+    public static Uni<List<Employee>> findMaster() {
+        return list("level", Level.MASTER);
+    }
 }
