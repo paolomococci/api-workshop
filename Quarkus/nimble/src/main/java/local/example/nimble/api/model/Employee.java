@@ -101,6 +101,10 @@ public class Employee
         this.level = level;
     }
 
+    public static Uni<List<Employee>> findByName(String name) {
+        return list("name", name);
+    }
+
     public static Uni<Employee> findByUsername(String username) {
         return find("username", username).firstResult();
     }
