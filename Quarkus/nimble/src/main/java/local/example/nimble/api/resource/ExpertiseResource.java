@@ -2,11 +2,11 @@ package local.example.nimble.api.resource;
 
 import io.quarkus.hibernate.reactive.panache.Panache;
 import io.quarkus.panache.common.Sort;
+import io.quarkus.vertx.web.Route;
 import io.smallrye.mutiny.Uni;
 
 import local.example.nimble.api.model.Expertise;
 
-import org.jboss.resteasy.reactive.ResponseStatus;
 import org.jboss.resteasy.reactive.RestPath;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,17 +14,17 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import java.net.HttpURLConnection;
 import java.util.List;
 
 @ApplicationScoped
 @Path("/api/v1/expertise")
 public class ExpertiseResource {
 
-    @GET
-    @Path(value = "/probe")
-    @Produces(MediaType.TEXT_PLAIN)
-    @ResponseStatus(HttpURLConnection.HTTP_OK)
+    @Route(
+            path = "/api/v1/expertise/probe",
+            methods = Route.HttpMethod.GET,
+            produces = MediaType.TEXT_PLAIN
+    )
     public String probe() {
         return "expertise";
     }
