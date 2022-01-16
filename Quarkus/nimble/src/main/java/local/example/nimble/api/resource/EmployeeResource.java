@@ -9,6 +9,7 @@ import local.example.nimble.api.model.Employee;
 import org.jboss.resteasy.reactive.ResponseStatus;
 import org.jboss.resteasy.reactive.RestPath;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -16,6 +17,7 @@ import javax.ws.rs.core.Response;
 import java.net.HttpURLConnection;
 import java.util.List;
 
+@ApplicationScoped
 @Path("/api/v1/employees")
 public class EmployeeResource {
 
@@ -41,12 +43,14 @@ public class EmployeeResource {
     }
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Uni<List<Employee>> readAll(){
         return Employee.listAll(Sort.by("surname"));
     }
 
     @GET
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Uni<Employee> read(Long id) {
         return Employee.findById(id);
     }
