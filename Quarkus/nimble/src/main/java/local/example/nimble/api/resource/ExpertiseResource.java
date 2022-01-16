@@ -7,9 +7,11 @@ import io.smallrye.mutiny.Uni;
 
 import local.example.nimble.api.model.Expertise;
 
+import org.hibernate.reactive.mutiny.Mutiny;
 import org.jboss.resteasy.reactive.RestPath;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -19,6 +21,9 @@ import java.util.List;
 @ApplicationScoped
 @Path("/api/v1/expertise")
 public class ExpertiseResource {
+
+    @Inject
+    Mutiny.SessionFactory sessionFactory;
 
     @Route(
             path = "/api/v1/expertise/probe",
@@ -46,13 +51,20 @@ public class ExpertiseResource {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Expertise> read(Long id) {
-        return Expertise.findById(id);
+        return sessionFactory.withTransaction(
+                (session, transaction) -> session.find(Expertise.class, id)
+        );
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<List<Expertise>> readAll() {
-        return Expertise.listAll(Sort.by("name"));
+        return sessionFactory.withTransaction(
+                (session, transaction) -> session.createNamedQuery(
+                        "Expertise.findAll",
+                        Expertise.class
+                ).getResultList()
+        );
     }
 
     @PUT
