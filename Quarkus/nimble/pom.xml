@@ -43,7 +43,12 @@
       <artifactId>quarkus-resteasy-reactive-jackson</artifactId>
     </dependency>
 
-    <!-- backend database during development -->
+    <!-- backend database PostgreSQL -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-reactive-pg-client</artifactId>
+    </dependency>
+
 
     <!-- ORM -->
     <dependency>
