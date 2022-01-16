@@ -29,6 +29,16 @@
   </dependencyManagement>
   <dependencies>
 
+    <!-- H2 console -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-vertx</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-undertow</artifactId>
+    </dependency>
+
     <!-- REST -->
     <dependency>
       <groupId>io.quarkus</groupId>
