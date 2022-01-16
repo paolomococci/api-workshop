@@ -41,17 +41,13 @@ public class ExpertiseResource {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @ResponseStatus(HttpURLConnection.HTTP_OK)
-    public Uni<List<Expertise>> readAll(){
+    public Uni<List<Expertise>> readAll() {
         return Expertise.listAll(Sort.by("name"));
     }
 
     @GET
-    @Path(value = "{id}")
-    @Produces(MediaType.APPLICATION_JSON)
-    @ResponseStatus(HttpURLConnection.HTTP_OK)
-    public Uni<Expertise> read(@RestPath Long id) {
+    @Path("/{id}")
+    public Uni<Expertise> read(Long id) {
         return Expertise.findById(id);
     }
 
