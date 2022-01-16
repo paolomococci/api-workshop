@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Cacheable
 @Table(name = "EMPLOYEE")
 public class Employee
         extends PanacheEntity {
