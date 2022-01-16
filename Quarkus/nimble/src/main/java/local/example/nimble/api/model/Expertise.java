@@ -2,7 +2,6 @@ package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 import io.smallrye.mutiny.Uni;
-import io.vertx.mutiny.sqlclient.Row;
 
 import javax.persistence.*;
 import java.util.List;
@@ -22,11 +21,6 @@ public class Expertise
     @Column(name = "EMPLOYEES")
     @ManyToMany(mappedBy = "expertise")
     private List<Employee> employees;
-
-    public Expertise(Long id, String name) {
-        this.id = id;
-        this.name =name;
-    }
 
     public Long getId() {
         return id;
@@ -66,9 +60,5 @@ public class Expertise
 
     public static Uni<List<Expertise>> findDescription(String description) {
         return list("description", description);
-    }
-
-    private static Expertise form(Row row) {
-        return new Expertise(row.getLong("id"), row.getString("name"));
     }
 }
