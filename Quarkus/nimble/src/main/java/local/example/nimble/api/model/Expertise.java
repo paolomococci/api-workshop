@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Cacheable
 @Table(name = "EXPERTISE")
 public class Expertise
         extends PanacheEntity {
