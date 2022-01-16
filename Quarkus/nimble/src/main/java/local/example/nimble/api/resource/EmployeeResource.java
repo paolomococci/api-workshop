@@ -43,16 +43,16 @@ public class EmployeeResource {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Uni<List<Employee>> readAll(){
-        return Employee.listAll(Sort.by("surname"));
-    }
-
-    @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Employee> read(Long id) {
         return Employee.findById(id);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<List<Employee>> readAll(){
+        return Employee.listAll(Sort.by("surname"));
     }
 
     @PUT
