@@ -9,6 +9,7 @@ import local.example.nimble.api.model.Expertise;
 import org.jboss.resteasy.reactive.ResponseStatus;
 import org.jboss.resteasy.reactive.RestPath;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -16,6 +17,7 @@ import javax.ws.rs.core.Response;
 import java.net.HttpURLConnection;
 import java.util.List;
 
+@ApplicationScoped
 @Path("/api/v1/expertise")
 public class ExpertiseResource {
 
