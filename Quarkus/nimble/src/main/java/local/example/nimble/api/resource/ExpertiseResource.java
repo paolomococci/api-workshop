@@ -43,14 +43,16 @@ public class ExpertiseResource {
     }
 
     @GET
-    public Uni<List<Expertise>> readAll() {
-        return Expertise.listAll(Sort.by("name"));
-    }
-
-    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
     public Uni<Expertise> read(Long id) {
         return Expertise.findById(id);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<List<Expertise>> readAll() {
+        return Expertise.listAll(Sort.by("name"));
     }
 
     @PUT
