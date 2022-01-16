@@ -43,8 +43,8 @@ public class ExpertiseResource {
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Uni<Expertise> read(Long id) {
         return Expertise.findById(id);
     }
