@@ -1,8 +1,10 @@
 package local.example.nimble.api.service;
 
+import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
 import io.vertx.mutiny.sqlclient.Row;
 import io.vertx.mutiny.sqlclient.RowSet;
+import local.example.nimble.api.model.Expertise;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
