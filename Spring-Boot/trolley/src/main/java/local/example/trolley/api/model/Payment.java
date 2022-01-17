@@ -35,4 +35,7 @@ public class Payment
 
     @OneToOne(mappedBy = "payment")
     private Order order;
+
+    @OneToOne(mappedBy = "supplyPayment")
+    private Supply supply;
 }
