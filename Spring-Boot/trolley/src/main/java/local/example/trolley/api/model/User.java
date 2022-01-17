@@ -64,7 +64,7 @@ public class User
     private Cart cart;
 
     @OneToMany(
-            mappedBy = "userEntity",
+            mappedBy = "customer",
             fetch = FetchType.LAZY,
             orphanRemoval = true
     )
