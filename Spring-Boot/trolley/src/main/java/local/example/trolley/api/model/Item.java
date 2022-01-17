@@ -35,10 +35,10 @@ public class Item
     @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")
     private Product product;
 
-    @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "cartItems", fetch = FetchType.LAZY)
     private List<Cart> carts;
 
-    @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "orderItems", fetch = FetchType.LAZY)
     private List<Order> orders;
 
     @ManyToMany(mappedBy = "supplyItems", fetch = FetchType.LAZY)
