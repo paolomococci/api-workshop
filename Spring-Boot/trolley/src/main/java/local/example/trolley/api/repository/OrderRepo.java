@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface OrderRepo
         extends CrudRepository<Order, UUID> {
 
-    String QUERY = "";
+    String SELECT_QUERY = "";
 }
