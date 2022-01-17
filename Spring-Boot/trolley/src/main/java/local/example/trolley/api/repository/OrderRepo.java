@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface OrderRepo
         extends CrudRepository<Order, UUID> {
 
-    String SELECT_QUERY = "";
+    String SELECT_QUERY = "SELECT o FROM orders o JOIN o.customer_id u WHERE u.id = :customerId";
 }
