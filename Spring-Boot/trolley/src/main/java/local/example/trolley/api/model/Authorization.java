@@ -29,4 +29,8 @@ public class Authorization
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ORDER_ID", referencedColumnName = "ID")
     private Order order;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SUPPLY_ID", referencedColumnName = "ID")
+    private Supply supply;
 }
