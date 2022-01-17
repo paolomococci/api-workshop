@@ -46,7 +46,7 @@ public class Order
     @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
     private Payment payment;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
     private Shipment shipment;
 
