@@ -54,7 +54,10 @@ public class Order
     @JoinColumn(name = "CARD_ID", referencedColumnName = "ID")
     private Card card;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     @JoinTable(
             name = "ORDER_ITEM",
             joinColumns = @JoinColumn(name = "ORDER_ID"),
