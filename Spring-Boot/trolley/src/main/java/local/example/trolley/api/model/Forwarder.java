@@ -7,12 +7,12 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Entity
@@ -40,4 +40,12 @@ public class Forwarder
     @Column(name = "ACTIVE")
     @ColumnDefault(value = "false")
     private boolean active;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "FORWARDER_SHIPMENT",
+            joinColumns = @JoinColumn(name = "FORWARDER_ID"),
+            inverseJoinColumns = @JoinColumn(name = "SHIPMENT_ID")
+    )
+    private List<Shipment> shipments = Collections.emptyList();
 }
