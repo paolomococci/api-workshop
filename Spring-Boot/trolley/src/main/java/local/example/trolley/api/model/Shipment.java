@@ -29,6 +29,9 @@ public class Shipment
     @ColumnDefault(value = "false")
     private boolean achieve;
 
+    @OneToOne(mappedBy = "shipment")
+    private Order order;
+
     @ManyToMany(mappedBy = "shipments", fetch = FetchType.LAZY)
     private List<Forwarder> forwarders;
 }
