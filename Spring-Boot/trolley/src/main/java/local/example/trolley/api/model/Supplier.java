@@ -7,13 +7,11 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -41,4 +39,11 @@ public class Supplier
     @Column(name = "ACTIVE")
     @ColumnDefault(value = "false")
     private boolean active;
+
+    @OneToMany(
+            mappedBy = "supplier",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private List<Supply> supplies;
 }
