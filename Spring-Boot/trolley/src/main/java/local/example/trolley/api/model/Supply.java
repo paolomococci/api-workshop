@@ -30,4 +30,13 @@ public class Supply
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name="SUPPLIER_ID", nullable=false)
     private Supplier supplier;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(
+            name = "ADDRESS_ID",
+            referencedColumnName = "ID",
+            insertable=false,
+            updatable=false
+    )
+    private Address supplyAddress;
 }
