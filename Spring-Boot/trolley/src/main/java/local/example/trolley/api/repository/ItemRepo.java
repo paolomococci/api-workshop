@@ -12,4 +12,5 @@ public interface ItemRepo
         extends CrudRepository<Item, UUID> {
 
     String QUERY = "";
+    String DELETE_QUERY = "";
 }
