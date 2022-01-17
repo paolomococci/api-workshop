@@ -43,4 +43,8 @@ public class Supply
     @OneToOne(cascade = CascadeType.ALL )
     @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
     private Payment supplyPayment;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
+    private Shipment supplyShipment;
 }
