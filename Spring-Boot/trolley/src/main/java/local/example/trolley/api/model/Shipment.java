@@ -32,6 +32,9 @@ public class Shipment
     @OneToOne(mappedBy = "shipment")
     private Order order;
 
+    @OneToOne(mappedBy = "supplyShipment")
+    private Supply supply;
+
     @ManyToMany(mappedBy = "shipments", fetch = FetchType.LAZY)
     private List<Forwarder> forwarders;
 }
