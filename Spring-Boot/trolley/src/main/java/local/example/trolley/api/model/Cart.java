@@ -29,7 +29,10 @@ public class Cart
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
     private User user;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
     @JoinTable(
             name = "CART_ITEM",
             joinColumns = @JoinColumn(name = "CART_ID"),
