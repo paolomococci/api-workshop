@@ -11,6 +11,8 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.List;
 
 @Data
 @Entity
@@ -47,4 +49,15 @@ public class Supply
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "SHIPMENT_ID", referencedColumnName = "ID")
     private Shipment supplyShipment;
+
+    @ManyToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JoinTable(
+            name = "SUPPLY_ITEM",
+            joinColumns = @JoinColumn(name = "SUPPLY_ID"),
+            inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
+    )
+    private List<Item> supplyItems = Collections.emptyList();
 }
