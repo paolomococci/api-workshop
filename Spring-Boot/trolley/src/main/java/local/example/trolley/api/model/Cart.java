@@ -38,5 +38,5 @@ public class Cart
             joinColumns = @JoinColumn(name = "CART_ID"),
             inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
     )
-    private List<Item> items = Collections.emptyList();
+    private List<Item> cartItems = Collections.emptyList();
 }
