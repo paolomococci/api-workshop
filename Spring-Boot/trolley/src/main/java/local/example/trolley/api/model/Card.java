@@ -27,8 +27,14 @@ public class Card
     @Column(name = "CSC")
     private String csc;
 
-    @OneToOne
-    @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
+    @ManyToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(
+            name = "USER_ID",
+            referencedColumnName = "ID"
+    )
     private User user;
 
     @OneToMany(
