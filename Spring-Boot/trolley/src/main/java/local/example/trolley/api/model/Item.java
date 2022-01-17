@@ -40,4 +40,7 @@ public class Item
 
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
     private List<Order> orders;
+
+    @ManyToMany(mappedBy = "supplyItems", fetch = FetchType.LAZY)
+    private List<Supply> supplies;
 }
