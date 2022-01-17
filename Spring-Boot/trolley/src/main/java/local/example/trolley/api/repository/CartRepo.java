@@ -10,4 +10,6 @@ import java.util.UUID;
 @RepositoryRestResource
 public interface CartRepo
         extends CrudRepository<Cart, UUID> {
+
+    String QUERY = "";
 }
