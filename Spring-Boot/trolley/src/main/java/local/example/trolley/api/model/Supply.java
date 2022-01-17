@@ -60,4 +60,7 @@ public class Supply
             inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
     )
     private List<Item> supplyItems = Collections.emptyList();
+
+    @OneToOne(mappedBy = "supply")
+    private Authorization authorization;
 }
