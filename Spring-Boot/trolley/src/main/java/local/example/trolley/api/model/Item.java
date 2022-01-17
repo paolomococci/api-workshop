@@ -36,7 +36,7 @@ public class Item
     private Product product;
 
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
-    private List<Cart> cart;
+    private List<Cart> carts;
 
     @ManyToMany(mappedBy = "items", fetch = FetchType.LAZY)
     private List<Order> orders;
