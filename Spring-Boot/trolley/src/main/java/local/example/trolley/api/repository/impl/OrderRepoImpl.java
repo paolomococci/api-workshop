@@ -2,5 +2,5 @@ package local.example.trolley.api.repository.impl;
 
 public class OrderRepoImpl {
 
-    private static final String QUERY = "";
+    private static final String SELECT_QUERY = "";
 }
