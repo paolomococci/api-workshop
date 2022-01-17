@@ -48,4 +48,11 @@ public class Address
             orphanRemoval = true
     )
     private List<Order> orders;
+
+    @OneToMany(
+            mappedBy = "supplyAddress",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
+    private List<Supply> supplies;
 }
