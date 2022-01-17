@@ -15,9 +15,9 @@ public class OrderItem
         extends EntityTemplate
         implements Serializable {
 
-    @Column(name = "ITEM")
+    @Column(name = "ITEM_ID")
     private UUID itemId;
 
-    @Column(name = "ORDER")
+    @Column(name = "ORDER_ID")
     private UUID orderId;
 }
