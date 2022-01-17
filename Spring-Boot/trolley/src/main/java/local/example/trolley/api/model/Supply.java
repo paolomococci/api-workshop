@@ -7,9 +7,7 @@ import lombok.EqualsAndHashCode;
 
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -28,4 +26,8 @@ public class Supply
     @Column(name = "PROCESSED")
     @ColumnDefault(value = "false")
     private boolean processed;
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name="SUPPLIER_ID", nullable=false)
+    private Supplier supplier;
 }
