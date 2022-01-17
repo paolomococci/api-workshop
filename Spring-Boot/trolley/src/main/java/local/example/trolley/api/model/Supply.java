@@ -39,4 +39,8 @@ public class Supply
             updatable=false
     )
     private Address supplyAddress;
+
+    @OneToOne(cascade = CascadeType.ALL )
+    @JoinColumn(name = "PAYMENT_ID", referencedColumnName = "ID")
+    private Payment supplyPayment;
 }
