@@ -63,7 +63,7 @@ public class Order
             joinColumns = @JoinColumn(name = "ORDER_ID"),
             inverseJoinColumns = @JoinColumn(name = "ITEM_ID")
     )
-    private List<Item> items = Collections.emptyList();
+    private List<Item> orderItems = Collections.emptyList();
 
     @OneToOne(mappedBy = "order")
     private Authorization authorization;
