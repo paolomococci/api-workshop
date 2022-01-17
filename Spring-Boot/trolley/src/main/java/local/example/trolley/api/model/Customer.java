@@ -36,7 +36,10 @@ public class Customer
     @NotNull(message = "the phone field cannot be null")
     private String phone;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(
+            mappedBy = "customer",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true
+    )
     private List<Order> orders;
-
 }
