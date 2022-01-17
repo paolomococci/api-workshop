@@ -11,6 +11,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -27,4 +28,7 @@ public class Shipment
     @Column(name = "ACHIEVE")
     @ColumnDefault(value = "false")
     private boolean achieve;
+
+    @ManyToMany(mappedBy = "shipments", fetch = FetchType.LAZY)
+    private List<Forwarder> forwarders;
 }
