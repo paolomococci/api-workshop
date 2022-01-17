@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface CartRepo
         extends CrudRepository<Cart, UUID> {
 
-    String QUERY = "SELECT C FROM CARTS C JOIN C.USERS WHERE C.ID = :customerId";
+    String SELECT_QUERY = "SELECT C FROM CARTS C JOIN C.USERS WHERE C.ID = :customerId";
 }
