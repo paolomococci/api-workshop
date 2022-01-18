@@ -2,11 +2,13 @@ package local.example.trolley.api.repository;
 
 import local.example.trolley.api.model.Item;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.List;
 import java.util.UUID;
 
 @RepositoryRestResource
@@ -21,4 +23,14 @@ public interface ItemRepo
             nativeQuery = true
     )
     Iterable<Item> findByCustomerId(@Param("customerId") UUID customerId);
+
+    @Query(
+            value = DELETE_QUERY,
+            nativeQuery = true
+    )
+    @Modifying
+    Iterable<Item> deleteCartItemJoinById(
+            @Param("uuidList") List<UUID> uuidList,
+            @Param("cartId") UUID cartId
+    );
 }
