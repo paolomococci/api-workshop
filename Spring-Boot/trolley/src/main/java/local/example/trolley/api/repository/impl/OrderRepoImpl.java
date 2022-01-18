@@ -1,5 +1,6 @@
 package local.example.trolley.api.repository.impl;
 
+import local.example.trolley.api.exception.ResourceNotFoundException;
 import local.example.trolley.api.model.Item;
 import local.example.trolley.api.model.Order;
 import local.example.trolley.api.repository.AddressRepo;
@@ -62,6 +63,14 @@ public class OrderRepoImpl
         List<Item> items = StreamSupport
                 .stream(itemsAlreadyRegisteredInThwDatabase.spliterator(), false).toList();
 
+        if (items.size() < 1) {
+            throw new ResourceNotFoundException(
+                    String.format(
+                            "-- no items found in customer's ID: %s cart --",
+                            order.getCustomer().getId()
+                    )
+            );
+        }
 
         return Optional.empty();
     }
