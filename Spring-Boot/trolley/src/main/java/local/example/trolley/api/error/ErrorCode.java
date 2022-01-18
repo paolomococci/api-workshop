@@ -11,6 +11,7 @@ public enum ErrorCode {
     HTTP_MESSAGE_NOT_READABLE("CART-5006", "Payload at odds with Content-Type stated"),
     HTTP_REQUEST_METHOD_NOT_SUPPORTED("CART-5007", "Request Method Not Supported"),
     ILLEGAL_ARGUMENT_EXCEPTION("CART-5009", "Invalid Data Sent"),
+    ITEM_NOT_FOUND("CART-5012", "Item Not Found"),
     JSON_PARSE_ERROR("CART-5005", "JSON Object Invalid Payload"),
     RESOURCE_ALREADY_EXISTS("CART-5013", "Resource Already Exists"),
     RESOURCE_NOT_FOUND("CART-5010", "Resource Not Found");
