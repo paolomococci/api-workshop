@@ -21,8 +21,10 @@ import java.util.Optional;
 public class OrderRepoImpl
         implements OrderRepoExt {
 
-    private static final String SELECT_QUERY = "SELECT o.* FROM trolley_db.orders WHERE o.customer_id = ? AND o.registered >= ?";
-    private static final String INSERT_QUERY = "INSERT INTO trolley_db.orders";
+    private static final String SELECT_QUERY =
+            "SELECT o.* FROM trolley_db.orders WHERE o.customer_id = ? AND o.registered >= ?";
+    private static final String INSERT_QUERY =
+            "INSERT INTO trolley_db.orders(address_id,card_id,customer_id,registered,total,processed)";
 
     @PersistenceContext
     private final EntityManager entityManager;
