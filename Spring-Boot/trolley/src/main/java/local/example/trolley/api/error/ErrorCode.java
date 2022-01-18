@@ -7,7 +7,8 @@ public enum ErrorCode {
     HTTP_MEDIA_TYPE_NOT_ACCEPTABLE("CART-5004", "Requested Accept Header Value Unsupported"),
     HTTP_MESSAGE_NOT_WRITABLE("CART-5003", "Missing Accept Header"),
     HTTP_MESSAGE_NOT_READABLE("CART-5006", "Payload at odds with Content-Type stated"),
-    JSON_PARSE_ERROR("CART-5005", "JSON Object Invalid Payload");
+    JSON_PARSE_ERROR("CART-5005", "JSON Object Invalid Payload"),
+    RESOURCE_NOT_FOUND("CART-5010", "Resource Not Found");
 
     private final String errorCode;
     private final String errorMessageKey;
