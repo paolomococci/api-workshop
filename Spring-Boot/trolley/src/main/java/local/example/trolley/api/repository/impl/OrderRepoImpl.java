@@ -22,6 +22,7 @@ public class OrderRepoImpl
         implements OrderRepoExt {
 
     private static final String SELECT_QUERY = "SELECT o.* FROM trolley_db.orders WHERE o.customer_id = ? AND o.registered >= ?";
+    private static final String INSERT_QUERY = "INSERT INTO trolley_db.orders";
 
     @PersistenceContext
     private final EntityManager entityManager;
