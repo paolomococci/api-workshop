@@ -32,6 +32,22 @@ public class OrderRepoImpl
     private OrderItemRepo orderItemRepo;
     private ItemService itemService;
 
+    public OrderRepoImpl(
+            EntityManager entityManager,
+            ItemRepo itemRepo,
+            AddressRepo addressRepo,
+            CartRepo cartRepo,
+            OrderItemRepo orderItemRepo,
+            ItemService itemService
+    ) {
+        this.entityManager = entityManager;
+        this.itemRepo = itemRepo;
+        this.addressRepo = addressRepo;
+        this.cartRepo = cartRepo;
+        this.orderItemRepo = orderItemRepo;
+        this.itemService = itemService;
+    }
+
     @Override
     public Optional<Order> insert(Order order) {
         return Optional.empty();
