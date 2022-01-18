@@ -3,6 +3,7 @@ package local.example.trolley.api.error;
 public enum ErrorCode {
 
     CONSTRAINT_VIOLATION("CART-5008", "Validation Constraint Failed"),
+    CUSTOMER_NOT_FOUND("CART-5011", "Customer Not Found"),
     GENERIC_ERROR("CART-5001", "Unable Complete Request"),
     HTTP_MEDIA_TYPE_NOT_SUPPORTED("CART-5002", "Media Type Unsupported"),
     HTTP_MEDIA_TYPE_NOT_ACCEPTABLE("CART-5004", "Requested Accept Header Value Unsupported"),
