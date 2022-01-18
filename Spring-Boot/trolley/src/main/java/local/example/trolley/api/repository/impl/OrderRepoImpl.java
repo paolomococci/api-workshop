@@ -1,5 +1,6 @@
 package local.example.trolley.api.repository.impl;
 
+import local.example.trolley.api.model.Item;
 import local.example.trolley.api.model.Order;
 import local.example.trolley.api.repository.AddressRepo;
 import local.example.trolley.api.repository.CartRepo;
@@ -14,7 +15,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Repository
 @Transactional
@@ -53,6 +57,12 @@ public class OrderRepoImpl
 
     @Override
     public Optional<Order> insert(Order order) {
+        Iterable<Item> itemsAlreadyRegisteredInThwDatabase = this.itemRepo
+                .findByCustomerId(order.getCustomer().getId());
+        List<Item> items = StreamSupport
+                .stream(itemsAlreadyRegisteredInThwDatabase.spliterator(), false).toList();
+
+
         return Optional.empty();
     }
 
