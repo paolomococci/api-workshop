@@ -1,9 +1,13 @@
 package local.example.trolley.api.repository.impl;
 
 import local.example.trolley.api.model.Order;
+import local.example.trolley.api.repository.AddressRepo;
+import local.example.trolley.api.repository.CartRepo;
 import local.example.trolley.api.repository.ItemRepo;
+import local.example.trolley.api.repository.OrderItemRepo;
 import local.example.trolley.api.repository.ext.OrderRepoExt;
 
+import local.example.trolley.api.service.ItemService;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -23,6 +27,10 @@ public class OrderRepoImpl
     private EntityManager entityManager;
 
     private ItemRepo itemRepo;
+    private AddressRepo addressRepo;
+    private CartRepo cartRepo;
+    private OrderItemRepo orderItemRepo;
+    private ItemService itemService;
 
     @Override
     public Optional<Order> insert(Order order) {
