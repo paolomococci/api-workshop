@@ -24,13 +24,13 @@ public class OrderRepoImpl
     private static final String SELECT_QUERY = "SELECT o.* FROM trolley_db.orders WHERE o.customer_id = ? AND o.registered >= ?";
 
     @PersistenceContext
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
-    private ItemRepo itemRepo;
-    private AddressRepo addressRepo;
-    private CartRepo cartRepo;
-    private OrderItemRepo orderItemRepo;
-    private ItemService itemService;
+    private final ItemRepo itemRepo;
+    private final AddressRepo addressRepo;
+    private final CartRepo cartRepo;
+    private final OrderItemRepo orderItemRepo;
+    private final ItemService itemService;
 
     public OrderRepoImpl(
             EntityManager entityManager,
@@ -51,5 +51,29 @@ public class OrderRepoImpl
     @Override
     public Optional<Order> insert(Order order) {
         return Optional.empty();
+    }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    public ItemRepo getItemRepo() {
+        return itemRepo;
+    }
+
+    public AddressRepo getAddressRepo() {
+        return addressRepo;
+    }
+
+    public CartRepo getCartRepo() {
+        return cartRepo;
+    }
+
+    public OrderItemRepo getOrderItemRepo() {
+        return orderItemRepo;
+    }
+
+    public ItemService getItemService() {
+        return itemService;
     }
 }
