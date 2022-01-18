@@ -29,17 +29,17 @@ public class OrderRepoImpl
     @PersistenceContext
     private final EntityManager entityManager;
 
-    private final ItemRepo itemRepo;
     private final AddressRepo addressRepo;
     private final CartRepo cartRepo;
+    private final ItemRepo itemRepo;
     private final OrderItemRepo orderItemRepo;
     private final ItemService itemService;
 
     public OrderRepoImpl(
             EntityManager entityManager,
-            ItemRepo itemRepo,
             AddressRepo addressRepo,
             CartRepo cartRepo,
+            ItemRepo itemRepo,
             OrderItemRepo orderItemRepo,
             ItemService itemService
     ) {
