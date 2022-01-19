@@ -22,10 +22,6 @@ public class Expertise
     @ManyToMany(mappedBy = "expertise")
     public List<Employee> employees;
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
-
     public static Uni<Expertise> findByName(String name) {
         return find("name", name).firstResult();
     }
