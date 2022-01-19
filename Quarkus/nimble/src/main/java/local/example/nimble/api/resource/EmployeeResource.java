@@ -70,11 +70,11 @@ public class EmployeeResource {
                 () -> Employee.<Employee> findById(id)
                         .onItem().ifNotNull().invoke(
                                 temp -> {
-                                    temp.setName(employee.getName());
-                                    temp.setSurname(employee.getSurname());
-                                    temp.setUsername(employee.getUsername());
-                                    temp.setBirthday(employee.getBirthday());
-                                    temp.setRecruited(employee.getRecruited());
+                                    temp.name = employee.name;
+                                    temp.surname = employee.surname;
+                                    temp.username = employee.username;
+                                    temp.birthday = employee.birthday;
+                                    temp.recruited = employee.recruited;
                                 }
                         )
                         .onItem().ifNotNull().transform(temp -> Response.ok(temp).build())
