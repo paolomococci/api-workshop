@@ -7,12 +7,9 @@ import io.smallrye.mutiny.Uni;
 
 import local.example.nimble.api.model.Expertise;
 
-import local.example.nimble.api.service.ExpertiseService;
-
 import org.jboss.resteasy.reactive.RestPath;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -20,9 +17,6 @@ import javax.ws.rs.core.Response;
 @ApplicationScoped
 @Path("/api/v1/expertise")
 public class ExpertiseResource {
-
-    @Inject
-    ExpertiseService expertiseService;
 
     @Route(
             path = "/api/v1/expertise/probe",
