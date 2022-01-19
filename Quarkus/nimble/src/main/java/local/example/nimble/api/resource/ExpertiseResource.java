@@ -68,8 +68,8 @@ public class ExpertiseResource {
                 () -> Expertise.<Expertise> findById(id)
                         .onItem().ifNotNull().invoke(
                                 temp -> {
-                                    temp.setName(expertise.getName());
-                                    temp.setDescription(expertise.getDescription());
+                                    temp.name = expertise.name;
+                                    temp.description = expertise.description;
                                 }
                         )
                         .onItem().ifNotNull().transform(temp -> Response.ok(temp).build())
