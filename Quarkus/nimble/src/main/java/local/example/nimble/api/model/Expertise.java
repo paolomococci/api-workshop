@@ -13,14 +13,14 @@ public class Expertise
         extends PanacheEntity {
 
     @Column(name = "NAME", unique = true)
-    private String name;
+    public String name;
 
     @Column(name = "DESCRIPTION")
-    private String description;
+    public String description;
 
     @Column(name = "EMPLOYEES")
     @ManyToMany(mappedBy = "expertise")
-    private List<Employee> employees;
+    public List<Employee> employees;
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
