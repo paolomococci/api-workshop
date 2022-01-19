@@ -30,7 +30,7 @@ public class Expertise
         return find("name", name).firstResult();
     }
 
-    public static Uni<List<Expertise>> findDescription(String description) {
+    public static Uni<List<Expertise>> findByDescription(String description) {
         return list("description", description);
     }
 }
