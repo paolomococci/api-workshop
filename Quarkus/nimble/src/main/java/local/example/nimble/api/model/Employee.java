@@ -14,19 +14,19 @@ public class Employee
         extends PanacheEntity {
 
     @Column(name = "NAME")
-    private String name;
+    public String name;
 
     @Column(name = "SURNAME")
-    private String surname;
+    public String surname;
 
     @Column(name = "USERNAME", unique = true)
-    private String username;
+    public String username;
 
     @Column(name = "BIRTHDAY")
-    private LocalDate birthday;
+    public LocalDate birthday;
 
     @Column(name = "RECRUITED")
-    private LocalDate recruited;
+    public LocalDate recruited;
 
     @Column(name = "EXPERTISE")
     @ManyToMany(cascade = CascadeType.ALL)
@@ -35,11 +35,11 @@ public class Employee
             joinColumns = @JoinColumn(name = "EMPLOYEE_ID"),
             inverseJoinColumns = @JoinColumn(name = "EXPERTISE_ID")
     )
-    List<Expertise> expertise;
+    public List<Expertise> expertise;
 
     @Column(name = "LEVEL")
     @Enumerated(EnumType.STRING)
-    private Level level;
+    public Level level;
 
     public static Uni<List<Employee>> findByName(String name) {
         return list("name", name);
