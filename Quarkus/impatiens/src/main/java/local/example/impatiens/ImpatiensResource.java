@@ -14,4 +14,3 @@ public class ImpatiensResource {
         return "-- impatiens API --";
     }
 }
-
