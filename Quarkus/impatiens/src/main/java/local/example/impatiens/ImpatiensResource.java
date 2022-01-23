@@ -69,4 +69,11 @@ public class ImpatiensResource {
     public Uni<List<Impatiens>> trendy() {
         return Impatiens.readAllTrendy();
     }
+
+    @GET
+    @Path("/api/v1/alive")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<List<Impatiens>> alive() {
+        return Impatiens.readAllAlive();
+    }
 }
