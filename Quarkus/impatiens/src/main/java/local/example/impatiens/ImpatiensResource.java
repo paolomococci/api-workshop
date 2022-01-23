@@ -62,4 +62,11 @@ public class ImpatiensResource {
     public Uni<List<Impatiens>> itemise() {
         return Impatiens.listAll(Sort.by("cultivarName"));
     }
+
+    @GET
+    @Path("/api/v1/trendy")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<List<Impatiens>> trendy() {
+        return Impatiens.readAllTrendy();
+    }
 }
