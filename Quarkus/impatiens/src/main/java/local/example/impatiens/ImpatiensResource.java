@@ -186,4 +186,15 @@ public class ImpatiensResource {
                         deleted ? Response.ok().status(Response.Status.NO_CONTENT).build()
                                 : Response.ok().status(Response.Status.NOT_FOUND).build());
     }
+
+    @DELETE
+    @Path("/api/v1/sweep")
+    public Uni<Response> sweep() {
+        return Panache
+                .withTransaction(
+                        Impatiens::deleteAll
+                ).replaceWith(
+                        Response.ok().status(Response.Status.NO_CONTENT).build()
+                );
+    }
 }
