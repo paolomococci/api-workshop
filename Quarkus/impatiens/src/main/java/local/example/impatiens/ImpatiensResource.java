@@ -1,6 +1,7 @@
 package local.example.impatiens;
 
 import io.quarkus.hibernate.reactive.panache.Panache;
+import io.quarkus.panache.common.Sort;
 import io.smallrye.mutiny.Uni;
 
 import local.example.impatiens.entity.Impatiens;
@@ -10,6 +11,8 @@ import org.jboss.resteasy.reactive.RestPath;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import java.util.List;
 
 @Path("/impatiens")
 public class ImpatiensResource {
@@ -51,5 +54,12 @@ public class ImpatiensResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Impatiens> read(@RestPath Long id) {
         return Impatiens.findById(id);
+    }
+
+    @GET
+    @Path("/api/v1/itemise")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<List<Impatiens>> itemise() {
+        return Impatiens.listAll(Sort.by("cultivarName"));
     }
 }
