@@ -1,4 +1,10 @@
 package local.example.impatiens.entity;
 
-public class Impatiens {
+import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Impatiens
+        extends PanacheEntity {
 }
