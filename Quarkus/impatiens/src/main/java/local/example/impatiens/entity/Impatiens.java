@@ -28,4 +28,8 @@ public class Impatiens
     public static Uni<List<Impatiens>> readAllJustDiscovered() {
         return Impatiens.list("cultivarStatus", CultivarStatus.JUST_DISCOVERED);
     }
+
+    public static Uni<List<Impatiens>> readAllAbandoned() {
+        return Impatiens.list("cultivarStatus", CultivarStatus.ABANDONED);
+    }
 }
