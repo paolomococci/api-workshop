@@ -20,4 +20,8 @@ public class Impatiens
     public static Uni<List<Impatiens>> readAllTrendy() {
         return Impatiens.list("cultivarStatus", CultivarStatus.TRENDY);
     }
+
+    public static Uni<List<Impatiens>> readAllAlive() {
+        return Impatiens.list("cultivarStatus", CultivarStatus.ALIVE);
+    }
 }
