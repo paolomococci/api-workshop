@@ -5,6 +5,8 @@ import io.smallrye.mutiny.Uni;
 
 import local.example.impatiens.entity.Impatiens;
 
+import org.jboss.resteasy.reactive.RestPath;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -42,5 +44,12 @@ public class ImpatiensResource {
                 .replaceWith(
                         Response.ok(impatiens).status(Response.Status.CREATED)::build
                 );
+    }
+
+    @GET
+    @Path("/api/v1/read/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<Impatiens> read(@RestPath Long id) {
+        return Impatiens.findById(id);
     }
 }
