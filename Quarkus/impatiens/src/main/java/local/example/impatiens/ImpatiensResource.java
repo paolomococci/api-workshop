@@ -134,4 +134,45 @@ public class ImpatiensResource {
                                 .onItem().ifNull().continueWith(Response.ok().status(Response.Status.NOT_FOUND)::build)
                 );
     }
+
+    @PATCH
+    @Path("/api/v1/amend/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Uni<Response> amend(
+            @RestPath Long id,
+            Impatiens impatiens
+    ) {
+        if (impatiens == null) {
+            throw new WebApplicationException(
+                    "Unprocessable Entity: null entity that cannot be processed",
+                    422
+            );
+        }
+
+        if (impatiens.id != null) {
+            throw new WebApplicationException(
+                    "Unprocessable Entity: one the entity to which an identifier has already been assigned cannot be processed",
+                    422
+            );
+        }
+
+        return Panache
+                .withTransaction(
+                        () -> Impatiens.<Impatiens> findById(id).onItem().ifNotNull().invoke(
+                                        entity -> {
+                                            if (impatiens.cultivarName != null)
+                                                entity.cultivarName = impatiens.cultivarName;
+                                            if (impatiens.developedDate != null)
+                                                entity.developedDate = impatiens.developedDate;
+                                            if (impatiens.marketingDate != null)
+                                                entity.marketingDate = impatiens.marketingDate;
+                                            if (impatiens.cultivarStatus != null)
+                                                entity.cultivarStatus = impatiens.cultivarStatus;
+                                        }
+                                )
+                                .onItem().ifNotNull().transform(entity -> Response.ok(entity).build())
+                                .onItem().ifNull().continueWith(Response.ok().status(Response.Status.NOT_FOUND)::build)
+                );
+    }
 }
