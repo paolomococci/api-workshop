@@ -97,4 +97,41 @@ public class ImpatiensResource {
     public Uni<List<Impatiens>> lost() {
         return Impatiens.readAllLost();
     }
+
+    @PUT
+    @Path("/api/v1/update/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Uni<Response> update(
+            @RestPath Long id,
+            Impatiens impatiens
+    ) {
+        if (impatiens == null) {
+            throw new WebApplicationException(
+                    "Unprocessable Entity: null entity that cannot be processed",
+                    422
+            );
+        }
+
+        if (impatiens.id != null) {
+            throw new WebApplicationException(
+                    "Unprocessable Entity: one the entity to which an identifier has already been assigned cannot be processed",
+                    422
+            );
+        }
+
+        return Panache
+                .withTransaction(
+                        () -> Impatiens.<Impatiens> findById(id).onItem().ifNotNull().invoke(
+                                        entity -> {
+                                            entity.cultivarName = impatiens.cultivarName;
+                                            entity.developedDate = impatiens.developedDate;
+                                            entity.marketingDate = impatiens.marketingDate;
+                                            entity.cultivarStatus = impatiens.cultivarStatus;
+                                        }
+                                )
+                                .onItem().ifNotNull().transform(entity -> Response.ok(entity).build())
+                                .onItem().ifNull().continueWith(Response.ok().status(Response.Status.NOT_FOUND)::build)
+                );
+    }
 }
