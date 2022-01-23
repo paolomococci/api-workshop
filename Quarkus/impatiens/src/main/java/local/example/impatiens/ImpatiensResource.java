@@ -83,4 +83,11 @@ public class ImpatiensResource {
     public Uni<List<Impatiens>> justDiscovered() {
         return Impatiens.readAllJustDiscovered();
     }
+
+    @GET
+    @Path("/api/v1/abandoned")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<List<Impatiens>> abandoned() {
+        return Impatiens.readAllAbandoned();
+    }
 }
