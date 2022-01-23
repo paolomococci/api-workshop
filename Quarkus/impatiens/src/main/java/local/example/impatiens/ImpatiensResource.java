@@ -175,4 +175,15 @@ public class ImpatiensResource {
                                 .onItem().ifNull().continueWith(Response.ok().status(Response.Status.NOT_FOUND)::build)
                 );
     }
+
+    @DELETE
+    @Path("/api/v1/delete/{id}")
+    public Uni<Response> delete(@RestPath Long id) {
+        return Panache
+                .withTransaction(
+                        () -> Impatiens.deleteById(id)
+                ).map(deleted ->
+                        deleted ? Response.ok().status(Response.Status.NO_CONTENT).build()
+                                : Response.ok().status(Response.Status.NOT_FOUND).build());
+    }
 }
