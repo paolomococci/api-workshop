@@ -2,6 +2,7 @@ package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
+import io.quarkus.panache.common.Sort;
 import io.smallrye.mutiny.Uni;
 
 import javax.persistence.*;
@@ -26,6 +27,10 @@ public class Expertise
 
     public static Uni<Expertise> read(Long id) {
         return find("id", id).firstResult();
+    }
+
+    public static Uni<List<Expertise>> itemise() {
+        return listAll(Sort.by("name"));
     }
 
     public static Uni<Expertise> findByName(String name) {
