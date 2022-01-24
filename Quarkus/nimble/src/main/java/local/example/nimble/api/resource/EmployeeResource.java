@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @ApplicationScoped
-@Path("/api/v1/employees")
+@Path("employees")
 public class EmployeeResource {
 
     @Route(
@@ -30,6 +30,7 @@ public class EmployeeResource {
     }
 
     @POST
+    @Path("/api/v1/create")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> create(Employee employee) {
@@ -43,20 +44,21 @@ public class EmployeeResource {
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/api/v1/read/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Employee> read(Long id) {
+    public Uni<Employee> read(@RestPath Long id) {
         return Employee.findById(id);
     }
 
     @GET
+    @Path("/api/v1/itemise")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<List<Employee>> readAll(){
         return Employee.listAll(Sort.by("surname"));
     }
 
     @PUT
-    @Path(value = "{id}")
+    @Path(value = "/api/v1/update/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> update(
@@ -83,7 +85,7 @@ public class EmployeeResource {
     }
 
     @DELETE
-    @Path(value = "{id}")
+    @Path(value = "/api/v1/delete/{id}")
     public Uni<Response> delete(@RestPath Long id) {
         return Panache.withTransaction(
                 () -> Employee.deleteById(id)
