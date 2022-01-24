@@ -44,6 +44,10 @@ public class Employee
     @Enumerated(EnumType.STRING)
     public Level level;
 
+    public static Uni<Employee> read(Long id) {
+        return find("id", id).firstResult();
+    }
+
     public static Uni<List<Employee>> itemise() {
         return listAll(Sort.by("surname"));
     }
