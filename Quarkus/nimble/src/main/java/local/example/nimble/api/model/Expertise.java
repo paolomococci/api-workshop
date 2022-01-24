@@ -24,6 +24,10 @@ public class Expertise
     @ManyToMany(mappedBy = "expertise")
     public List<Employee> employees;
 
+    public static Uni<Expertise> read(Long id) {
+        return find("id", id).firstResult();
+    }
+
     public static Uni<Expertise> findByName(String name) {
         return find("name", name).firstResult();
     }
