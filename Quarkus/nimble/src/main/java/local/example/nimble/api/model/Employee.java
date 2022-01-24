@@ -1,6 +1,9 @@
 package local.example.nimble.api.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
 import io.quarkus.panache.common.Sort;
@@ -32,7 +35,8 @@ public class Employee
     @Column(name = "RECRUITED")
     public LocalDate recruited;
 
-    @JsonIgnore
+    @JsonManagedReference
+    @JsonBackReference
     @Column(name = "EXPERTISE")
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
