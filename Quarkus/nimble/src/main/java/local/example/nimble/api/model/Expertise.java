@@ -1,5 +1,6 @@
 package local.example.nimble.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
 import io.quarkus.panache.common.Sort;
@@ -21,6 +22,7 @@ public class Expertise
     @Column(name = "DESCRIPTION")
     public String description;
 
+    @JsonIgnore
     @Column(name = "EMPLOYEES")
     @ManyToMany(mappedBy = "expertise")
     public List<Employee> employees;
