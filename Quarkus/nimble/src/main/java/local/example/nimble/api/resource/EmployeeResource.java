@@ -1,7 +1,6 @@
 package local.example.nimble.api.resource;
 
 import io.quarkus.hibernate.reactive.panache.Panache;
-import io.quarkus.panache.common.Sort;
 import io.quarkus.vertx.web.Route;
 import io.smallrye.mutiny.Uni;
 
