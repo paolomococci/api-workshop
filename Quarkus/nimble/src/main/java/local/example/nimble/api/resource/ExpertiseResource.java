@@ -47,7 +47,7 @@ public class ExpertiseResource {
     @Path("/api/v1/read/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Expertise> read(@RestPath Long id) {
-        return Expertise.findById(id);
+        return Expertise.read(id);
     }
 
     @GET
