@@ -16,6 +16,14 @@ import java.util.List;
 @Entity
 @Cacheable
 @Table(name = "EXPERTISE")
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "Expertise.getByEmployee",
+                        query = ""
+                )
+        }
+)
 public class Expertise
         extends PanacheEntity {
 
