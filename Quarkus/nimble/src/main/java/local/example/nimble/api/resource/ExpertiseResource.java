@@ -53,7 +53,7 @@ public class ExpertiseResource {
     @GET
     @Path("/api/v1/itemise")
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<List<Expertise>> readAll() {
+    public Uni<List<Expertise>> itemise() {
         return Expertise.listAll(Sort.by("name"));
     }
 
