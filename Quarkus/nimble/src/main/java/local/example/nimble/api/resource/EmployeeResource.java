@@ -47,7 +47,7 @@ public class EmployeeResource {
     @Path("/api/v1/read/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Employee> read(@RestPath Long id) {
-        return Employee.findById(id);
+        return Employee.read(id);
     }
 
     @GET
