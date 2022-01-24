@@ -54,7 +54,7 @@ public class EmployeeResource {
     @Path("/api/v1/itemise")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<List<Employee>> itemise(){
-        return Employee.listAll(Sort.by("surname"));
+        return Employee.itemise();
     }
 
     @PUT
