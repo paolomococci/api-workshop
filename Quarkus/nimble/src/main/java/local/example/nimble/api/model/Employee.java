@@ -1,9 +1,11 @@
 package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
+
 import io.smallrye.mutiny.Uni;
 
 import javax.persistence.*;
+
 import java.time.LocalDate;
 import java.util.List;
 
