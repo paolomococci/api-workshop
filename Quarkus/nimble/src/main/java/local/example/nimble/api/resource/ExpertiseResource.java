@@ -1,6 +1,7 @@
 package local.example.nimble.api.resource;
 
 import io.quarkus.hibernate.reactive.panache.Panache;
+import io.quarkus.panache.common.Sort;
 import io.quarkus.vertx.web.Route;
 import io.smallrye.mutiny.Multi;
 import io.smallrye.mutiny.Uni;
@@ -13,9 +14,10 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @ApplicationScoped
-@Path("/api/v1/expertise")
+@Path("expertise")
 public class ExpertiseResource {
 
     @Route(
@@ -28,6 +30,7 @@ public class ExpertiseResource {
     }
 
     @POST
+    @Path("/api/v1/create")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> create(Expertise expertise) {
@@ -41,20 +44,21 @@ public class ExpertiseResource {
     }
 
     @GET
-    @Path("/{id}")
+    @Path("/api/v1/read/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Response> read(Long id) {
-        return null;
+    public Uni<Expertise> read(@RestPath Long id) {
+        return Expertise.findById(id);
     }
 
     @GET
+    @Path("/api/v1/itemise")
     @Produces(MediaType.APPLICATION_JSON)
-    public Multi<Response> readAll() {
-        return null;
+    public Uni<List<Expertise>> readAll() {
+        return Expertise.listAll(Sort.by("name"));
     }
 
     @PUT
-    @Path(value = "{id}")
+    @Path(value = "/api/v1/update/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<Response> update(
@@ -78,7 +82,7 @@ public class ExpertiseResource {
     }
 
     @DELETE
-    @Path(value = "{id}")
+    @Path(value = "/api/v1/delete/{id}")
     public Uni<Response> delete(@RestPath Long id) {
         return Panache.withTransaction(
                 () -> Expertise.deleteById(id)
