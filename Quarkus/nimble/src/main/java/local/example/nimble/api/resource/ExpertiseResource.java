@@ -54,7 +54,7 @@ public class ExpertiseResource {
     @Path("/api/v1/itemise")
     @Produces(MediaType.APPLICATION_JSON)
     public Uni<List<Expertise>> itemise() {
-        return Expertise.listAll(Sort.by("name"));
+        return Expertise.itemise();
     }
 
     @PUT
