@@ -2,6 +2,7 @@ package local.example.nimble.api.model;
 
 import io.quarkus.hibernate.reactive.panache.PanacheEntity;
 
+import io.quarkus.panache.common.Sort;
 import io.smallrye.mutiny.Uni;
 
 import javax.persistence.*;
@@ -42,6 +43,10 @@ public class Employee
     @Column(name = "LEVEL")
     @Enumerated(EnumType.STRING)
     public Level level;
+
+    public static Uni<List<Employee>> itemise() {
+        return listAll(Sort.by("surname"));
+    }
 
     public static Uni<List<Employee>> findByName(String name) {
         return list("name", name);
