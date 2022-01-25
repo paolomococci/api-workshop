@@ -22,6 +22,10 @@ import java.util.List;
                 @NamedQuery(
                         name = "Employee.getByExpertise",
                         query = ""
+                ),
+                @NamedQuery(
+                        name = "Employee.getByName",
+                        query = "SELECT e FROM EMPLOYEE e WHERE e.name=?1"
                 )
         }
 )
@@ -67,7 +71,7 @@ public class Employee
     }
 
     public static Uni<List<Employee>> findByName(String name) {
-        return list("name", name);
+        return list("#Employee.getByName", name);
     }
 
     public static Uni<List<Employee>> findBySurname(String surname) {
