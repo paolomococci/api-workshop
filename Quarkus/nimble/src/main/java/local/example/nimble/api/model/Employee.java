@@ -51,8 +51,7 @@ public class Employee
     @Column(name = "RECRUITED")
     public LocalDate recruited;
 
-    @JsonManagedReference
-    @JsonBackReference
+    @JsonIgnore
     @Column(name = "EXPERTISE")
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
