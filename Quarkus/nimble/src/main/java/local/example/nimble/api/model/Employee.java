@@ -25,19 +25,19 @@ import java.util.List;
                 ),
                 @NamedQuery(
                         name = "Employee.getByName",
-                        query = "SELECT e FROM EMPLOYEE e WHERE e.name=?1"
+                        query = "SELECT e FROM employee e WHERE e.name=?1"
                 ),
                 @NamedQuery(
                         name = "Employee.getBySurname",
-                        query = "SELECT e FROM EMPLOYEE e WHERE e.surname=?1"
+                        query = "SELECT e FROM employee e WHERE e.surname=?1"
                 ),
                 @NamedQuery(
                         name = "Employee.getByUsername",
-                        query = "SELECT e FROM EMPLOYEE e WHERE e.username=?1"
+                        query = "SELECT e FROM employee e WHERE e.username=?1"
                 ),
                 @NamedQuery(
                         name = "Employee.getByLevel",
-                        query = "SELECT e FROM EMPLOYEE e WHERE e.level=?1"
+                        query = "SELECT e FROM employee e WHERE e.level=?1"
                 )
         }
 )
