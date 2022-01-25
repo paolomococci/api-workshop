@@ -33,8 +33,7 @@ public class Expertise
     @Column(name = "DESCRIPTION")
     public String description;
 
-    @JsonManagedReference
-    @JsonBackReference
+    @JsonIgnore
     @Column(name = "EMPLOYEES")
     @ManyToMany(mappedBy = "expertise")
     public List<Employee> employees;
