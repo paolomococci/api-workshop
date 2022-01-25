@@ -100,8 +100,4 @@ public class Employee
     public static Uni<List<Employee>> findMaster() {
         return list("level", Level.MASTER);
     }
-
-    public static Uni<List<Employee>> findByExpertise(Expertise expertise) {
-        return list("expertise", expertise);
-    }
 }
