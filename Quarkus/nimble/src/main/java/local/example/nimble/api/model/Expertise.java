@@ -25,6 +25,10 @@ import java.util.List;
                 @NamedQuery(
                         name = "Expertise.getByName",
                         query = "SELECT e FROM EXPERTISE e WHERE e.name=?1"
+                ),
+                @NamedQuery(
+                        name = "Expertise.getWhenTextDescriptionIsLike",
+                        query = ""
                 )
         }
 )
