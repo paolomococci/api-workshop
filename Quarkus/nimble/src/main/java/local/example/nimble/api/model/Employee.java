@@ -90,7 +90,7 @@ public class Employee
     }
 
     public static Uni<Employee> findByUsername(String username) {
-        return find("Employee.getByUsername", username).firstResult();
+        return find("#Employee.getByUsername", username).firstResult();
     }
 
     public static Uni<List<Employee>> findByLevel(Level level) {
