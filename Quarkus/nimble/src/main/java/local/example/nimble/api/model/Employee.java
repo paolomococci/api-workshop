@@ -38,6 +38,15 @@ import java.util.List;
                 @NamedQuery(
                         name = "Employee.getByLevel",
                         query = "SELECT e FROM employee e WHERE e.level=?1"
+                ),
+                @NamedQuery(
+                        name = "Employee.getConjunction",
+                        query = """
+                                SELECT e.name, e.surname, e.username, p.name, p.description
+                                FROM employee e
+                                INNER JOIN employee_expertise ep ON e.id = ep.employee_id
+                                INNER JOIN expertise p ON ep.expertise_id = p.id
+                                """
                 )
         }
 )
