@@ -46,6 +46,6 @@ public class NimbleResource {
             produces = MediaType.TEXT_PLAIN
     )
     public Uni<List<String>> conjunctionListUni() {
-        return Expertise.conjunction();
+        return Expertise.conjunctions();
     }
 }
