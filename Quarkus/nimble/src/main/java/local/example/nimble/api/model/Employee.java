@@ -40,7 +40,7 @@ import java.util.List;
                         query = "SELECT e FROM employee e WHERE e.level=?1"
                 ),
                 @NamedQuery(
-                        name = "Employee.getConjunction",
+                        name = "Employee.getConjunctions",
                         query = """
                                 SELECT e.name, e.surname, e.username, p.name, p.description
                                 FROM employee e
