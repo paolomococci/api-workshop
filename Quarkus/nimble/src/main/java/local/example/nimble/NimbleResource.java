@@ -39,4 +39,13 @@ public class NimbleResource {
     public Uni<List<Expertise>> expertiseListUni() {
         return Expertise.itemise();
     }
+
+    @Route(
+            path = "/api/v2/conjunction",
+            methods = Route.HttpMethod.GET,
+            produces = MediaType.TEXT_PLAIN
+    )
+    public Uni<List<String>> conjunctionListUni() {
+        return Expertise.conjunction();
+    }
 }
