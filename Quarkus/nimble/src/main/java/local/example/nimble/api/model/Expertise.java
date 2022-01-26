@@ -31,7 +31,7 @@ import java.util.List;
                         query = "SELECT * FROM expertise WHERE description::TEXT LIKE ?1"
                 ),
                 @NamedQuery(
-                        name = "Expertise.getConjunction",
+                        name = "Expertise.getConjunctions",
                         query = """
                                 SELECT p.name, e.name, e.surname
                                 FROM employee e
@@ -67,7 +67,7 @@ public class Expertise
         return find("#Expertise.getByName", name).firstResult();
     }
 
-    public static Uni<List<String>> conjunction() {
+    public static Uni<List<String>> conjunctions() {
         return null;
     }
 }
