@@ -66,4 +66,8 @@ public class Expertise
     public static Uni<Expertise> findByName(String name) {
         return find("#Expertise.getByName", name).firstResult();
     }
+
+    public static Uni<List<String>> conjunction() {
+        return null;
+    }
 }
