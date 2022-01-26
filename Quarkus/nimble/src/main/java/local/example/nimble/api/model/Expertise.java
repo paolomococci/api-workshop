@@ -29,6 +29,15 @@ import java.util.List;
                 @NamedQuery(
                         name = "Expertise.getWhenTextDescriptionIsLike",
                         query = "SELECT * FROM expertise WHERE description::TEXT LIKE ?1"
+                ),
+                @NamedQuery(
+                        name = "Expertise.getConjunction",
+                        query = """
+                                SELECT p.name, e.name, e.surname
+                                FROM employee e
+                                INNER JOIN employee_expertise ep ON e.id = ep.employee_id
+                                INNER JOIN expertise p ON ep.expertise_id = p.id
+                                """
                 )
         }
 )
