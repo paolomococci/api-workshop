@@ -1,5 +1,7 @@
 # billing
 
+Example of REST application developed thanks to the Active Record pattern.
+
 ## scaffolding
 
 ```shell
