@@ -11,6 +11,6 @@ public class BillingResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String feedback() {
-        return "-- Billing REST API feedback endpoint --";
+        return "-- Billing REST API feedback that returns some plain text --";
     }
 }
