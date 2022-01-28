@@ -61,6 +61,14 @@ public class Expertise
     @ManyToMany(mappedBy = "expertise")
     public List<Employee> employees;
 
+    public List<Employee> getEmployees() {
+        return null;
+    }
+
+    public void setEmployees() {
+        this.employees = null;
+    }
+
     public static Uni<Expertise> read(Long id) {
         return find("id", id).firstResult();
     }
