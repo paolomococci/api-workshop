@@ -92,6 +92,10 @@ public class Employee
         // TODO
     }
 
+    public void addExpertise() {
+        // TODO
+    }
+
     @Column(name = "LEVEL")
     @Enumerated(EnumType.STRING)
     public Level level;
