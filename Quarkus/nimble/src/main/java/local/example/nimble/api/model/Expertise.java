@@ -19,12 +19,14 @@ import java.util.List;
 @NamedQueries(
         {
                 @NamedQuery(
-                        name = "Expertise.getByEmployee",
-                        query = ""
+                        name = "Expertise.getEmployee",
+                        query = """
+                                
+                                """
                 ),
                 @NamedQuery(
                         name = "Expertise.getByName",
-                        query = "SELECT e FROM expertise e WHERE e.name=?1"
+                        query = "SELECT p FROM expertise p WHERE p.name=?1"
                 ),
                 @NamedQuery(
                         name = "Expertise.getWhenTextDescriptionIsLike",
