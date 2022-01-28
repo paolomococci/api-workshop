@@ -52,6 +52,12 @@ import java.util.List;
                                 INNER JOIN employee_expertise ep ON e.id = ep.employee_id
                                 INNER JOIN expertise p ON ep.expertise_id = p.id
                                 """
+                ),
+                @NamedQuery(
+                        name = "Employee.getTheListOfExpertiseAlreadyReferenced",
+                        query = """
+                                SELECT ep.expertise_id FROM employee_expertise ep WHERE ep.employee_id = ?1
+                                """
                 )
         }
 )
