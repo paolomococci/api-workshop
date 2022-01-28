@@ -69,6 +69,10 @@ public class Expertise
        // TODO
     }
 
+    public void addEmployees() {
+        // TODO
+    }
+
     public static Uni<Expertise> read(Long id) {
         return find("id", id).firstResult();
     }
