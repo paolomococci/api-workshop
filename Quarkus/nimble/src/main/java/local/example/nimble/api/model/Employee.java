@@ -84,6 +84,14 @@ public class Employee
     )
     public List<Expertise> expertise;
 
+    public List<Expertise> getExpertise() {
+        return null;
+    }
+
+    public void setExpertise() {
+        this.expertise = null;
+    }
+
     @Column(name = "LEVEL")
     @Enumerated(EnumType.STRING)
     public Level level;
