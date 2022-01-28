@@ -96,6 +96,10 @@ public class Employee
         // TODO
     }
 
+    public void delExpertise() {
+        // TODO
+    }
+
     @Column(name = "LEVEL")
     @Enumerated(EnumType.STRING)
     public Level level;
