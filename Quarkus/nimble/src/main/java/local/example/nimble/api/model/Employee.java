@@ -20,8 +20,10 @@ import java.util.List;
 @NamedQueries(
         {
                 @NamedQuery(
-                        name = "Employee.getByExpertise",
-                        query = ""
+                        name = "Employee.getExpertise",
+                        query = """
+                                
+                                """
                 ),
                 @NamedQuery(
                         name = "Employee.getByName",
