@@ -21,11 +21,10 @@ import java.util.List;
                 @NamedQuery(
                         name = "Expertise.getEmployee",
                         query = """
-                                SELECT e.id, e.name, e.surname, e.username, e.birthday, e.recruited
+                                SELECT DISTINCT e.id, e.name, e.surname, e.username, e.birthday, e.recruited
                                 FROM employee e
                                 INNER JOIN employee_expertise ep ON e.id = ep.employee_id
                                 INNER JOIN expertise p ON ep.expertise_id = ?1
-                                LIMIT 1
                                 """
                 ),
                 @NamedQuery(
