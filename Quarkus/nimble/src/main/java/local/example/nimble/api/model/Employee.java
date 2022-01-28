@@ -89,7 +89,7 @@ public class Employee
     }
 
     public void setExpertise() {
-        this.expertise = null;
+        // TODO
     }
 
     @Column(name = "LEVEL")
