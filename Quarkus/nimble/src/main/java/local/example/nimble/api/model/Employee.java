@@ -54,6 +54,12 @@ import java.util.List;
                                 """
                 ),
                 @NamedQuery(
+                        name = "Employee.setConjunctions",
+                        query = """
+                                
+                                """
+                ),
+                @NamedQuery(
                         name = "Employee.getTheListOfExpertiseAlreadyReferenced",
                         query = """
                                 SELECT ep.expertise_id FROM employee_expertise ep WHERE ep.employee_id = ?1
