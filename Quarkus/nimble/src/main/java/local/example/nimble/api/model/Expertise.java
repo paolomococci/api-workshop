@@ -47,7 +47,7 @@ import java.util.List;
                 @NamedQuery(
                         name = "Expertise.setConjunctions",
                         query = """
-                                
+                                INSERT INTO employee_expertise (employee_id, expertise_id) VALUES (?1,?2)
                                 """
                 ),
                 @NamedQuery(
