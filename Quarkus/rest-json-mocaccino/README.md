@@ -4,7 +4,7 @@
 mvn io.quarkus.platform:quarkus-maven-plugin:2.7.0.Final:create \
     -DprojectGroupId=mocaccino \
     -DprojectArtifactId=rest-json-mocaccino \
-    -DprojectVersion=0.0.1-SNAPSHOT \
+    -DprojectVersion=1.0.0-SNAPSHOT \
     -DclassName="local.mocaccino.rest.json.MocaccinoResource" \
     -Dextensions="resteasy,resteasy-jackson" \
     -DbuildTool=gradle
