@@ -43,5 +43,5 @@ nb-configuration.xml
 mvnw
 mvnw.cmd
 HELP.md
-.pem
-.cer
+*.pem
+*.cer
