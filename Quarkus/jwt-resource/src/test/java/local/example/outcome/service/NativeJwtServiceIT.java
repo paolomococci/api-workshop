@@ -1,4 +1,8 @@
 package local.example.outcome.service;
 
-public class NativeJwtServiceIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeJwtServiceIT
+        extends JwtServiceTests {
 }
