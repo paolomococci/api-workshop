@@ -1,14 +1,17 @@
 package local.example.outcome.util;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 public class ResourceRetriever {
 
-    public InputStream retrieveStream(final String fileName) {
-        InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(fileName);
+    public static String content(final String path)
+            throws IOException {
+        InputStream inputStream = ResourceRetriever.class.getClassLoader().getResourceAsStream(path);
         if (inputStream == null) {
-            throw new IllegalArgumentException(fileName + "not found");
+            throw new IllegalArgumentException(path + "not found");
         }
-        return inputStream;
+        return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
     }
 }
