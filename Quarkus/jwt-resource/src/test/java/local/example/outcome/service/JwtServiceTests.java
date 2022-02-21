@@ -21,14 +21,27 @@ public class JwtServiceTests {
 
     @Test
     public void jwtCreateTest()
-            throws SignatureException, IOException {
+            throws IOException {
         JwtService jwtService = new JwtService();
         String jwt = jwtService.create(
                 "SOMEONEID9876543210",
                 "sampleJWT",
                 "johndoe",
-                300000
+                180000
         );
         Assertions.assertNotNull(jwt);
+    }
+
+    @Test
+    public void jwtCreateAndDecodeTest()
+            throws IOException {
+        JwtService jwtService = new JwtService();
+        String jwt = jwtService.create(
+                "SOMEONEID9876543210",
+                "sampleJWT",
+                "johndoe",
+                180000
+        );
+        Assertions.assertNotNull(jwtService.decode(jwt));
     }
 }
