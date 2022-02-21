@@ -52,7 +52,7 @@ public class JwtService {
 
     public Claims decode(String jwt) {
         return Jwts.parser()
-                .setSigningKey(DatatypeConverter.parseBase64Binary(key))
+                .setSigningKey(DatatypeConverter.parseBase64Binary(getKey()))
                 .parseClaimsJws(jwt).getBody();
     }
 
