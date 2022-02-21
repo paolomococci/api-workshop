@@ -16,7 +16,6 @@ public class JwtServiceTests {
     public void cerExistenceTest() throws IOException {
         JwtService jwtService = new JwtService();
         String key = jwtService.getKey();
-        System.out.println(key);
         Assertions.assertNotNull(key);
     }
 
