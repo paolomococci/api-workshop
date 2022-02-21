@@ -16,12 +16,17 @@ public class JwtService {
                 .replace("-----END CERTIFICATE-----", "");
     }
 
-    public static String create() {
+    public static String create(
+            String id,
+            String issuer,
+            String subject,
+            long lifeTimeInMilliseconds
+    ) {
         // TODO
         return "";
     }
 
-    public static String decode() {
+    public static String decode(String jwt) {
         // TODO
         return "";
     }
