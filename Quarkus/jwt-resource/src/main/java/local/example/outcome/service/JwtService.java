@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class JwtService {
 
-    private String key;
+    private final String key;
 
     public JwtService() throws IOException {
         String publicKey = ResourceRetriever.content("publickey.cer");
