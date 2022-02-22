@@ -61,8 +61,10 @@ public class JwtService {
     }
 
     private String cerToString(String publicKey) {
-        // TODO
-        return "";
+        return publicKey
+                .replace("-----BEGIN CERTIFICATE-----", "")
+                .replace(System.lineSeparator(), "")
+                .replace("-----END CERTIFICATE-----", "");
     }
 
     private String pemToString(String privateKey) {
