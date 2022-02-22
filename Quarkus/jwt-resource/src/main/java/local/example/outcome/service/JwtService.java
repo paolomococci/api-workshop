@@ -68,7 +68,9 @@ public class JwtService {
     }
 
     private String pemToString(String privateKey) {
-        // TODO
-        return "";
+        return privateKey
+                .replace("-----BEGIN RSA PRIVATE KEY-----", "")
+                .replace(System.lineSeparator(), "")
+                .replace("-----END RSA PRIVATE KEY-----", "");
     }
 }
