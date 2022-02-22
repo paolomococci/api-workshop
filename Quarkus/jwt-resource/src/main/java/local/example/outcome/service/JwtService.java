@@ -19,10 +19,7 @@ public class JwtService {
     public JwtService()
             throws IOException {
         String publicKey = ResourceRetriever.content("publickey.cer");
-        key = publicKey
-                .replace("-----BEGIN CERTIFICATE-----", "")
-                .replace(System.lineSeparator(), "")
-                .replace("-----END CERTIFICATE-----", "");
+        key = cerToCompactString(publicKey);
     }
 
     public String create(
@@ -60,14 +57,14 @@ public class JwtService {
         return key;
     }
 
-    private String cerToString(String publicKey) {
+    private String cerToCompactString(String publicKey) {
         return publicKey
                 .replace("-----BEGIN CERTIFICATE-----", "")
                 .replace(System.lineSeparator(), "")
                 .replace("-----END CERTIFICATE-----", "");
     }
 
-    private String pemToString(String privateKey) {
+    private String pemToCompactString(String privateKey) {
         return privateKey
                 .replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .replace(System.lineSeparator(), "")
