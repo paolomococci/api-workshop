@@ -59,4 +59,9 @@ public class JwtService {
     public String getKey() {
         return key;
     }
+
+    private String cerToString(String publicKey) {
+        // TODO
+        return publicKey;
+    }
 }
