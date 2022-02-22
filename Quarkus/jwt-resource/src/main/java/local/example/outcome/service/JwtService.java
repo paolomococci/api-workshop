@@ -62,6 +62,11 @@ public class JwtService {
 
     private String cerToString(String publicKey) {
         // TODO
-        return publicKey;
+        return "";
+    }
+
+    private String pemToString(String privateKey) {
+        // TODO
+        return "";
     }
 }
