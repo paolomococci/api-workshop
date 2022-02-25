@@ -39,6 +39,7 @@ nb-configuration.xml
 .env
 
 # more
+*.pem
 .mvn/
 mvnw
 mvnw.cmd
