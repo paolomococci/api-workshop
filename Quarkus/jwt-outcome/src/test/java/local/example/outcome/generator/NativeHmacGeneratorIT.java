@@ -1,4 +1,8 @@
 package local.example.outcome.generator;
 
-public class NativeHmacGeneratorIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeHmacGeneratorIT
+        extends HmacGeneratorTests {
 }
