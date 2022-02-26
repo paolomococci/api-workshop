@@ -2,14 +2,16 @@ package local.example.outcome.generator;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 public class HMacGenerator {
 
-    public static String generate(String secret, byte[] key) {
-        // TODO
+    public String generate(String secret, byte[] key)
+            throws NoSuchAlgorithmException, InvalidKeyException {
+        byte[] bytes = this.toBytes("HmacSHA256", key, secret.getBytes(StandardCharsets.UTF_8));
         return "";
     }
 
