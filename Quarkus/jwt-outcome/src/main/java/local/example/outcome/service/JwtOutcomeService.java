@@ -5,7 +5,7 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-import local.example.outcome.util.ResourceRetrieverUtil;
+import local.example.outcome.retriever.ResourceRetriever;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
@@ -23,7 +23,7 @@ public class JwtOutcomeService {
 
     public JwtOutcomeService()
             throws IOException {
-        String publicKey = ResourceRetrieverUtil.content("publicKey.pem");
+        String publicKey = ResourceRetriever.content("publicKey.pem");
         key = publicKeyToCompactString(publicKey);
     }
 
