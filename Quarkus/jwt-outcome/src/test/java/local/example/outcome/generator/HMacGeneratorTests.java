@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 @QuarkusTest
-public class HmacGeneratorTests {
+public class HMacGeneratorTests {
 
     @Test
     public void sampleTest() {
