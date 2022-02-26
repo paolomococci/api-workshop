@@ -2,6 +2,7 @@ package local.example.outcome.generator;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +13,7 @@ public class HMacGenerator {
     public String generate(String secret, byte[] key)
             throws NoSuchAlgorithmException, InvalidKeyException {
         byte[] bytes = this.toBytes("HmacSHA256", key, secret.getBytes(StandardCharsets.UTF_8));
-        return "";
+        return this.bytesToHexadecimalString(bytes);
     }
 
     private byte[] toBytes(String algorithm, byte[] key, byte[] secret)
