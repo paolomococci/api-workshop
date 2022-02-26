@@ -23,7 +23,7 @@ openssl genrsa -out private.pem 4096
 ```
 
 ```shell
-openssl rsa -in private.pem -outfor PEM -pubout -out public.pem
+openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 ```
 
 ### a second example
