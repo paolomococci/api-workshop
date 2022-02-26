@@ -1,4 +1,8 @@
 package local.example.outcome.util;
 
-public class NativeResourceRetrieverUtilIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeResourceRetrieverUtilIT
+        extends ResourceRetrieverUtilTests {
 }
