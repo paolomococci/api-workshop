@@ -17,7 +17,7 @@ public class HMacGenerator {
             throws NoSuchAlgorithmException, InvalidKeyException {
         Mac mac = Mac.getInstance(algorithm);
         mac.init(new SecretKeySpec(key, algorithm));
-        return new byte[0];
+        return mac.doFinal(secret);
     }
 
     private String bytesToHexadecimalString(byte[] bytes) {
