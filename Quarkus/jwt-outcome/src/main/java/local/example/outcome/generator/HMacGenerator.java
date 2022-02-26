@@ -1,5 +1,7 @@
 package local.example.outcome.generator;
 
+import javax.crypto.Mac;
+import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
 public class HMacGenerator {
@@ -9,8 +11,9 @@ public class HMacGenerator {
         return "";
     }
 
-    private byte[] toBytes(String algorithm, byte[] key, byte[] secret) {
-        // TODO
+    private byte[] toBytes(String algorithm, byte[] key, byte[] secret)
+            throws NoSuchAlgorithmException {
+        Mac mac = Mac.getInstance(algorithm);
         return new byte[0];
     }
 
