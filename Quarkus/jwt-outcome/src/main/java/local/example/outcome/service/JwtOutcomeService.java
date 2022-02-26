@@ -84,7 +84,7 @@ public class JwtOutcomeService {
             String name,
             String email,
             String subject
-    ) throws IOException {
+    ) {
         return Jwts.builder()
                 .claim("country", country)
                 .claim("city", city)
