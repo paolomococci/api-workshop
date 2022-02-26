@@ -1,6 +1,6 @@
 package local.example.outcome.generator;
 
-public class HmacGenerator {
+public class HMacGenerator {
 
     public static String generate(String secret, byte[] key) {
         return "";
