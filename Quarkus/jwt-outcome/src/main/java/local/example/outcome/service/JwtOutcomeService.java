@@ -11,8 +11,13 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 import java.util.Date;
+import java.util.UUID;
 
 public class JwtOutcomeService {
 
@@ -71,5 +76,24 @@ public class JwtOutcomeService {
                 .replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .replace(System.lineSeparator(), "")
                 .replace("-----END RSA PRIVATE KEY-----", "");
+    }
+
+    public static String createSampleJwtToken(
+            String country,
+            String city,
+            String name,
+            String email,
+            String subject
+    ) throws IOException {
+        return Jwts.builder()
+                .claim("country", country)
+                .claim("city", city)
+                .claim("name", name)
+                .claim("email", email)
+                .setSubject(subject)
+                .setId(UUID.randomUUID().toString())
+                .setIssuedAt(Date.from(Instant.now()))
+                .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
+                .compact();
     }
 }
