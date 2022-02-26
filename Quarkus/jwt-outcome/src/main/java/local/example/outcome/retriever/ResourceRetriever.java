@@ -1,14 +1,14 @@
-package local.example.outcome.util;
+package local.example.outcome.retriever;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-public class ResourceRetrieverUtil {
+public class ResourceRetriever {
 
     public static String content(final String path)
             throws IOException {
-        InputStream inputStream = ResourceRetrieverUtil
+        InputStream inputStream = ResourceRetriever
                 .class.getClassLoader().getResourceAsStream(path);
         if (inputStream == null) {
             throw new IllegalArgumentException("Path " + path + " does not exist!");
