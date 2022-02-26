@@ -25,9 +25,9 @@ public class HMacGeneratorTests {
         HMacGenerator hMacGenerator = new HMacGenerator();
         String result = hMacGenerator.generate(
                 stringBuilder.toString(),
-                "sample".getBytes(StandardCharsets.UTF_8)
+                "sample_key".getBytes(StandardCharsets.UTF_8)
         );
-        //System.out.println(result);
-        Assertions.assertTrue(result.chars().count() > 0);
+        System.out.println(result);
+        Assertions.assertNotNull(result);
     }
 }
