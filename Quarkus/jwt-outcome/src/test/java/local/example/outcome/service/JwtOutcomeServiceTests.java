@@ -19,7 +19,7 @@ public class JwtOutcomeServiceTests {
     @Test
     public void createSampleJwtTokenTest()
             throws IOException {
-        String jwtToken = JwtOutcomeService.createSampleJwtToken(
+        String jwtToken = JwtOutcomeService.createUnsignedJwtToken(
                 "Fantasy",
                 "Someone",
                 "James Doe",
