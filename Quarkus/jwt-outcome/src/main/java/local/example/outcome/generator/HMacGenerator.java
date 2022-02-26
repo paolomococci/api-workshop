@@ -1,6 +1,8 @@
 package local.example.outcome.generator;
 
 import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.UUID;
 
@@ -12,8 +14,9 @@ public class HMacGenerator {
     }
 
     private byte[] toBytes(String algorithm, byte[] key, byte[] secret)
-            throws NoSuchAlgorithmException {
+            throws NoSuchAlgorithmException, InvalidKeyException {
         Mac mac = Mac.getInstance(algorithm);
+        mac.init(new SecretKeySpec(key, algorithm));
         return new byte[0];
     }
 
