@@ -5,6 +5,7 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import local.example.outcome.model.SignedJsonWebToken;
 import local.example.outcome.model.UnsignedJsonWebToken;
 import local.example.outcome.retriever.ResourceRetriever;
 
@@ -109,7 +110,7 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    public static String createSignedJwtTokenFromObject(UnsignedJsonWebToken unsignedJsonWebToken) {
+    public static String createSignedJwtTokenFromObject(SignedJsonWebToken signedJsonWebToken) {
         // TODO
         return null;
     }
