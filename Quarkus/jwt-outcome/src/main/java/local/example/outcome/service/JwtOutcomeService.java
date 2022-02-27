@@ -5,7 +5,7 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-import local.example.outcome.model.JsonWebToken;
+import local.example.outcome.model.UnsignedJsonWebToken;
 import local.example.outcome.retriever.ResourceRetriever;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -96,20 +96,20 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    public static String createUnsignedJwtTokenFromObject(JsonWebToken jsonWebToken) {
+    public static String createUnsignedJwtTokenFromObject(UnsignedJsonWebToken unsignedJsonWebToken) {
         return Jwts.builder()
-                .claim("country", jsonWebToken.country)
-                .claim("city", jsonWebToken.city)
-                .claim("name", jsonWebToken.name)
-                .claim("email", jsonWebToken.email)
-                .setSubject(jsonWebToken.subject)
+                .claim("country", unsignedJsonWebToken.country)
+                .claim("city", unsignedJsonWebToken.city)
+                .claim("name", unsignedJsonWebToken.name)
+                .claim("email", unsignedJsonWebToken.email)
+                .setSubject(unsignedJsonWebToken.subject)
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
                 .compact();
     }
 
-    public static String createSignedJwtTokenFromObject(JsonWebToken jsonWebToken) {
+    public static String createSignedJwtTokenFromObject(UnsignedJsonWebToken unsignedJsonWebToken) {
         // TODO
         return null;
     }
