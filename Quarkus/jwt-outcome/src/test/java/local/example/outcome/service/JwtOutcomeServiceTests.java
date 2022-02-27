@@ -2,7 +2,7 @@ package local.example.outcome.service;
 
 import io.quarkus.test.junit.QuarkusTest;
 
-import local.example.outcome.model.JsonWebToken;
+import local.example.outcome.model.UnsignedJsonWebToken;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -32,14 +32,14 @@ public class JwtOutcomeServiceTests {
 
     @Test
     public void createUnsignedJwtTokenFromObjectTest() {
-        JsonWebToken jsonWebToken = new JsonWebToken(
+        UnsignedJsonWebToken unsignedJsonWebToken = new UnsignedJsonWebToken(
                 "Fantasy",
                 "Someone",
                 "James Doe",
                 "james.doe@example.local",
                 "some sample subject"
         );
-        String jwtToken = JwtOutcomeService.createUnsignedJwtTokenFromObject(jsonWebToken);
+        String jwtToken = JwtOutcomeService.createUnsignedJwtTokenFromObject(unsignedJsonWebToken);
         Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
     }
 
