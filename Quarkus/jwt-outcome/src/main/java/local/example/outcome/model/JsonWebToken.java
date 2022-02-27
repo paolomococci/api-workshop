@@ -1,9 +1,9 @@
 package local.example.outcome.model;
 
 public class JsonWebToken {
-    String country;
-    String city;
-    String name;
-    String email;
-    String subject;
+    public String country;
+    public String city;
+    public String name;
+    public String email;
+    public String subject;
 }
