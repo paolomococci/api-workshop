@@ -10,20 +10,20 @@ import java.util.UUID;
 
 public class HMacGenerator {
 
-    public String generate(String secret, byte[] key)
+    public static String generate(String secret, byte[] key)
             throws NoSuchAlgorithmException, InvalidKeyException {
-        byte[] bytes = this.toBytes("HmacSHA256", key, secret.getBytes(StandardCharsets.UTF_8));
-        return this.bytesToHexadecimalString(bytes);
+        byte[] bytes = toBytes("HmacSHA256", key, secret.getBytes(StandardCharsets.UTF_8));
+        return bytesToHexadecimalString(bytes);
     }
 
-    private byte[] toBytes(String algorithm, byte[] key, byte[] secret)
+    private static byte[] toBytes(String algorithm, byte[] key, byte[] secret)
             throws NoSuchAlgorithmException, InvalidKeyException {
         Mac mac = Mac.getInstance(algorithm);
         mac.init(new SecretKeySpec(key, algorithm));
         return mac.doFinal(secret);
     }
 
-    private String bytesToHexadecimalString(byte[] bytes) {
+    private static String bytesToHexadecimalString(byte[] bytes) {
         final char[] injected = UUID.randomUUID().toString().toCharArray();
         char[] chars = new char[bytes.length*2];
         for (int i = 0, temp; i < bytes.length; i++) {
