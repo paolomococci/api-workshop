@@ -5,6 +5,7 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import local.example.outcome.model.JsonWebToken;
 import local.example.outcome.retriever.ResourceRetriever;
 
 import javax.crypto.spec.SecretKeySpec;
@@ -76,7 +77,7 @@ public class JwtOutcomeService {
                 .replace("-----END RSA PRIVATE KEY-----", "");
     }
 
-    public static String createUnsignedJwtToken(
+    public static String createUnsignedJwtTokenFromPlain(
             String country,
             String city,
             String name,
