@@ -1,6 +1,6 @@
 package local.example.outcome.model;
 
-public class JsonWebToken {
+public class UnsignedJsonWebToken {
 
     public String country;
     public String city;
@@ -8,7 +8,7 @@ public class JsonWebToken {
     public String email;
     public String subject;
 
-    public JsonWebToken(
+    public UnsignedJsonWebToken(
             String country,
             String city,
             String name,
