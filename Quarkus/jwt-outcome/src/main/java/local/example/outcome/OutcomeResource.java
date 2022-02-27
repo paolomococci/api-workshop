@@ -13,4 +13,10 @@ public class OutcomeResource {
     public String feedback() {
         return "--- jwt-outcome feedback ---";
     }
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String unsigned() {
+        return "--- jwt-outcome feedback ---";
+    }
 }
