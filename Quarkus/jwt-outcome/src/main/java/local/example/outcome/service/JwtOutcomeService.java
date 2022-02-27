@@ -108,4 +108,9 @@ public class JwtOutcomeService {
                 .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
                 .compact();
     }
+
+    public static String createSignedJwtTokenFromObject(JsonWebToken jsonWebToken) {
+        // TODO
+        return null;
+    }
 }
