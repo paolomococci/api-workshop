@@ -41,4 +41,9 @@ public class JwtOutcomeServiceTests {
         String jwtToken = JwtOutcomeService.createUnsignedJwtTokenFromObject(jsonWebToken);
         Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
     }
+
+    @Test
+    public void createSignedJwtTokenFromObjectTest() {
+
+    }
 }
