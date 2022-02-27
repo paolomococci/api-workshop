@@ -95,4 +95,17 @@ public class JwtOutcomeService {
                 .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
                 .compact();
     }
+
+    public static String createUnsignedJwtTokenFromObject(JsonWebToken jsonWebToken) {
+        return Jwts.builder()
+                .claim("country", jsonWebToken.country)
+                .claim("city", jsonWebToken.city)
+                .claim("name", jsonWebToken.name)
+                .claim("email", jsonWebToken.email)
+                .setSubject(jsonWebToken.subject)
+                .setId(UUID.randomUUID().toString())
+                .setIssuedAt(Date.from(Instant.now()))
+                .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
+                .compact();
+    }
 }
