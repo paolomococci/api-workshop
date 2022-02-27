@@ -16,7 +16,7 @@ public class JwtOutcomeServiceTests {
     }
 
     @Test
-    public void createUnsignedJwtTokenTest() {
+    public void createUnsignedJwtTokenFromPlainTest() {
         String jwtToken = JwtOutcomeService.createUnsignedJwtTokenFromPlain(
                 "Fantasy",
                 "Someone",
@@ -26,5 +26,10 @@ public class JwtOutcomeServiceTests {
         );
         System.out.println(jwtToken);
         Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
+    }
+
+    @Test
+    public void createUnsignedJwtTokenFromObjectTest() {
+
     }
 }
