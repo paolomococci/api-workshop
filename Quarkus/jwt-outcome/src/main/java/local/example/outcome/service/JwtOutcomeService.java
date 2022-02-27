@@ -111,7 +111,16 @@ public class JwtOutcomeService {
     }
 
     public static String createSignedJwtTokenFromObject(SignedJsonWebToken signedJsonWebToken) {
-        // TODO
-        return null;
+        return Jwts.builder()
+                .claim("country", signedJsonWebToken.country)
+                .claim("city", signedJsonWebToken.city)
+                .claim("name", signedJsonWebToken.name)
+                .claim("email", signedJsonWebToken.email)
+                .setSubject(signedJsonWebToken.subject)
+                .setId(UUID.randomUUID().toString())
+                .setIssuedAt(Date.from(Instant.now()))
+                .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
+                .signWith(signedJsonWebToken.key)
+                .compact();
     }
 }
