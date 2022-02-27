@@ -22,8 +22,7 @@ public class HMacGeneratorTests {
             int randomCharacter = 33 + (int) (random.nextDouble()*93);
             stringBuilder.append((char) randomCharacter);
         }
-        HMacGenerator hMacGenerator = new HMacGenerator();
-        String result = hMacGenerator.generate(
+        String result = HMacGenerator.generate(
                 stringBuilder.toString(),
                 "sample_key".getBytes(StandardCharsets.UTF_8)
         );
