@@ -1,6 +1,7 @@
 package local.example.outcome.model;
 
 import java.security.InvalidKeyException;
+import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 
 public class SignedJsonWebToken {
@@ -10,7 +11,7 @@ public class SignedJsonWebToken {
     public String name;
     public String email;
     public String subject;
-    public HMac hMac;
+    public HMac key;
 
     public SignedJsonWebToken(
             String country,
@@ -26,6 +27,10 @@ public class SignedJsonWebToken {
         this.name = name;
         this.email = email;
         this.subject = subject;
-        this.hMac = new HMac(secret, key);
+        this.key = new HMac(secret, key);
+    }
+
+    public HMac getKey() {
+        return key;
     }
 }
