@@ -38,5 +38,7 @@ public class JwtOutcomeServiceTests {
                 "james.doe@example.local",
                 "some sample subject"
         );
+        String jwtToken = JwtOutcomeService.createUnsignedJwtTokenFromObject(jsonWebToken);
+        Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
     }
 }
