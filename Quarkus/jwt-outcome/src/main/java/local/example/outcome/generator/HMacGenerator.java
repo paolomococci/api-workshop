@@ -12,14 +12,14 @@ public class HMacGenerator {
 
     public static String generate(String secret, byte[] key)
             throws NoSuchAlgorithmException, InvalidKeyException {
-        byte[] bytes = toBytes("HmacSHA256", key, secret.getBytes(StandardCharsets.UTF_8));
+        byte[] bytes = toBytes(key, secret.getBytes(StandardCharsets.UTF_8));
         return bytesToHexadecimalString(bytes);
     }
 
-    private static byte[] toBytes(String algorithm, byte[] key, byte[] secret)
+    private static byte[] toBytes(byte[] key, byte[] secret)
             throws NoSuchAlgorithmException, InvalidKeyException {
-        Mac mac = Mac.getInstance(algorithm);
-        mac.init(new SecretKeySpec(key, algorithm));
+        Mac mac = Mac.getInstance("HmacSHA256");
+        mac.init(new SecretKeySpec(key, "HmacSHA256"));
         return mac.doFinal(secret);
     }
 
