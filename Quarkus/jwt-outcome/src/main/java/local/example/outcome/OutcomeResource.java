@@ -17,6 +17,12 @@ public class OutcomeResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String unsigned() {
-        return "--- jwt-outcome feedback ---";
+        return "--- jwt-outcome unsigned ---";
+    }
+
+    @GET
+    @Produces(MediaType.TEXT_PLAIN)
+    public String signed() {
+        return "--- jwt-outcome signed ---";
     }
 }
