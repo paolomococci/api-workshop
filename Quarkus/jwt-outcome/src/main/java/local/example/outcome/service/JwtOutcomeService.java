@@ -5,7 +5,6 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-import local.example.outcome.model.SignedJsonWebToken;
 import local.example.outcome.model.UnsignedJsonWebToken;
 import local.example.outcome.retriever.ResourceRetriever;
 
@@ -107,20 +106,6 @@ public class JwtOutcomeService {
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
-                .compact();
-    }
-
-    public static String createSignedJwtTokenFromObject(SignedJsonWebToken signedJsonWebToken) {
-        return Jwts.builder()
-                .claim("country", signedJsonWebToken.country)
-                .claim("city", signedJsonWebToken.city)
-                .claim("name", signedJsonWebToken.name)
-                .claim("email", signedJsonWebToken.email)
-                .setSubject(signedJsonWebToken.subject)
-                .setId(UUID.randomUUID().toString())
-                .setIssuedAt(Date.from(Instant.now()))
-                .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
-                .signWith(signedJsonWebToken.key)
                 .compact();
     }
 }
