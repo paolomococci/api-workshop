@@ -1,4 +1,10 @@
 package local.example.outcome.model;
 
 public class SignedClaim {
+
+    public String country;
+    public String city;
+    public String name;
+    public String email;
+    public String subject;
 }
