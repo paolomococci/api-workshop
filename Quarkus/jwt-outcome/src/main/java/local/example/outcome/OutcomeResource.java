@@ -1,6 +1,6 @@
 package local.example.outcome;
 
-import local.example.outcome.model.UnsignedJsonWebToken;
+import local.example.outcome.model.UnsignedClaim;
 import local.example.outcome.service.JwtOutcomeService;
 
 import javax.ws.rs.GET;
@@ -15,7 +15,7 @@ import java.util.Set;
 @Path("/outcome")
 public class OutcomeResource {
 
-    private final Set<UnsignedJsonWebToken> assortments = Collections.newSetFromMap(
+    private final Set<UnsignedClaim> assortments = Collections.newSetFromMap(
         Collections.synchronizedMap(
                 new LinkedHashMap<>()
         )
@@ -29,7 +29,7 @@ public class OutcomeResource {
 
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public String unsignedJwt(UnsignedJsonWebToken unsignedJsonWebToken) {
-        return JwtOutcomeService.createUnsignedJwtTokenFromObject(unsignedJsonWebToken);
+    public String unsignedJwt(UnsignedClaim unsignedClaim) {
+        return JwtOutcomeService.createUnsignedJwtTokenFromObject(unsignedClaim);
     }
 }
