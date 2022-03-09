@@ -31,8 +31,8 @@ public class JwtOutcomeService {
 
     public JwtOutcomeService()
             throws IOException {
-        String publicKey = ResourceRetriever.content("privateKey.pem");
-        key = publicKeyToCompactString(publicKey);
+        String tempKey = ResourceRetriever.content("privateKey.pem");
+        key = this.privateKeyToCompactString(tempKey);
     }
 
     public String create(
