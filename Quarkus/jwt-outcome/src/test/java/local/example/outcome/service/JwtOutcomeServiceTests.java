@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.nio.charset.StandardCharsets;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 @QuarkusTest
 public class JwtOutcomeServiceTests {
@@ -45,7 +47,9 @@ public class JwtOutcomeServiceTests {
     }
 
     @Test
-    public void createSignedJwtFromObjectTest() {
+    public void createSignedJwtFromObjectTest()
+            throws NoSuchAlgorithmException,
+            InvalidKeySpecException {
         SignedClaim signedClaim = new SignedClaim(
                 "Fantasy",
                 "Someone",
