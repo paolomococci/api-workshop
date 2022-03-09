@@ -128,6 +128,11 @@ public class JwtOutcomeService {
                 .compact();
     }
 
+    private PrivateKey privateKey() {
+        // TODO
+        return null;
+    }
+
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
         return new PKCS8EncodedKeySpec(
                 Base64.getDecoder()
