@@ -97,7 +97,7 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    public static String createUnsignedJwtTokenFromObject(UnsignedClaim unsignedClaim) {
+    public static String createUnsignedJwtFromObject(UnsignedClaim unsignedClaim) {
         return Jwts.builder()
                 .claim("country", unsignedClaim.country)
                 .claim("city", unsignedClaim.city)
