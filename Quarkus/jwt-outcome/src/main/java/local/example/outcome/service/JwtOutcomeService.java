@@ -32,7 +32,7 @@ public class JwtOutcomeService {
     public JwtOutcomeService()
             throws IOException {
         String tempKey = ResourceRetriever.content("privateKey.pem");
-        key = this.privateKeyToCompactString(tempKey);
+        key = privateKeyToCompactString(tempKey);
     }
 
     public String create(
@@ -66,18 +66,18 @@ public class JwtOutcomeService {
                 .parseClaimsJws(jwt).getBody();
     }
 
-    public String getKey() {
+    public static String getKey() {
         return key;
     }
 
-    private String publicKeyToCompactString(String publicKey) {
+    private static String publicKeyToCompactString(String publicKey) {
         return publicKey
                 .replace("-----BEGIN CERTIFICATE-----", "")
                 .replace(System.lineSeparator(), "")
                 .replace("-----END CERTIFICATE-----", "");
     }
 
-    private String privateKeyToCompactString(String privateKey) {
+    private static String privateKeyToCompactString(String privateKey) {
         return privateKey
                 .replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .replace(System.lineSeparator(), "")
@@ -116,7 +116,9 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    public static String createSignedHMACJwtFromObject(SignedClaim signedClaim) {
+    public static String createSignedHMACJwtFromObject(SignedClaim signedClaim)
+            throws NoSuchAlgorithmException,
+            InvalidKeySpecException {
         return Jwts.builder()
                 .claim("country", signedClaim.country)
                 .claim("city", signedClaim.city)
@@ -126,23 +128,24 @@ public class JwtOutcomeService {
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(Date.from(Instant.now().plus(30, ChronoUnit.MINUTES)))
+                .signWith(privateKey())
                 .compact();
     }
 
-    private PrivateKey privateKey()
+    private static PrivateKey privateKey()
             throws NoSuchAlgorithmException,
             InvalidKeySpecException {
-        return (PrivateKey) this.keyFactory().generatePublic(this.pkcs8EncodedKeySpec());
+        return (PrivateKey) keyFactory().generatePublic(pkcs8EncodedKeySpec());
     }
 
-    private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
+    private static PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
         return new PKCS8EncodedKeySpec(
                 Base64.getDecoder()
-                        .decode(this.publicKeyToCompactString(this.getKey()))
+                        .decode(privateKeyToCompactString(getKey()))
         );
     }
 
-    private KeyFactory keyFactory()
+    private static KeyFactory keyFactory()
             throws NoSuchAlgorithmException {
         return KeyFactory.getInstance("RSA");
     }
