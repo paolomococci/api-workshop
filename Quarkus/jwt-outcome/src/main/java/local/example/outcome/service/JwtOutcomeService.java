@@ -132,4 +132,9 @@ public class JwtOutcomeService {
                         .decode(this.publicKeyToCompactString(this.getKey()))
         );
     }
+
+    private KeyFactory keyFactory() {
+        // TODO
+        return null;
+    }
 }
