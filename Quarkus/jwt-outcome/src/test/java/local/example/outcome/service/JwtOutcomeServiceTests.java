@@ -31,7 +31,7 @@ public class JwtOutcomeServiceTests {
     }
 
     @Test
-    public void createUnsignedJwtTokenFromObjectTest() {
+    public void createUnsignedJwtFromObjectTest() {
         UnsignedClaim unsignedClaim = new UnsignedClaim(
                 "Fantasy",
                 "Someone",
