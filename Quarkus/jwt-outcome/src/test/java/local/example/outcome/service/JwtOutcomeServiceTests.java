@@ -18,7 +18,7 @@ public class JwtOutcomeServiceTests {
     }
 
     @Test
-    public void createUnsignedJwtTokenFromPlainTest() {
+    public void createUnsignedJwtFromPlainTest() {
         String jwtToken = JwtOutcomeService.createUnsignedJwtFromPlain(
                 "Fantasy",
                 "Someone",
