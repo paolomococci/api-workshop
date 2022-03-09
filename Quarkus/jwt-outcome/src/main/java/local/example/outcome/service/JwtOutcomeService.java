@@ -111,7 +111,15 @@ public class JwtOutcomeService {
     }
 
     public static String createSignedHMACJwtFromObject(SignedClaim signedClaim) {
-        // TODO
-        return "";
+        return Jwts.builder()
+                .claim("country", signedClaim.country)
+                .claim("city", signedClaim.city)
+                .claim("name", signedClaim.name)
+                .claim("email", signedClaim.email)
+                .setSubject(signedClaim.subject)
+                .setId(UUID.randomUUID().toString())
+                .setIssuedAt(Date.from(Instant.now()))
+                .setExpiration(Date.from(Instant.now().plus(30, ChronoUnit.MINUTES)))
+                .compact();
     }
 }
