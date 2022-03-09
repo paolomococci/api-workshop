@@ -30,6 +30,6 @@ public class OutcomeResource {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public String unsignedJwt(UnsignedClaim unsignedClaim) {
-        return JwtOutcomeService.createUnsignedJwtTokenFromObject(unsignedClaim);
+        return JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
     }
 }
