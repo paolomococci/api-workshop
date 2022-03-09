@@ -2,6 +2,7 @@ package local.example.outcome.service;
 
 import io.quarkus.test.junit.QuarkusTest;
 
+import local.example.outcome.model.SignedClaim;
 import local.example.outcome.model.UnsignedClaim;
 
 import org.junit.jupiter.api.Assertions;
@@ -40,6 +41,19 @@ public class JwtOutcomeServiceTests {
                 "some sample subject"
         );
         String jwtToken = JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
+        Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
+    }
+
+    @Test
+    public void createSignedJwtFromObjectTest() {
+        SignedClaim signedClaim = new SignedClaim(
+                "Fantasy",
+                "Someone",
+                "James Doe",
+                "james.doe@example.local",
+                "some sample subject"
+        );
+        String jwtToken = JwtOutcomeService.createSignedHMACJwtFromObject(signedClaim);
         Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
     }
 }
