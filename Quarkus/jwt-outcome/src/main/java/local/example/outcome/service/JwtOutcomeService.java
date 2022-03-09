@@ -14,8 +14,11 @@ import javax.xml.bind.DatatypeConverter;
 
 import java.io.IOException;
 import java.security.Key;
+import java.security.KeyFactory;
+import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Base64;
 import java.util.Date;
 import java.util.UUID;
 
@@ -25,7 +28,7 @@ public class JwtOutcomeService {
 
     public JwtOutcomeService()
             throws IOException {
-        String publicKey = ResourceRetriever.content("publicKey.pem");
+        String publicKey = ResourceRetriever.content("privateKey.pem");
         key = publicKeyToCompactString(publicKey);
     }
 
@@ -121,5 +124,12 @@ public class JwtOutcomeService {
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(Date.from(Instant.now().plus(30, ChronoUnit.MINUTES)))
                 .compact();
+    }
+
+    private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
+        return new PKCS8EncodedKeySpec(
+                Base64.getDecoder()
+                        .decode(this.publicKeyToCompactString(this.getKey()))
+        );
     }
 }
