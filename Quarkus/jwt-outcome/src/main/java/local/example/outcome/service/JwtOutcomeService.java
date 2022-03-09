@@ -17,6 +17,7 @@ import java.security.Key;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -128,9 +129,10 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    private PrivateKey privateKey() {
-        // TODO
-        return null;
+    private PrivateKey privateKey()
+            throws NoSuchAlgorithmException,
+            InvalidKeySpecException {
+        return this.keyFactory().generatePublic(this.pkcs8EncodedKeySpec());
     }
 
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
