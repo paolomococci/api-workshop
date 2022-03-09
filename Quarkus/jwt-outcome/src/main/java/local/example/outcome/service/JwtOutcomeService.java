@@ -15,6 +15,8 @@ import javax.xml.bind.DatatypeConverter;
 import java.io.IOException;
 import java.security.Key;
 import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -133,8 +135,8 @@ public class JwtOutcomeService {
         );
     }
 
-    private KeyFactory keyFactory() {
-        // TODO
-        return null;
+    private KeyFactory keyFactory()
+            throws NoSuchAlgorithmException {
+        return KeyFactory.getInstance("RSA");
     }
 }
