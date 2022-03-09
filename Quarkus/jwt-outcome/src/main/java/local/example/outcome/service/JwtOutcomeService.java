@@ -78,7 +78,7 @@ public class JwtOutcomeService {
                 .replace("-----END RSA PRIVATE KEY-----", "");
     }
 
-    public static String createUnsignedJwtTokenFromPlain(
+    public static String createUnsignedJwtFromPlain(
             String country,
             String city,
             String name,
