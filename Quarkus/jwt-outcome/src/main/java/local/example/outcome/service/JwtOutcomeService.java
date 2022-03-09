@@ -5,6 +5,7 @@ import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+import local.example.outcome.model.SignedClaim;
 import local.example.outcome.model.UnsignedClaim;
 import local.example.outcome.retriever.ResourceRetriever;
 
@@ -107,5 +108,10 @@ public class JwtOutcomeService {
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(Date.from(Instant.now().plus(60, ChronoUnit.MINUTES)))
                 .compact();
+    }
+
+    public static String createSignedHMACJwtFromObject(SignedClaim signedClaim) {
+        // TODO
+        return "";
     }
 }
