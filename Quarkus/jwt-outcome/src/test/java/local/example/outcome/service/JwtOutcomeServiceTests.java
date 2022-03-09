@@ -39,7 +39,7 @@ public class JwtOutcomeServiceTests {
                 "james.doe@example.local",
                 "some sample subject"
         );
-        String jwtToken = JwtOutcomeService.createUnsignedJwtTokenFromObject(unsignedClaim);
+        String jwtToken = JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
         Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
     }
 }
