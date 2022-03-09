@@ -132,7 +132,7 @@ public class JwtOutcomeService {
     private PrivateKey privateKey()
             throws NoSuchAlgorithmException,
             InvalidKeySpecException {
-        return this.keyFactory().generatePublic(this.pkcs8EncodedKeySpec());
+        return (PrivateKey) this.keyFactory().generatePublic(this.pkcs8EncodedKeySpec());
     }
 
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
