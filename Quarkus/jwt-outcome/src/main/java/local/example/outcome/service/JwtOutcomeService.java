@@ -18,8 +18,10 @@ import java.security.Key;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
@@ -28,15 +30,19 @@ import java.util.UUID;
 public class JwtOutcomeService {
 
     private static String pemKey;
-    private byte[] derKey;
+    private byte[] privateDerKey;
+    private byte[] publicDerKey;
 
     public JwtOutcomeService()
             throws IOException {
         String tempPemKey = ResourceRetriever.content("privateKey.pem");
         pemKey = privateKeyToCompactString(tempPemKey);
-        InputStream inputStream = ResourceRetriever.raw("privateKey.der");
-        derKey = new byte[inputStream.available()];
-        derKey = inputStream.readAllBytes();
+        InputStream privateInputStream = ResourceRetriever.raw("privateKey.der");
+        privateDerKey = new byte[privateInputStream.available()];
+        privateDerKey = privateInputStream.readAllBytes();
+        InputStream publicInputStream = ResourceRetriever.raw("publicKey.der");
+        publicDerKey = new byte[publicInputStream.available()];
+        publicDerKey = publicInputStream.readAllBytes();
     }
 
     public String create(
@@ -74,8 +80,8 @@ public class JwtOutcomeService {
         return pemKey;
     }
 
-    public byte[] getDerKey() {
-        return derKey;
+    public byte[] getPrivateDerKey() {
+        return privateDerKey;
     }
 
     private String publicKeyToCompactString(String publicKey) {
@@ -147,7 +153,7 @@ public class JwtOutcomeService {
     }
 
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
-        return new PKCS8EncodedKeySpec(derKey);
+        return new PKCS8EncodedKeySpec(privateDerKey);
     }
 
     private KeyFactory keyFactory()
