@@ -12,8 +12,6 @@ import local.example.outcome.retriever.ResourceRetriever;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
-import java.io.DataInputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.Key;
@@ -39,6 +37,7 @@ public class JwtOutcomeService {
         pemKey = privateKeyToCompactString(tempPemKey);
         InputStream inputStream = ResourceRetriever.raw("privateKey.der");
         derKey = new byte[inputStream.available()];
+        derKey = inputStream.readAllBytes();
     }
 
     public String create(
