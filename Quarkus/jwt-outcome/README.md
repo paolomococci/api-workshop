@@ -36,6 +36,12 @@ openssl genrsa -out privateKey.pem 4096
 openssl req -new -x509 -key privateKey.pem -out publicKey.pem -days 14
 ```
 
+### or, here's a third example
+
+```shell
+openssl genrsa -out privateKey.pem 2048
+```
+
 ## example of POST request made using curl and its unsigned response
 
 ```shell
