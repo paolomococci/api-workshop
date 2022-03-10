@@ -70,14 +70,14 @@ public class JwtOutcomeService {
         return key;
     }
 
-    private static String publicKeyToCompactString(String publicKey) {
+    private String publicKeyToCompactString(String publicKey) {
         return publicKey
                 .replace("-----BEGIN CERTIFICATE-----", "")
                 .replace(System.lineSeparator(), "")
                 .replace("-----END CERTIFICATE-----", "");
     }
 
-    private static String privateKeyToCompactString(String privateKey) {
+    private String privateKeyToCompactString(String privateKey) {
         return privateKey
                 .replace("-----BEGIN RSA PRIVATE KEY-----", "")
                 .replace(System.lineSeparator(), "")
@@ -116,7 +116,7 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    public static String createSignedHMACJwtFromObject(SignedClaim signedClaim)
+    public String createSignedHMACJwtFromObject(SignedClaim signedClaim)
             throws NoSuchAlgorithmException,
             InvalidKeySpecException {
         return Jwts.builder()
@@ -132,20 +132,20 @@ public class JwtOutcomeService {
                 .compact();
     }
 
-    private static PrivateKey privateKey()
+    private PrivateKey privateKey()
             throws NoSuchAlgorithmException,
             InvalidKeySpecException {
         return (PrivateKey) keyFactory().generatePublic(pkcs8EncodedKeySpec());
     }
 
-    private static PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
+    private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
         return new PKCS8EncodedKeySpec(
                 Base64.getDecoder()
                         .decode(privateKeyToCompactString(getKey()))
         );
     }
 
-    private static KeyFactory keyFactory()
+    private KeyFactory keyFactory()
             throws NoSuchAlgorithmException {
         return KeyFactory.getInstance("RSA");
     }
