@@ -12,7 +12,10 @@ import local.example.outcome.retriever.ResourceRetriever;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -27,12 +30,15 @@ import java.util.UUID;
 
 public class JwtOutcomeService {
 
-    private static String key;
+    private static String pemKey;
+    private byte[] derKey;
 
     public JwtOutcomeService()
             throws IOException {
-        String tempKey = ResourceRetriever.content("privateKey.pem");
-        key = privateKeyToCompactString(tempKey);
+        String tempPemKey = ResourceRetriever.content("privateKey.pem");
+        pemKey = privateKeyToCompactString(tempPemKey);
+        InputStream inputStream = ResourceRetriever.raw("privateKey.der");
+        derKey = new byte[inputStream.available()];
     }
 
     public String create(
@@ -44,7 +50,7 @@ public class JwtOutcomeService {
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.ES256;
         long nowInMilliseconds = System.currentTimeMillis();
         Date date = new Date(nowInMilliseconds);
-        byte[] keyInBytes = DatatypeConverter.parseBase64Binary(getKey());
+        byte[] keyInBytes = DatatypeConverter.parseBase64Binary(getPemKey());
         Key keyForSignature = new SecretKeySpec(keyInBytes, signatureAlgorithm.getJcaName());
         JwtBuilder jwtBuilder = Jwts.builder()
                 .setId(id)
@@ -62,12 +68,12 @@ public class JwtOutcomeService {
 
     public Claims decode(String jwt) {
         return Jwts.parser()
-                .setSigningKey(DatatypeConverter.parseBase64Binary(getKey()))
+                .setSigningKey(DatatypeConverter.parseBase64Binary(getPemKey()))
                 .parseClaimsJws(jwt).getBody();
     }
 
-    public static String getKey() {
-        return key;
+    public static String getPemKey() {
+        return pemKey;
     }
 
     private String publicKeyToCompactString(String publicKey) {
@@ -141,7 +147,7 @@ public class JwtOutcomeService {
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
         return new PKCS8EncodedKeySpec(
                 Base64.getDecoder()
-                        .decode(privateKeyToCompactString(getKey()))
+                        .decode(privateKeyToCompactString(getPemKey()))
         );
     }
 
