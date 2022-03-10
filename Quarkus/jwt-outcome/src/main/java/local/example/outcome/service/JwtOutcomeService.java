@@ -152,6 +152,12 @@ public class JwtOutcomeService {
         return (RSAPrivateKey) keyFactory().generatePrivate(pkcs8EncodedKeySpec());
     }
 
+    private RSAPublicKey rsaPublicKey()
+            throws NoSuchAlgorithmException,
+            InvalidKeySpecException {
+        return (RSAPublicKey) keyFactory().generatePublic(x509EncodedKeySpec());
+    }
+
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
         return new PKCS8EncodedKeySpec(privateDerKey);
     }
