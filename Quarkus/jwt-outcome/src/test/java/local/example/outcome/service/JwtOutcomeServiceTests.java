@@ -8,6 +8,7 @@ import local.example.outcome.model.UnsignedClaim;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -49,7 +50,8 @@ public class JwtOutcomeServiceTests {
     @Test
     public void createSignedJwtFromObjectTest()
             throws NoSuchAlgorithmException,
-            InvalidKeySpecException {
+            InvalidKeySpecException,
+            IOException {
         SignedClaim signedClaim = new SignedClaim(
                 "Fantasy",
                 "Someone",
@@ -57,7 +59,8 @@ public class JwtOutcomeServiceTests {
                 "james.doe@example.local",
                 "some sample subject"
         );
-        String jwtToken = JwtOutcomeService.createSignedHMACJwtFromObject(signedClaim);
+        JwtOutcomeService jwtOutcomeService = new JwtOutcomeService();
+        String jwtToken = jwtOutcomeService.createSignedHMACJwtFromObject(signedClaim);
         Assertions.assertTrue(jwtToken.getBytes(StandardCharsets.UTF_8).length > 0);
     }
 }
