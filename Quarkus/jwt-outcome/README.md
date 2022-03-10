@@ -52,10 +52,16 @@ I generate a private key:
 openssl genrsa -out privateKey.pem 2048
 ```
 
+I convert private key to format DER
+
+```shell
+openssl pkcs8 -topk8 -inform PEM -outform DER -in privateKey.pem -out privateKey.der -nocrypt
+```
+
 I generate a public key:
 
 ```shell
-openssl rsa -in privateKey.pem -outform PEM -pubout -out publicKey.pem
+openssl rsa -in privateKey.pem -pubout -outform DER -out publicKey.der
 ```
 
 ## example of POST request made using curl and its unsigned response
