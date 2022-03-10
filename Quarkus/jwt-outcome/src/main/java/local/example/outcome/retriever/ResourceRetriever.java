@@ -6,8 +6,7 @@ import java.nio.charset.StandardCharsets;
 
 public class ResourceRetriever {
 
-    public static InputStream raw(final String path)
-            throws IOException {
+    public static InputStream raw(final String path) {
         InputStream inputStream = ResourceRetriever
                 .class.getClassLoader().getResourceAsStream(path);
         if (inputStream == null) {
