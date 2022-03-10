@@ -6,6 +6,16 @@ import java.nio.charset.StandardCharsets;
 
 public class ResourceRetriever {
 
+    public static InputStream raw(final String path)
+            throws IOException {
+        InputStream inputStream = ResourceRetriever
+                .class.getClassLoader().getResourceAsStream(path);
+        if (inputStream == null) {
+            throw new IllegalArgumentException("Path " + path + " does not exist!");
+        }
+        return inputStream;
+    }
+
     public static String content(final String path)
             throws IOException {
         InputStream inputStream = ResourceRetriever
