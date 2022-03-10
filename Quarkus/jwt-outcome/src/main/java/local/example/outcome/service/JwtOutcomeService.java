@@ -156,6 +156,10 @@ public class JwtOutcomeService {
         return new PKCS8EncodedKeySpec(privateDerKey);
     }
 
+    private X509EncodedKeySpec x509EncodedKeySpec() {
+        return new X509EncodedKeySpec(publicDerKey);
+    }
+
     private KeyFactory keyFactory()
             throws NoSuchAlgorithmException {
         return KeyFactory.getInstance("RSA");
