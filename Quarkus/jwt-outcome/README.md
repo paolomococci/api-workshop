@@ -16,36 +16,6 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.7.3.Final:create -DprojectGroupId
 
 Open a terminal in the resource folder and type the following shell commands to generate the private and public key.
 
-### a prime example
-
-I generate a private key:
-
-```shell
-openssl genrsa -out private.pem 4096
-```
-
-I generate a public key:
-
-```shell
-openssl rsa -in private.pem -outform PEM -pubout -out public.pem
-```
-
-### a second example
-
-I generate a private key:
-
-```shell
-openssl genrsa -out privateKey.pem 4096
-```
-
-I generate a public key:
-
-```shell
-openssl req -new -x509 -key privateKey.pem -out publicKey.pem -days 14
-```
-
-### or, here's a third example
-
 I generate a private key:
 
 ```shell
