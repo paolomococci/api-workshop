@@ -17,12 +17,11 @@ import java.io.InputStream;
 import java.security.Key;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
+import java.security.interfaces.RSAPrivateKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import java.util.Base64;
 import java.util.Date;
 import java.util.UUID;
 
@@ -137,21 +136,18 @@ public class JwtOutcomeService {
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(Date.from(Instant.now()))
                 .setExpiration(Date.from(Instant.now().plus(30, ChronoUnit.MINUTES)))
-                .signWith(privateKey())
+                .signWith(rsaPrivateKey())
                 .compact();
     }
 
-    private PrivateKey privateKey()
+    private RSAPrivateKey rsaPrivateKey()
             throws NoSuchAlgorithmException,
             InvalidKeySpecException {
-        return (PrivateKey) keyFactory().generatePublic(pkcs8EncodedKeySpec());
+        return (RSAPrivateKey) keyFactory().generatePrivate(pkcs8EncodedKeySpec());
     }
 
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
-        return new PKCS8EncodedKeySpec(
-                Base64.getDecoder()
-                        .decode(privateKeyToCompactString(getPemKey()))
-        );
+        return new PKCS8EncodedKeySpec(derKey);
     }
 
     private KeyFactory keyFactory()
