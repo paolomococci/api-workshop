@@ -75,6 +75,10 @@ public class JwtOutcomeService {
         return pemKey;
     }
 
+    public byte[] getDerKey() {
+        return derKey;
+    }
+
     private String publicKeyToCompactString(String publicKey) {
         return publicKey
                 .replace("-----BEGIN CERTIFICATE-----", "")
