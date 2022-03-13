@@ -28,7 +28,7 @@ public class JwtOutcomeService {
         privateDerKey = privateInputStream.readAllBytes();
     }
 
-    public String createSignedHMACJwtFromObject(SignedClaim signedClaim)
+    public String createSignedHMACJwt(SignedClaim signedClaim)
             throws NoSuchAlgorithmException,
             InvalidKeySpecException {
         return Jwts.builder()
