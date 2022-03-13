@@ -7,12 +7,10 @@ import local.example.outcome.service.JwtOutcomeService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Set;
 
 @Path("/outcome")
 public class OutcomeResource {
