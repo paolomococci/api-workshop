@@ -4,6 +4,8 @@ import local.example.outcome.retriever.ResourceRetriever;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.security.KeyFactory;
+import java.security.NoSuchAlgorithmException;
 import java.security.spec.PKCS8EncodedKeySpec;
 
 public class JwtOutcomeService {
@@ -19,5 +21,10 @@ public class JwtOutcomeService {
 
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
         return new PKCS8EncodedKeySpec(privateDerKey);
+    }
+
+    private KeyFactory keyFactory()
+            throws NoSuchAlgorithmException {
+        return KeyFactory.getInstance("RSA");
     }
 }
