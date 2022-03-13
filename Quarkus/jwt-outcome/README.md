@@ -59,6 +59,8 @@ content-length: 592
 
 ## example of POST request made using curl and its signed response
 
+it begins with a first request
+
 ```shell
 curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","city":"Someone","name":"James Doe","email":"james.doe@example.local","subject":"some sample subject"}' http://127.0.0.1:8080/outcome/signed
 HTTP/1.1 200 OK
