@@ -26,6 +26,14 @@ public class OutcomeResourceTest {
     }
 
     @Test
+    public void readSignedJwtListEndpointTest() {
+        given()
+                .when().get("/outcome/jwt/list")
+                .then()
+                .statusCode(200);
+    }
+
+    @Test
     public void createAndReadSignedJwtListEndpointTest() {
         given()
                 .contentType(ContentType.JSON)
