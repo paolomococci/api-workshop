@@ -26,9 +26,9 @@ public class OutcomeResource {
     }
 
     @GET
-    @Path("/jwt")
+    @Path("/jwt/list")
     @Produces(MediaType.APPLICATION_JSON)
-    public SignedJwtList signedJwt() {
+    public SignedJwtList readSignedJwtList() {
         // TODO
         return null;
     }
@@ -37,7 +37,19 @@ public class OutcomeResource {
     @Path("/jwt")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public SignedJwtList signedJwt(SignedClaim signedClaim)
+    public String createSignedJwt(SignedClaim signedClaim)
+            throws IOException,
+            NoSuchAlgorithmException,
+            InvalidKeySpecException {
+        JwtOutcomeService jwtOutcomeService = new JwtOutcomeService();
+        return jwtOutcomeService.createSignedHMACJwt(signedClaim);
+    }
+
+    @POST
+    @Path("/jwt/list")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public SignedJwtList createAndReadSignedJwtList(SignedClaim signedClaim)
             throws IOException,
             NoSuchAlgorithmException,
             InvalidKeySpecException {
