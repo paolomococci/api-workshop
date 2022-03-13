@@ -36,6 +36,8 @@ openssl rsa -in privateKey.pem -pubout -outform DER -out publicKey.der
 
 ## example of POST request made using curl and its unsigned response
 
+it begins with a first request
+
 ```shell
 curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","city":"Someone","name":"James Doe","email":"james.doe@example.local","subject":"some sample subject"}' http://127.0.0.1:8080/outcome/unsigned
 HTTP/1.1 200 OK
@@ -44,7 +46,7 @@ content-length: 309
 
 {"unsignedStrings":["eyJhbGciOiJub25lIn0.eyJjb3VudHJ5IjoiRmFudGFzeSIsImNpdHkiOiJTb21lb25lIiwibmFtZSI6IkphbWVzIERvZSIsImVtYWlsIjoiamFtZXMuZG9lQGV4YW1wbGUubG9jYWwiLCJzdWIiOiJzb21lIHNhbXBsZSBzdWJqZWN0IiwianRpIjoiYzA0Mjk0YTItZGY5MS00YWY2LWFlMDctZGYwOTk2ZjE0YTdmIiwiaWF0IjoxNjQ3MTkyNzQ5LCJleHAiOjE2NDcxOTYzNDl9."]}
 ```
-and
+and then a second request
 
 ```shell
 curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","city":"Someone","name":"Amy Doe","email":"amy.doe@example.local","subject":"some sample subject"}' http://127.0.0.1:8080/outcome/unsigned
