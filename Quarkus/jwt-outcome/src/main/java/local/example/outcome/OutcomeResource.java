@@ -16,7 +16,7 @@ import java.util.Set;
 @Path("/outcome")
 public class OutcomeResource {
 
-    private final Set<UnsignedClaim> unsignedClaims = Collections.newSetFromMap(
+    private final Set<String> unsignedClaims = Collections.newSetFromMap(
         Collections.synchronizedMap(
                 new LinkedHashMap<>()
         )
@@ -38,8 +38,9 @@ public class OutcomeResource {
     @Path("/unsigned")
     @Produces(MediaType.TEXT_PLAIN)
     @Consumes(MediaType.APPLICATION_JSON)
-    public String unsignedJwt(UnsignedClaim unsignedClaim) {
-        return JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
+    public Set<String> unsignedJwt(UnsignedClaim unsignedClaim) {
+        unsignedClaims.add(JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim));
+        return unsignedClaims;
     }
 
     @POST
