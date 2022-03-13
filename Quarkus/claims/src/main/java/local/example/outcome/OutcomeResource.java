@@ -1,24 +1,40 @@
 package local.example.outcome;
 
 import local.example.outcome.model.SignedClaim;
+import local.example.outcome.model.SignedJwtList;
+import local.example.outcome.service.JwtOutcomeService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 @Path("/outcome")
 public class OutcomeResource {
 
-    private final SignedClaim signed;
+    private final SignedJwtList signedJwtList;
 
     public OutcomeResource() {
-        signed = new SignedClaim();
+        signedJwtList = new SignedJwtList();
     }
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String feedback() {
         return "<!--feedback endpoint-->";
+    }
+
+    @POST
+    @Path("/signed")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public SignedJwtList signedJwt(SignedClaim signedClaim)
+            throws IOException,
+            NoSuchAlgorithmException,
+            InvalidKeySpecException {
+        JwtOutcomeService jwtOutcomeService = new JwtOutcomeService();
+        this.signedJwtList.add(jwtOutcomeService.createSignedHMACJwt(signedClaim));
+        return this.signedJwtList;
     }
 }
