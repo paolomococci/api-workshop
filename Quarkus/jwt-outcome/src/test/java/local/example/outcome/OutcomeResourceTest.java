@@ -9,14 +9,12 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 public class OutcomeResourceTest {
 
-    private static String UNSIGNED = "";
-    private static String SIGNED = "";
+    private static final String JSON_STRING = "{\"country\":\"Fantasy\",\"city\":\"Someone\",\"name\":\"James Doe\",\"email\":\"james.doe@example.local\",\"subject\":\"some sample subject\"}";
 
     @Test
     public void feedbackOutcomeEndpointTest() {
@@ -30,11 +28,10 @@ public class OutcomeResourceTest {
     @Test
     public void unsignedEndpointTest() {
         given()
-                .contentType(ContentType.TEXT)
-                .body(UNSIGNED)
+                .contentType(ContentType.JSON)
+                .body(JSON_STRING)
                 .when().post("/outcome/unsigned")
-                .then().statusCode(HttpResponseStatus.OK.code())
-                .body(containsString("."));
+                .then().statusCode(HttpResponseStatus.OK.code());
     }
 
     @Test
