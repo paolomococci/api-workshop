@@ -35,3 +35,17 @@ I generate a public key:
 ```shell
 openssl rsa -in privateKey.pem -pubout -outform DER -out publicKey.der
 ```
+
+## example of POST request made using curl and its signed response
+
+it begins with a first request
+
+```shell
+
+```
+
+and then a second request
+
+```shell
+
+```
