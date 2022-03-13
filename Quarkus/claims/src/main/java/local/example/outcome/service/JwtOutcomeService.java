@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 
 public class JwtOutcomeService {
@@ -17,6 +19,12 @@ public class JwtOutcomeService {
         InputStream privateInputStream = ResourceRetriever.raw("privateKey.der");
         privateDerKey = new byte[privateInputStream.available()];
         privateDerKey = privateInputStream.readAllBytes();
+    }
+
+    private RSAPrivateKey rsaPrivateKey()
+            throws NoSuchAlgorithmException,
+            InvalidKeySpecException {
+        return (RSAPrivateKey) keyFactory().generatePrivate(pkcs8EncodedKeySpec());
     }
 
     private PKCS8EncodedKeySpec pkcs8EncodedKeySpec() {
