@@ -6,6 +6,7 @@ import local.example.outcome.service.JwtOutcomeService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -28,9 +29,10 @@ public class OutcomeResource {
     @GET
     @Path("/jwt/list")
     @Produces(MediaType.APPLICATION_JSON)
-    public SignedJwtList readSignedJwtList() {
-        // TODO
-        return null;
+    public Response readSignedJwtList() {
+        if (this.signedJwtList.isEmpty())
+            return Response.ok().build();
+        return Response.ok(this.signedJwtList).build();
     }
 
     @POST
