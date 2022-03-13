@@ -1,6 +1,7 @@
 package local.example.outcome;
 
 import local.example.outcome.model.SignedClaim;
+import local.example.outcome.model.Unsigned;
 import local.example.outcome.model.UnsignedClaim;
 import local.example.outcome.service.JwtOutcomeService;
 
@@ -22,11 +23,11 @@ public class OutcomeResource {
         )
     );
 
-    private final Set<SignedClaim> signedClaims = Collections.newSetFromMap(
-            Collections.synchronizedMap(
-                    new LinkedHashMap<>()
-            )
-    );
+    private final Unsigned unsigned;
+
+    public OutcomeResource() {
+        unsigned = new Unsigned();
+    }
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
@@ -36,11 +37,11 @@ public class OutcomeResource {
 
     @POST
     @Path("/unsigned")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Set<String> unsignedJwt(UnsignedClaim unsignedClaim) {
-        unsignedClaims.add(JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim));
-        return unsignedClaims;
+    public Unsigned unsignedJwt(UnsignedClaim unsignedClaim) {
+        unsigned.add(JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim));
+        return unsigned;
     }
 
     @POST
