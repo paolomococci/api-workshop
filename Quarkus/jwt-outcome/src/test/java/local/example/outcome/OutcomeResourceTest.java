@@ -36,6 +36,10 @@ public class OutcomeResourceTest {
 
     @Test
     public void signedEndpointTest() {
-        // TODO
+        given()
+                .contentType(ContentType.JSON)
+                .body(JSON_STRING)
+                .when().post("/outcome/signed")
+                .then().statusCode(HttpResponseStatus.OK.code());
     }
 }
