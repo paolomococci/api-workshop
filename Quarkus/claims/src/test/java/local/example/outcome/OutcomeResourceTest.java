@@ -26,7 +26,7 @@ public class OutcomeResourceTest {
     }
 
     @Test
-    public void signedEndpointTest() {
+    public void createAndReadSignedJwtListEndpointTest() {
         given()
                 .contentType(ContentType.JSON)
                 .body(JSON_STRING)
