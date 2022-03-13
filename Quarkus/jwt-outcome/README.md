@@ -62,5 +62,10 @@ content-length: 592
 it begins with a first request
 
 ```shell
+curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","city":"Someone","name":"James Doe","email":"james.doe@example.local","subject":"some sample subject"}' http://127.0.0.1:8080/outcome/signed
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 650
 
+{"signedStrings":["eyJhbGciOiJSUzI1NiJ9.eyJjb3VudHJ5IjoiRmFudGFzeSIsImNpdHkiOiJTb21lb25lIiwibmFtZSI6IkphbWVzIERvZSIsImVtYWlsIjoiamFtZXMuZG9lQGV4YW1wbGUubG9jYWwiLCJzdWIiOiJzb21lIHNhbXBsZSBzdWJqZWN0IiwianRpIjoiNTg3YjI0OTAtZTFlYi00ZTNkLTlhMDMtNmE4OGVhMWMxMDY1IiwiaWF0IjoxNjQ3MTk0NDYwLCJleHAiOjE2NDcxOTYyNjB9.gX4SjqZVO3OL-qsAay60-u0HmQ6OXsrV73_wF-5fi6CCT3RvjnkPJdGULOtXlHzYnnCicvaS2WLf6TiGXHs3ClAze-5zkQTIn1InbctDQYzg4AXliHE9O4fQhg2cwPb1r8e0BL7THwX6Th1rdA18KpwbChuWMlCrEU_2NXnfcW4uryOFdO6VS4NFfgM1F4w7uMzvPdXj_nEz0nomhYLGcQzGcc6yRDUjgNzMmb8C9SeJWsC6-yUET_4ZV05uWqKJqL6R2IeYi-UATgoCfZcIRZSIDRozn5NIdAlWG-GbJu69rB52jI5NGkBEOxjOoDWjzpRhbm9fEBYB6o345_teAQ"]}
 ```
