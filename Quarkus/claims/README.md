@@ -1,5 +1,7 @@
 # claims
 
+This Application could be defined as the essential version of jwt-outcome
+
 ## scaffolding
 
 ```shell
