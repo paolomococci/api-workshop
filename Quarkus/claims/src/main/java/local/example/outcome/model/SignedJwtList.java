@@ -14,4 +14,8 @@ public class SignedJwtList {
     public void add(String unsigned) {
         this.signedStrings.add(unsigned);
     }
+
+    public boolean isEmpty() {
+        return this.signedStrings.isEmpty();
+    }
 }
