@@ -4,10 +4,7 @@ import local.example.outcome.model.SignedClaim;
 import local.example.outcome.model.UnsignedClaim;
 import local.example.outcome.service.JwtOutcomeService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -37,6 +34,7 @@ public class OutcomeResource {
     @POST
     @Path("/unsigned")
     @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.APPLICATION_JSON)
     public String unsignedJwt(UnsignedClaim unsignedClaim) {
         return JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
     }
