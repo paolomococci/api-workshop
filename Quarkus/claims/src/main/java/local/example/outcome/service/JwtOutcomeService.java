@@ -1,5 +1,7 @@
 package local.example.outcome.service;
 
+import io.jsonwebtoken.Jwts;
+
 import local.example.outcome.model.SignedClaim;
 import local.example.outcome.retriever.ResourceRetriever;
 
