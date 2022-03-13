@@ -22,7 +22,7 @@ public class OutcomeResourceTest {
           .when().get("/outcome")
           .then()
              .statusCode(200)
-             .body(is("--- jwt-outcome feedback ---"));
+             .body(is("<!--feedback endpoint-->"));
     }
 
     @Test
