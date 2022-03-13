@@ -6,6 +6,9 @@ import local.example.outcome.service.JwtOutcomeService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Set;
@@ -37,5 +40,17 @@ public class OutcomeResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public String unsignedJwt(UnsignedClaim unsignedClaim) {
         return JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
+    }
+
+    @POST
+    @Path("/signed")
+    @Produces(MediaType.TEXT_PLAIN)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public String signedJwt(SignedClaim signedClaim)
+            throws IOException,
+            NoSuchAlgorithmException,
+            InvalidKeySpecException {
+        JwtOutcomeService jwtOutcomeService = new JwtOutcomeService();
+        return jwtOutcomeService.createSignedHMACJwtFromObject(signedClaim);
     }
 }
