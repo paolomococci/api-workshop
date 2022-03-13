@@ -1,5 +1,6 @@
 package local.example.outcome;
 
+import local.example.outcome.model.SignedClaim;
 import local.example.outcome.model.UnsignedClaim;
 import local.example.outcome.service.JwtOutcomeService;
 
@@ -19,7 +20,13 @@ public class OutcomeResource {
         Collections.synchronizedMap(
                 new LinkedHashMap<>()
         )
-);
+    );
+
+    private final Set<SignedClaim> signedClaims = Collections.newSetFromMap(
+            Collections.synchronizedMap(
+                    new LinkedHashMap<>()
+            )
+    );
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
