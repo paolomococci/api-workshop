@@ -17,12 +17,6 @@ import java.util.Set;
 @Path("/outcome")
 public class OutcomeResource {
 
-    private final Set<String> unsignedClaims = Collections.newSetFromMap(
-        Collections.synchronizedMap(
-                new LinkedHashMap<>()
-        )
-    );
-
     private final Unsigned unsigned;
 
     public OutcomeResource() {
