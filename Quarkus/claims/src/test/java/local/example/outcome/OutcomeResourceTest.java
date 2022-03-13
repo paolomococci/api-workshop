@@ -41,4 +41,13 @@ public class OutcomeResourceTest {
                 .when().post("/outcome/jwt/list")
                 .then().statusCode(HttpResponseStatus.OK.code());
     }
+
+    @Test
+    public void createSignedJwtEndpointTest() {
+        given()
+                .contentType(ContentType.JSON)
+                .body(JSON_STRING)
+                .when().post("/outcome/jwt")
+                .then().statusCode(HttpResponseStatus.OK.code());
+    }
 }
