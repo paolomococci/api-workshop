@@ -28,7 +28,7 @@ public class OutcomeResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String feedback() {
-        return "--- jwt-outcome feedback ---";
+        return "<!--feedback endpoint-->";
     }
 
     @POST
