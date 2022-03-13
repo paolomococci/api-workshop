@@ -25,6 +25,14 @@ public class OutcomeResource {
         return "<!--feedback endpoint-->";
     }
 
+    @GET
+    @Path("/jwt")
+    @Produces(MediaType.APPLICATION_JSON)
+    public SignedJwtList signedJwt() {
+        // TODO
+        return null;
+    }
+
     @POST
     @Path("/jwt")
     @Produces(MediaType.APPLICATION_JSON)
