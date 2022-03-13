@@ -11,6 +11,9 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class OutcomeResourceTest {
 
+    private static String UNSIGNED = "";
+    private static String SIGNED = "";
+
     @Test
     public void feedbackOutcomeEndpointTest() {
         given()
