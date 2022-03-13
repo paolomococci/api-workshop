@@ -18,4 +18,9 @@ public class OutcomeResourceTest {
              .statusCode(200)
              .body(is("--- jwt-outcome feedback ---"));
     }
+
+    @Test
+    public void unsignedEndpointTest() {
+        // TODO
+    }
 }
