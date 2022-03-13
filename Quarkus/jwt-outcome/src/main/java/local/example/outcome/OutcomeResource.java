@@ -28,6 +28,7 @@ public class OutcomeResource {
     }
 
     @POST
+    @Path("/unsigned")
     @Produces(MediaType.TEXT_PLAIN)
     public String unsignedJwt(UnsignedClaim unsignedClaim) {
         return JwtOutcomeService.createUnsignedJwtFromObject(unsignedClaim);
