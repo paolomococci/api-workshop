@@ -30,7 +30,7 @@ public class OutcomeResourceTest {
         given()
                 .contentType(ContentType.JSON)
                 .body(JSON_STRING)
-                .when().post("/outcome/signed")
+                .when().post("/outcome/jwt")
                 .then().statusCode(HttpResponseStatus.OK.code());
     }
 }
