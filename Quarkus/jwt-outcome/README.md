@@ -40,9 +40,9 @@ openssl rsa -in privateKey.pem -pubout -outform DER -out publicKey.der
 curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","city":"Someone","name":"James Doe","email":"james.doe@example.local","subject":"some sample subject"}' http://127.0.0.1:8080/outcome/unsigned
 HTTP/1.1 200 OK
 Content-Type: text/plain;charset=UTF-8
-content-length: 285
+content-length: 287
 
-eyJhbGciOiJub25lIn0.eyJjb3VudHJ5IjoiRmFudGFzeSIsImNpdHkiOiJTb21lb25lIiwibmFtZSI6IkphbWVzIERvZSIsImVtYWlsIjoiamFtZXMuZG9lQGV4YW1wbGUubG9jYWwiLCJzdWIiOiJzb21lIHNhbXBsZSBzdWJqZWN0IiwianRpIjoiNWVkOTYwNjUtMTQ0Zi00ZmJlLTg0ZWEtOWZlNTI1MGRhNGIzIiwiaWF0IjoxNjQ3MTg5NzQ3LCJleHAiOjE2NDcxOTMzNDd9.
+[eyJhbGciOiJub25lIn0.eyJjb3VudHJ5IjoiRmFudGFzeSIsImNpdHkiOiJTb21lb25lIiwibmFtZSI6IkphbWVzIERvZSIsImVtYWlsIjoiamFtZXMuZG9lQGV4YW1wbGUubG9jYWwiLCJzdWIiOiJzb21lIHNhbXBsZSBzdWJqZWN0IiwianRpIjoiOGQ3ZmY2YjgtY2UzMi00MWQ2LThlZWItNjc3NmEzNWQyMTgxIiwiaWF0IjoxNjQ3MTkxNTM2LCJleHAiOjE2NDcxOTUxMzZ9.]
 ```
 
 ## example of POST request made using curl and its signed response
