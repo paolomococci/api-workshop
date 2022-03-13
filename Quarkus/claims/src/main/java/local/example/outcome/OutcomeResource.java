@@ -26,7 +26,7 @@ public class OutcomeResource {
     }
 
     @POST
-    @Path("/signed")
+    @Path("/jwt")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public SignedJwtList signedJwt(SignedClaim signedClaim)
