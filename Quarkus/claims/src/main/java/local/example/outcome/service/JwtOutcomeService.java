@@ -21,7 +21,7 @@ public class JwtOutcomeService {
 
     private byte[] privateDerKey;
 
-    public JwtOutcomeService(byte[] privateDerKey)
+    public JwtOutcomeService()
             throws IOException {
         InputStream privateInputStream = ResourceRetriever.raw("privateKey.der");
         privateDerKey = new byte[privateInputStream.available()];
