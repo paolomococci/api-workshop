@@ -39,7 +39,7 @@ openssl rsa -in privateKey.pem -pubout -outform DER -out publicKey.der
 ## example of GET request before POST requests are made
 
 ```shell
-
+curl -i http://127.0.0.1:8080/outcome/jwt/list
 ```
 
 response:
