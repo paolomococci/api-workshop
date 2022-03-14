@@ -44,7 +44,9 @@ public class OutcomeResource {
             NoSuchAlgorithmException,
             InvalidKeySpecException {
         JwtOutcomeService jwtOutcomeService = new JwtOutcomeService();
-        return jwtOutcomeService.createSignedHMACJwt(signedClaim);
+        String jwt = jwtOutcomeService.createSignedHMACJwt(signedClaim);
+        this.signedJwtList.add(jwt);
+        return jwt;
     }
 
     @POST
