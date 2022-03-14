@@ -60,7 +60,11 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","ci
 response:
 
 ```text
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 628
 
+eyJhbGciOiJSUzI1NiJ9.eyJjb3VudHJ5IjoiRmFudGFzeSIsImNpdHkiOiJTb21lb25lIiwibmFtZSI6IkphbWVzIERvZSIsImVtYWlsIjoiamFtZXMuZG9lQGV4YW1wbGUubG9jYWwiLCJzdWIiOiJzb21lIHNhbXBsZSBzdWJqZWN0IiwianRpIjoiZWVhODkwZTgtNTg2OS00NDFmLTg1YTUtMTBmYWVlZDkyNzZkIiwiaWF0IjoxNjQ3MjQxNzIzLCJleHAiOjE2NDcyNDM1MjN9.kW-aXupyESr_hYu-LYJQOo9Cb_GrBNqbdKa2f8f9nKyrOpVqyEKor8Rw-PCwOw3VE8d3uMeiAWRLiHEaP5pMIZkaFuJbSvnn9MPVEZkSadhYnCEV-NS21YuwV05jFyWDV-NAVC9_ZwVssDeVpftnHXaBMBwm_jrrX35wK2GgSPI4E7opTXBWCvfSWFpXtWCXMuc_zw68vWWyzp93YHVFtU-73DTNdMDSb4g1chq-pJgJ5ZawCaxxQKQCxbEg7ZcLgaKqDOlnj3o4nXA4RHurtXM86I8uJsSchM68rrUVjiy_O2qxSm-uP1hU85phxnuUqZz6ZoyVqn_ZPpeugV8MtQ
 ```
 
 and then a second request
