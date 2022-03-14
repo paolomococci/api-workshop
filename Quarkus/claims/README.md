@@ -71,7 +71,7 @@ and then a second request
 ## example of GET request after some POST requests have been made
 
 ```shell
-
+curl -i http://127.0.0.1:8080/outcome/jwt/list
 ```
 
 response:
