@@ -45,7 +45,8 @@ curl -i http://127.0.0.1:8080/outcome/jwt/list
 response:
 
 ```text
-
+HTTP/1.1 200 OK
+content-length: 0
 ```
 
 ## example of POST request made using curl and its signed response
