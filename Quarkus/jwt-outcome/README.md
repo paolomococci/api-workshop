@@ -40,6 +40,11 @@ it begins with a first request
 
 ```shell
 curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","city":"Someone","name":"James Doe","email":"james.doe@example.local","subject":"some sample subject"}' http://127.0.0.1:8080/outcome/unsigned
+```
+
+response:
+
+```text
 HTTP/1.1 200 OK
 Content-Type: application/json
 content-length: 309
