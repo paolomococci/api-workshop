@@ -42,11 +42,23 @@ openssl rsa -in privateKey.pem -pubout -outform DER -out publicKey.der
 
 ```
 
+response:
+
+```text
+
+```
+
 ## example of POST request made using curl and its signed response
 
 it begins with a first request
 
 ```shell
+
+```
+
+response:
+
+```text
 
 ```
 
@@ -59,5 +71,11 @@ and then a second request
 ## example of GET request after some POST requests have been made
 
 ```shell
+
+```
+
+response:
+
+```text
 
 ```
