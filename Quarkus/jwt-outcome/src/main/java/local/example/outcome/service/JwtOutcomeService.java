@@ -170,4 +170,9 @@ public class JwtOutcomeService {
             throws NoSuchAlgorithmException {
         return KeyFactory.getInstance("RSA");
     }
+
+    public boolean validateSignedHMACJwt() {
+        // TODO
+        return false;
+    }
 }
