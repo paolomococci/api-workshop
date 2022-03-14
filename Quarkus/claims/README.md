@@ -76,7 +76,11 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"country":"Fantasy","ci
 response:
 
 ```text
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 623
 
+eyJhbGciOiJSUzI1NiJ9.eyJjb3VudHJ5IjoiRmFudGFzeSIsImNpdHkiOiJTb21lb25lIiwibmFtZSI6IkFteSBEb2UiLCJlbWFpbCI6ImFteS5kb2VAZXhhbXBsZS5sb2NhbCIsInN1YiI6InNvbWUgc2FtcGxlIHN1YmplY3QiLCJqdGkiOiI0ZjUyNWIxMS02ZmFjLTQzNjYtYjM3Ny0yOTg3M2E1YjllZDkiLCJpYXQiOjE2NDcyNDE3OTcsImV4cCI6MTY0NzI0MzU5N30.Az_uUnj9Kon3VbCePAS8j-FyfPJzifHLlMZweovWJdBqMU1DAEY_hMxcV-U2oOt5cHkc0qG9QQiLrgT-3spgu7235F1_A3pVr6XkzW-SuKYN2kTPrb7x31jQGm4ZeAsYKz9gAOS5JN39mGwfxNhwG8NXiDoLk6mlVP8B_YpRCDY55-9AuJ40CuDpECsrELTAPZUH8Be2gZIGgX8FM4vNP98Y6lxjYnJnJ0KkL20d3W5v3aqDJ8ddfA_wCaXW1j2WPoHYneIx9d8rvCzIshUmx7Q8fByxoRFyp8_hnjn4SucngJodXdyDCQ6sUPpTKffESnvlT2ua59OaYBDuagYYKA
 ```
 
 ## example of GET request after some POST requests have been made
