@@ -29,6 +29,9 @@ public class JwtOutcomeService {
         InputStream privateInputStream = ResourceRetriever.raw("privateKey.der");
         privateDerKey = new byte[privateInputStream.available()];
         privateDerKey = privateInputStream.readAllBytes();
+        InputStream publicInputStream = ResourceRetriever.raw("publicKey.der");
+        publicDerKey = new byte[publicInputStream.available()];
+        publicDerKey = publicInputStream.readAllBytes();
     }
 
     public String createSignedHMACJwt(SignedClaim signedClaim)
