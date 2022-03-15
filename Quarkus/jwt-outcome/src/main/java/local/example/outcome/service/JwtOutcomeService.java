@@ -1,9 +1,6 @@
 package local.example.outcome.service;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.*;
 
 import local.example.outcome.model.SignedClaim;
 import local.example.outcome.model.UnsignedClaim;
@@ -174,5 +171,10 @@ public class JwtOutcomeService {
     public boolean validateSignedHMACJwt() {
         // TODO
         return false;
+    }
+
+    private Jws<Claims> parseJwt(String jwt) {
+        // TODO
+        return null;
     }
 }
