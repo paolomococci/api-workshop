@@ -2,7 +2,6 @@ package local.example.outcome.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.JwsHeader;
 import io.jsonwebtoken.Jwts;
 
 import local.example.outcome.model.SignedClaim;
