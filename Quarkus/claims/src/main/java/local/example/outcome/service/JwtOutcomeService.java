@@ -22,6 +22,7 @@ import java.util.UUID;
 public class JwtOutcomeService {
 
     private byte[] privateDerKey;
+    private byte[] publicDerKey;
 
     public JwtOutcomeService()
             throws IOException {
