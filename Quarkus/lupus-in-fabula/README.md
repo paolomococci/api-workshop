@@ -10,5 +10,5 @@ Cicerone
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.7.5.Final:create -DprojectGroupId=local.example -DprojectArtifactId=lupus-in-fabula -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy,graphql" -DnoCode
+mvn io.quarkus.platform:quarkus-maven-plugin:2.7.5.Final:create -DprojectGroupId=local.example -DprojectArtifactId=lupus-in-fabula -Dextensions="resteasy,graphql" -DnoCode
 ```
