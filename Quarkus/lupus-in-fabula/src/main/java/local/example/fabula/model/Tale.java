@@ -1,6 +1,7 @@
 package local.example.fabula.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Tale {
 
@@ -11,4 +12,5 @@ public class Tale {
     public Author author;
     public Hero hero;
     public Antagonist antagonist;
+    public List<Character> characters;
 }
