@@ -8,4 +8,7 @@ public class Tale {
     public String title;
     public String description;
     public LocalDate release;
+    public Author author;
+    public Hero hero;
+    public Antagonist antagonist;
 }
