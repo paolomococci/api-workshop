@@ -4,10 +4,10 @@ import local.example.fabula.model.Tale;
 
 import java.util.List;
 
-public class TaleExamplesTestService {
+public class TaleExamplesDataStoreService {
 
     private List<Tale> tales;
 
-    public TaleExamplesTestService() {
+    public TaleExamplesDataStoreService() {
     }
 }
