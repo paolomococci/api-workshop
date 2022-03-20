@@ -54,4 +54,9 @@ public class TaleResourceTests {
     public void createHeroTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void createAntagonistTest() {
+        Assertions.assertTrue(true);
+    }
 }
