@@ -12,4 +12,9 @@ public class CharacterResourceTests {
     public void createCharacterTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void deleteCharacterTest() {
+        Assertions.assertTrue(true);
+    }
 }
