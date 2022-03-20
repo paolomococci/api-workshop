@@ -44,26 +44,6 @@ public class TaleResourceTests {
     }
 
     @Test
-    public void createAuthorTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
-    public void createHeroTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
-    public void createAntagonistTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
-    public void createCharacterTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
     public void deleteTaleTest() {
         Assertions.assertTrue(true);
     }
