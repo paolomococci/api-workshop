@@ -12,4 +12,9 @@ public class AuthorResourceTests {
     public void createAuthorTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void deleteAuthorTest() {
+        Assertions.assertTrue(true);
+    }
 }
