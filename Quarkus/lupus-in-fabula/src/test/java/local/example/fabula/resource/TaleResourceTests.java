@@ -44,4 +44,9 @@ public class TaleResourceTests {
     public void createTaleTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void createAuthorTest() {
+        Assertions.assertTrue(true);
+    }
 }
