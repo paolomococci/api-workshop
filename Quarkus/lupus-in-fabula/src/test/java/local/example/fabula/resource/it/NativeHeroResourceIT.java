@@ -1,4 +1,10 @@
 package local.example.fabula.resource.it;
 
-public class NativeHeroResourceIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+import local.example.fabula.resource.HeroResourceTests;
+
+@NativeImageTest
+public class NativeHeroResourceIT
+        extends HeroResourceTests {
 }
