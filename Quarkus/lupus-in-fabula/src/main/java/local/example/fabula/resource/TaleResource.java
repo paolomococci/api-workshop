@@ -5,7 +5,7 @@ import local.example.fabula.model.Author;
 import local.example.fabula.model.Character;
 import local.example.fabula.model.Hero;
 import local.example.fabula.model.Tale;
-import local.example.fabula.service.TaleExamplesDataStoreService;
+import local.example.fabula.service.TaleDataStoreService;
 
 import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.GraphQLApi;
@@ -19,7 +19,7 @@ import java.util.List;
 public class TaleResource {
 
     @Inject
-    TaleExamplesDataStoreService taleExamplesDataStoreService;
+    TaleDataStoreService taleDataStoreService;
 
     @Query("readAllTales")
     @Description("read all list of tales stored in this system")
