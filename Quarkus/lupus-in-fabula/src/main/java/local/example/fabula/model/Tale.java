@@ -9,8 +9,8 @@ public class Tale {
     public String title;
     public String description;
     public LocalDate release;
-    public Author author;
-    public Hero hero;
-    public Antagonist antagonist;
+    public List<Author> authors;
+    public List<Hero> heroes;
+    public List<Antagonist> antagonists;
     public List<Character> characters;
 }
