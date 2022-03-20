@@ -12,4 +12,9 @@ public class AntagonistResourceTests {
     public void createAntagonistTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void deleteAntagonistTest() {
+        Assertions.assertTrue(true);
+    }
 }
