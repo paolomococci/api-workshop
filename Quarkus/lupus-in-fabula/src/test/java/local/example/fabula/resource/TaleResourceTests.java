@@ -47,24 +47,4 @@ public class TaleResourceTests {
     public void deleteTaleTest() {
         Assertions.assertTrue(true);
     }
-
-    @Test
-    public void deleteAuthorTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
-    public void deleteHeroTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
-    public void deleteAntagonistTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
-    public void deleteCharacterTest() {
-        Assertions.assertTrue(true);
-    }
 }
