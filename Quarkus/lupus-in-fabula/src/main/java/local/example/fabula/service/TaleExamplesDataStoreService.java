@@ -12,6 +12,7 @@ import java.util.List;
 public class TaleExamplesDataStoreService {
 
     private final List<Tale> tales;
+
     private final List<Author> authors;
     private final List<Hero> heroes;
     private final List<Antagonist> antagonists;
@@ -23,5 +24,25 @@ public class TaleExamplesDataStoreService {
         this.heroes = new ArrayList<>();
         this.antagonists = new ArrayList<>();
         this.characters = new ArrayList<>();
+    }
+
+    public List<Tale> getTales() {
+        return tales;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public List<Hero> getHeroes() {
+        return heroes;
+    }
+
+    public List<Antagonist> getAntagonists() {
+        return antagonists;
+    }
+
+    public List<Character> getCharacters() {
+        return characters;
     }
 }
