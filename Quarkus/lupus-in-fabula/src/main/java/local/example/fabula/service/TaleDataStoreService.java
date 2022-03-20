@@ -9,7 +9,7 @@ import local.example.fabula.model.Tale;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaleExamplesDataStoreService {
+public class TaleDataStoreService {
 
     private final List<Tale> tales;
 
@@ -18,7 +18,7 @@ public class TaleExamplesDataStoreService {
     private final List<Antagonist> antagonists;
     private final List<Character> characters;
 
-    public TaleExamplesDataStoreService() {
+    public TaleDataStoreService() {
         this.tales = new ArrayList<>();
         this.authors = new ArrayList<>();
         this.heroes = new ArrayList<>();
