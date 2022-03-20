@@ -14,4 +14,9 @@ public class TaleResourceTests {
     public void sampleTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void readTaleTest() {
+        Assertions.assertTrue(true);
+    }
 }
