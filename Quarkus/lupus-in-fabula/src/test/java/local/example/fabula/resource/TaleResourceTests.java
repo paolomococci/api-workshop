@@ -11,17 +11,17 @@ public class TaleResourceTests {
     private static final String JSON_STRING = "";
 
     @Test
-    public void sampleTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @Test
     public void readTaleTest() {
         Assertions.assertTrue(true);
     }
 
     @Test
     public void readAllTalesTest() {
+        Assertions.assertTrue(true);
+    }
+
+    @Test
+    public void readAllTalesByHeroTest() {
         Assertions.assertTrue(true);
     }
 }
