@@ -69,4 +69,9 @@ public class TaleResourceTests {
     public void deleteTaleTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void deleteAuthorTest() {
+        Assertions.assertTrue(true);
+    }
 }
