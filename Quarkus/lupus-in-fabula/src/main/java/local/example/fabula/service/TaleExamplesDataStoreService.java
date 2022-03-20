@@ -15,7 +15,4 @@ public class TaleExamplesDataStoreService {
     private List<Hero> heroes;
     private List<Antagonist> antagonists;
     private List<Character> characters;
-
-    public TaleExamplesDataStoreService() {
-    }
 }
