@@ -1,5 +1,6 @@
 package local.example.fabula.resource;
 
+import local.example.fabula.model.Author;
 import local.example.fabula.model.Tale;
 import local.example.fabula.service.TaleExamplesDataStoreService;
 
@@ -19,6 +20,13 @@ public class TaleResource {
     @Query("readAllTales")
     @Description("read all list of tales stored in this system")
     public List<Tale> readAllTales() {
+        // TODO
+        return null;
+    }
+
+    @Query("readAllAuthors")
+    @Description("read all list of authors stored in this system")
+    public List<Author> readAllAuthors() {
         // TODO
         return null;
     }
