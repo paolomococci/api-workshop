@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 @QuarkusTest
 public class TaleResourceTests {
 
+    private static final String JSON_STRING = "";
+
     @Test
     public void sampleTest() {
         Assertions.assertTrue(true);
