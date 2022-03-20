@@ -11,11 +11,11 @@ import java.util.List;
 
 public class TaleExamplesDataStoreService {
 
-    private List<Tale> tales;
-    private List<Author> authors;
-    private List<Hero> heroes;
-    private List<Antagonist> antagonists;
-    private List<Character> characters;
+    private final List<Tale> tales;
+    private final List<Author> authors;
+    private final List<Hero> heroes;
+    private final List<Antagonist> antagonists;
+    private final List<Character> characters;
 
     public TaleExamplesDataStoreService() {
         this.tales = new ArrayList<>();
