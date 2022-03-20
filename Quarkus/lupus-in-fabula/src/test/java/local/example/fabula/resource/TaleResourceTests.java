@@ -21,6 +21,11 @@ public class TaleResourceTests {
     }
 
     @Test
+    public void readAllTalesByAuthorTest() {
+        Assertions.assertTrue(true);
+    }
+
+    @Test
     public void readAllTalesByHeroTest() {
         Assertions.assertTrue(true);
     }
