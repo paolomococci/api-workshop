@@ -1,4 +1,8 @@
 package local.example.fabula.resource;
 
-public class NativeTaleResourceIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeTaleResourceIT
+        extends TaleResourceTests {
 }
