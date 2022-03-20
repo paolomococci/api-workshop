@@ -12,4 +12,9 @@ public class HeroResourceTests {
     public void createHeroTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void deleteHeroTest() {
+        Assertions.assertTrue(true);
+    }
 }
