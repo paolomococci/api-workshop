@@ -59,4 +59,9 @@ public class TaleResourceTests {
     public void createAntagonistTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void createCharacterTest() {
+        Assertions.assertTrue(true);
+    }
 }
