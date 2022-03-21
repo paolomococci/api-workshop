@@ -12,4 +12,8 @@ public class CharacterDataStoreService {
     public CharacterDataStoreService() {
         characters = new ArrayList<>();
     }
+
+    public List<Character> getCharacters() {
+        return characters;
+    }
 }
