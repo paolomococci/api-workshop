@@ -63,6 +63,10 @@ public class DataStoreService {
         return this.authors.get(index);
     }
 
+    public int sizeOfAuthors() {
+        return this.authors.size();
+    }
+
     /* Hero */
     public List<Hero> getHeroes() {
         return heroes;
