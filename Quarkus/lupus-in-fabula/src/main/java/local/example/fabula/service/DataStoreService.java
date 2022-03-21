@@ -33,7 +33,7 @@ public class DataStoreService {
         this.tales.add(tale);
     }
 
-    public void remove(int index) {
+    public void removeTale(int index) {
         this.tales.remove(index);
     }
 
