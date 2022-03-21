@@ -16,4 +16,8 @@ public class AuthorDataStoreService {
     public List<Author> getAuthors() {
         return authors;
     }
+
+    public void add(Author author) {
+        this.authors.add(author);
+    }
 }
