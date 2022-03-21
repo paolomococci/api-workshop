@@ -2,9 +2,12 @@ package local.example.fabula.service;
 
 import local.example.fabula.model.Tale;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class TaleDataStoreService {
 
     private final List<Tale> tales;
