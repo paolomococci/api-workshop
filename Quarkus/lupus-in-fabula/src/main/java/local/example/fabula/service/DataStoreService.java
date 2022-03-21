@@ -80,4 +80,8 @@ public class DataStoreService {
     public void add(Character character) {
         this.characters.add(character);
     }
+
+    public void removeCharacter(int index) {
+        this.characters.remove(index);
+    }
 }
