@@ -25,6 +25,7 @@ public class DataStoreService {
         this.characters = new ArrayList<>();
     }
 
+    /* Tale */
     public List<Tale> getTales() {
         return tales;
     }
@@ -41,6 +42,11 @@ public class DataStoreService {
         return this.tales.get(index);
     }
 
+    public int sizeOfTales() {
+        return this.tales.size();
+    }
+
+    /* Author */
     public List<Author> getAuthors() {
         return authors;
     }
@@ -57,6 +63,7 @@ public class DataStoreService {
         return this.authors.get(index);
     }
 
+    /* Hero */
     public List<Hero> getHeroes() {
         return heroes;
     }
@@ -73,6 +80,7 @@ public class DataStoreService {
         return this.heroes.get(index);
     }
 
+    /* Antagonist */
     public List<Antagonist> getAntagonists() {
         return antagonists;
     }
@@ -89,6 +97,7 @@ public class DataStoreService {
         return this.antagonists.get(index);
     }
 
+    /* Character */
     public List<Character> getCharacters() {
         return characters;
     }
