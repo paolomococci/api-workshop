@@ -24,4 +24,8 @@ public class CharacterDataStoreService {
     public void remove(int index) {
         this.characters.remove(index);
     }
+
+    public Character get(int index) {
+        return this.characters.get(index);
+    }
 }
