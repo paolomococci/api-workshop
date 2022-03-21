@@ -125,4 +125,8 @@ public class DataStoreService {
     public Character getCharacter(int index) {
         return this.characters.get(index);
     }
+
+    public int sizeOfCharacters() {
+        return this.characters.size();
+    }
 }
