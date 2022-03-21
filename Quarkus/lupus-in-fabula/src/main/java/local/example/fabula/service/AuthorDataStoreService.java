@@ -28,4 +28,8 @@ public class AuthorDataStoreService {
     public Author get(int index) {
         return this.authors.get(index);
     }
+
+    public int size() {
+        return this.authors.size();
+    }
 }
