@@ -16,4 +16,8 @@ public class AntagonistDataStoreService {
     public List<Antagonist> getAntagonists() {
         return antagonists;
     }
+
+    public void add(Antagonist antagonist) {
+        this.antagonists.add(antagonist);
+    }
 }
