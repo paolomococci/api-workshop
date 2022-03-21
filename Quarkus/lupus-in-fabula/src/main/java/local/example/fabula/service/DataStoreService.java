@@ -29,6 +29,10 @@ public class DataStoreService {
         return tales;
     }
 
+    public void add(Tale tale) {
+        this.tales.add(tale);
+    }
+
     public List<Author> getAuthors() {
         return authors;
     }
