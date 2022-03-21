@@ -24,4 +24,8 @@ public class HeroDataStoreService {
     public void remove(int index) {
         this.heroes.remove(index);
     }
+
+    public Hero get(int index) {
+        return this.heroes.get(index);
+    }
 }
