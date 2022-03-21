@@ -37,6 +37,10 @@ public class DataStoreService {
         this.tales.remove(index);
     }
 
+    public Tale getTale(int index) {
+        return this.tales.get(index);
+    }
+
     public List<Author> getAuthors() {
         return authors;
     }
