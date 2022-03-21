@@ -20,4 +20,8 @@ public class AuthorDataStoreService {
     public void add(Author author) {
         this.authors.add(author);
     }
+
+    public void remove(int index) {
+        this.authors.remove(index);
+    }
 }
