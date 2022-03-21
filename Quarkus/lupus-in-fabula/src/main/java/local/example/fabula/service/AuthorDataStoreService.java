@@ -12,4 +12,8 @@ public class AuthorDataStoreService {
     public AuthorDataStoreService() {
         authors = new ArrayList<>();
     }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
 }
