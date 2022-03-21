@@ -2,9 +2,12 @@ package local.example.fabula.service;
 
 import local.example.fabula.model.Antagonist;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class AntagonistDataStoreService {
 
     private final List<Antagonist> antagonists;
