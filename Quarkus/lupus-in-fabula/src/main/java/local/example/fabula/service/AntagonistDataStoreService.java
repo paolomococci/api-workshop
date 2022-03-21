@@ -20,4 +20,8 @@ public class AntagonistDataStoreService {
     public void add(Antagonist antagonist) {
         this.antagonists.add(antagonist);
     }
+
+    public void remove(int index) {
+        this.antagonists.remove(index);
+    }
 }
