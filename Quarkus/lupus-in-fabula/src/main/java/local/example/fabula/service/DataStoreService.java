@@ -44,4 +44,8 @@ public class DataStoreService {
     public List<Character> getCharacters() {
         return characters;
     }
+
+    public void add(Character character) {
+        this.characters.add(character);
+    }
 }
