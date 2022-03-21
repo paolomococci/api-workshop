@@ -20,4 +20,8 @@ public class HeroDataStoreService {
     public void add(Hero hero) {
         this.heroes.add(hero);
     }
+
+    public void remove(int index) {
+        this.heroes.remove(index);
+    }
 }
