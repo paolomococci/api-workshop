@@ -12,4 +12,8 @@ public class AntagonistDataStoreService {
     public AntagonistDataStoreService() {
         antagonists = new ArrayList<>();
     }
+
+    public List<Antagonist> getAntagonists() {
+        return antagonists;
+    }
 }
