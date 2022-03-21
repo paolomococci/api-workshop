@@ -28,4 +28,8 @@ public class AntagonistDataStoreService {
     public Antagonist get(int index) {
         return this.antagonists.get(index);
     }
+
+    public int size() {
+        return this.antagonists.size();
+    }
 }
