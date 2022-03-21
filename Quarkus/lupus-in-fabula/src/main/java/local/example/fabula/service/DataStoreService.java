@@ -96,4 +96,8 @@ public class DataStoreService {
     public void removeCharacter(int index) {
         this.characters.remove(index);
     }
+
+    public Character getCharacter(int index) {
+        return this.characters.get(index);
+    }
 }
