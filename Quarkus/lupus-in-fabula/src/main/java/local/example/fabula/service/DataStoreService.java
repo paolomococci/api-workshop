@@ -45,6 +45,10 @@ public class DataStoreService {
         this.authors.add(author);
     }
 
+    public void removeAuthor(int index) {
+        this.authors.remove(index);
+    }
+
     public List<Hero> getHeroes() {
         return heroes;
     }
