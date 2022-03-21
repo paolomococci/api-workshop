@@ -16,4 +16,8 @@ public class HeroDataStoreService {
     public List<Hero> getHeroes() {
         return heroes;
     }
+
+    public void add(Hero hero) {
+        this.heroes.add(hero);
+    }
 }
