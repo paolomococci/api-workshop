@@ -12,4 +12,8 @@ public class HeroDataStoreService {
     public HeroDataStoreService() {
         heroes = new ArrayList<>();
     }
+
+    public List<Hero> getHeroes() {
+        return heroes;
+    }
 }
