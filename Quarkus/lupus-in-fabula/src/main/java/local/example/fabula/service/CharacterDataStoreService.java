@@ -20,4 +20,8 @@ public class CharacterDataStoreService {
     public void add(Character character) {
         this.characters.add(character);
     }
+
+    public void remove(int index) {
+        this.characters.remove(index);
+    }
 }
