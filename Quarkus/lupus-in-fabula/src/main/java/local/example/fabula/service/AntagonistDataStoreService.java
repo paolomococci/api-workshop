@@ -24,4 +24,8 @@ public class AntagonistDataStoreService {
     public void remove(int index) {
         this.antagonists.remove(index);
     }
+
+    public Antagonist get(int index) {
+        return this.antagonists.get(index);
+    }
 }
