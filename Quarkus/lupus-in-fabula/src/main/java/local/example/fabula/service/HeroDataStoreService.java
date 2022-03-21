@@ -28,4 +28,8 @@ public class HeroDataStoreService {
     public Hero get(int index) {
         return this.heroes.get(index);
     }
+
+    public int size() {
+        return this.heroes.size();
+    }
 }
