@@ -45,6 +45,10 @@ public class DataStoreService {
         return antagonists;
     }
 
+    public void add(Antagonist antagonist) {
+        this.antagonists.add(antagonist);
+    }
+
     public List<Character> getCharacters() {
         return characters;
     }
