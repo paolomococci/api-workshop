@@ -6,9 +6,12 @@ import local.example.fabula.model.Character;
 import local.example.fabula.model.Hero;
 import local.example.fabula.model.Tale;
 
+import javax.enterprise.context.ApplicationScoped;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class DataStoreService {
 
     private final List<Tale> tales;
