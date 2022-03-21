@@ -33,6 +33,10 @@ public class DataStoreService {
         this.tales.add(tale);
     }
 
+    public void remove(int index) {
+        this.tales.remove(index);
+    }
+
     public List<Author> getAuthors() {
         return authors;
     }
