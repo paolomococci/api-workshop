@@ -28,4 +28,8 @@ public class CharacterDataStoreService {
     public Character get(int index) {
         return this.characters.get(index);
     }
+
+    public int size() {
+        return this.characters.size();
+    }
 }
