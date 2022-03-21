@@ -16,4 +16,8 @@ public class CharacterDataStoreService {
     public List<Character> getCharacters() {
         return characters;
     }
+
+    public void add(Character character) {
+        this.characters.add(character);
+    }
 }
