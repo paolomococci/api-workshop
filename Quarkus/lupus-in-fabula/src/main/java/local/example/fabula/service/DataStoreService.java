@@ -105,6 +105,10 @@ public class DataStoreService {
         return this.antagonists.get(index);
     }
 
+    public int sizeOfAntagonists() {
+        return this.antagonists.size();
+    }
+
     /* Character */
     public List<Character> getCharacters() {
         return characters;
