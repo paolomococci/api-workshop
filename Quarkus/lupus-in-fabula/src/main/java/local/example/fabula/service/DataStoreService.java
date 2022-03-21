@@ -69,6 +69,10 @@ public class DataStoreService {
         this.antagonists.add(antagonist);
     }
 
+    public void removeAntagonist(int index) {
+        this.antagonists.remove(index);
+    }
+
     public List<Character> getCharacters() {
         return characters;
     }
