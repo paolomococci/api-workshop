@@ -37,6 +37,10 @@ public class DataStoreService {
         return heroes;
     }
 
+    public void add(Hero hero) {
+        this.heroes.add(hero);
+    }
+
     public List<Antagonist> getAntagonists() {
         return antagonists;
     }
