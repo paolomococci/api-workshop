@@ -24,4 +24,8 @@ public class AuthorDataStoreService {
     public void remove(int index) {
         this.authors.remove(index);
     }
+
+    public Author get(int index) {
+        return this.authors.get(index);
+    }
 }
