@@ -20,4 +20,8 @@ public class TaleDataStoreService {
     public void add(Tale tale) {
         this.tales.add(tale);
     }
+
+    public void remove(int index) {
+        this.tales.remove(index);
+    }
 }
