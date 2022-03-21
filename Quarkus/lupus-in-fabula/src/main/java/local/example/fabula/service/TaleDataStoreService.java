@@ -16,4 +16,8 @@ public class TaleDataStoreService {
     public List<Tale> getTales() {
         return tales;
     }
+
+    public void add(Tale tale) {
+        this.tales.add(tale);
+    }
 }
