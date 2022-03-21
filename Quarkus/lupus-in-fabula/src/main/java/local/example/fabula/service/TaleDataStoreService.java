@@ -24,4 +24,8 @@ public class TaleDataStoreService {
     public void remove(int index) {
         this.tales.remove(index);
     }
+
+    public Tale get(int index) {
+        return this.tales.get(index);
+    }
 }
