@@ -33,6 +33,10 @@ public class DataStoreService {
         return authors;
     }
 
+    public void add(Author author) {
+        this.authors.add(author);
+    }
+
     public List<Hero> getHeroes() {
         return heroes;
     }
