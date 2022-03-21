@@ -28,4 +28,8 @@ public class TaleDataStoreService {
     public Tale get(int index) {
         return this.tales.get(index);
     }
+
+    public int size() {
+        return this.tales.size();
+    }
 }
