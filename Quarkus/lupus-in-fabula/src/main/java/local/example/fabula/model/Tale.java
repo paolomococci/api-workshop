@@ -2,6 +2,7 @@ package local.example.fabula.model;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 public class Tale {
 
@@ -20,5 +21,9 @@ public class Tale {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setId() {
+        this.id = UUID.randomUUID().toString();
     }
 }
