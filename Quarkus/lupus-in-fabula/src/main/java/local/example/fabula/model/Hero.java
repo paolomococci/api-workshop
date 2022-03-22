@@ -1,5 +1,7 @@
 package local.example.fabula.model;
 
+import java.util.UUID;
+
 public class Hero {
 
     public String id;
@@ -11,5 +13,9 @@ public class Hero {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public void setId() {
+        this.id = UUID.randomUUID().toString();
     }
 }
