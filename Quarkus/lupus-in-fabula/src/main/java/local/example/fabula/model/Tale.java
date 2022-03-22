@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Tale {
 
-    public Integer id;
+    public String id;
     public String title;
     public String description;
     public LocalDate release;
