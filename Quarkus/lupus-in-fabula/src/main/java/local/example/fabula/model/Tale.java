@@ -13,4 +13,8 @@ public class Tale {
     public List<Hero> heroes;
     public List<Antagonist> antagonists;
     public List<Character> characters;
+
+    public String getId() {
+        return id;
+    }
 }
