@@ -8,6 +8,7 @@ import org.eclipse.microprofile.graphql.GraphQLApi;
 import org.eclipse.microprofile.graphql.Query;
 
 import javax.inject.Inject;
+
 import java.util.List;
 
 @GraphQLApi
