@@ -34,4 +34,10 @@ public class HeroResource {
         // TODO
         return null;
     }
+
+    @Mutation
+    public Hero updateHero(@Name("idOfHero") String id, Hero hero) {
+        // TODO
+        return null;
+    }
 }
