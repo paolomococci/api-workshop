@@ -28,4 +28,10 @@ public class AuthorResource {
         // TODO
         return null;
     }
+
+    @Mutation
+    public Author createAuthor(Author author) {
+        // TODO
+        return author;
+    }
 }
