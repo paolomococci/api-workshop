@@ -5,4 +5,8 @@ public class Character {
     public String id;
     public String name;
     public Role role;
+
+    public String getId() {
+        return id;
+    }
 }
