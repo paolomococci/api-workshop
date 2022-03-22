@@ -34,4 +34,10 @@ public class AuthorResource {
         // TODO
         return author;
     }
+
+    @Mutation
+    public Author updateAuthor(@Name("idOfAuthor") String id, Author author) {
+        // TODO
+        return author;
+    }
 }
