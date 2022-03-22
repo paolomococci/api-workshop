@@ -1,7 +1,6 @@
 package local.example.fabula.resource;
 
 import local.example.fabula.model.Antagonist;
-import local.example.fabula.model.Tale;
 import local.example.fabula.service.AntagonistDataStoreService;
 
 import org.eclipse.microprofile.graphql.Description;
@@ -28,7 +27,7 @@ public class AntagonistResource {
 
     @Query
     @Description("read a antagonist from id")
-    public Tale readAntagonist(@Name("idOfAntagonist") String id) {
+    public Antagonist readAntagonist(@Name("idOfAntagonist") String id) {
         // TODO
         return null;
     }
