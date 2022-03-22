@@ -5,6 +5,7 @@ import local.example.fabula.service.TaleDataStoreService;
 
 import org.eclipse.microprofile.graphql.Description;
 import org.eclipse.microprofile.graphql.GraphQLApi;
+import org.eclipse.microprofile.graphql.Name;
 import org.eclipse.microprofile.graphql.Query;
 
 import javax.inject.Inject;
@@ -20,6 +21,13 @@ public class TaleResource {
     @Query("readAllTales")
     @Description("read all list of tales stored in this system")
     public List<Tale> readAllTales() {
+        // TODO
+        return null;
+    }
+
+    @Query
+    @Description("read a tale from id")
+    public Tale readTale(@Name("idOfTale") String id) {
         // TODO
         return null;
     }
