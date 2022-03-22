@@ -34,4 +34,10 @@ public class CharacterResource {
         // TODO
         return null;
     }
+
+    @Mutation
+    public Character updateCharacter(@Name("idOfCharacter") String id, Character character) {
+        // TODO
+        return null;
+    }
 }
