@@ -1,13 +1,9 @@
 package local.example.fabula.resource;
 
 import local.example.fabula.model.Author;
-import local.example.fabula.model.Tale;
 import local.example.fabula.service.AuthorDataStoreService;
 
-import org.eclipse.microprofile.graphql.Description;
-import org.eclipse.microprofile.graphql.GraphQLApi;
-import org.eclipse.microprofile.graphql.Name;
-import org.eclipse.microprofile.graphql.Query;
+import org.eclipse.microprofile.graphql.*;
 
 import javax.inject.Inject;
 
@@ -28,7 +24,7 @@ public class AuthorResource {
 
     @Query
     @Description("read a author from id")
-    public Tale readAuthor(@Name("idOfAuthor") String id) {
+    public Author readAuthor(@Name("idOfAuthor") String id) {
         // TODO
         return null;
     }
