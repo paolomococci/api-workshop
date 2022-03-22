@@ -4,4 +4,8 @@ public class Author {
 
     public String id;
     public String name;
+
+    public String getId() {
+        return id;
+    }
 }
