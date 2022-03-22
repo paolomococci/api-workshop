@@ -34,4 +34,10 @@ public class TaleResource {
         // TODO
         return tale;
     }
+
+    @Mutation
+    public Tale updateTale(@Name("idOfTale") String id, Tale tale) {
+        // TODO
+        return tale;
+    }
 }
