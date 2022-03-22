@@ -3,10 +3,7 @@ package local.example.fabula.resource;
 import local.example.fabula.model.Tale;
 import local.example.fabula.service.TaleDataStoreService;
 
-import org.eclipse.microprofile.graphql.Description;
-import org.eclipse.microprofile.graphql.GraphQLApi;
-import org.eclipse.microprofile.graphql.Name;
-import org.eclipse.microprofile.graphql.Query;
+import org.eclipse.microprofile.graphql.*;
 
 import javax.inject.Inject;
 
@@ -30,5 +27,11 @@ public class TaleResource {
     public Tale readTale(@Name("idOfTale") String id) {
         // TODO
         return null;
+    }
+
+    @Mutation
+    public Tale createTale(Tale tale) {
+        // TODO
+        return tale;
     }
 }
