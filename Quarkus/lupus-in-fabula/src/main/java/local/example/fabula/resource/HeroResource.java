@@ -1,7 +1,6 @@
 package local.example.fabula.resource;
 
 import local.example.fabula.model.Hero;
-import local.example.fabula.model.Tale;
 import local.example.fabula.service.HeroDataStoreService;
 
 import org.eclipse.microprofile.graphql.Description;
@@ -28,7 +27,7 @@ public class HeroResource {
 
     @Query
     @Description("read a hero from id")
-    public Tale readHero(@Name("idOfHero") String id) {
+    public Hero readHero(@Name("idOfHero") String id) {
         // TODO
         return null;
     }
