@@ -34,4 +34,10 @@ public class AntagonistResource {
         // TODO
         return null;
     }
+
+    @Mutation
+    public Antagonist updateAntagonist(@Name("idOfAntagonist") String id, Antagonist antagonist) {
+        // TODO
+        return null;
+    }
 }
