@@ -42,6 +42,12 @@ public class HeroResource {
     }
 
     @Mutation
+    public Hero partialUpdateHero(@Name("idOfHero") String id, Hero hero) {
+        // TODO
+        return null;
+    }
+
+    @Mutation
     public Hero deleteHero(@Name("idOfHero") String id) {
         // TODO
         return null;
