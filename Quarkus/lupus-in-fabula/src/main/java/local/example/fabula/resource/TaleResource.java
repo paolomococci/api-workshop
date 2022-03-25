@@ -32,7 +32,7 @@ public class TaleResource {
     @Mutation
     public Tale createTale(Tale tale) {
         // TODO
-        return tale;
+        return null;
     }
 
     @Mutation
