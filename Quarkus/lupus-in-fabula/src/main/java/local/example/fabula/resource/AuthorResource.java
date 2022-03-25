@@ -32,7 +32,7 @@ public class AuthorResource {
     @Mutation
     public Author createAuthor(Author author) {
         // TODO
-        return author;
+        return null;
     }
 
     @Mutation
