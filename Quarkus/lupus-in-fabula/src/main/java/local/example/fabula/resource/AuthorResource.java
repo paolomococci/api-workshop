@@ -40,4 +40,10 @@ public class AuthorResource {
         // TODO
         return author;
     }
+
+    @Mutation
+    public Author deleteAuthor(@Name("idOfAuthor") String id) {
+        // TODO
+        return null;
+    }
 }
