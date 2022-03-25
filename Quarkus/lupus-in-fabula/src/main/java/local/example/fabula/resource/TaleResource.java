@@ -40,4 +40,10 @@ public class TaleResource {
         // TODO
         return tale;
     }
+
+    @Mutation
+    public Tale deleteTale(@Name("idOfTale") String id) {
+        // TODO
+        return null;
+    }
 }
