@@ -38,7 +38,7 @@ public class TaleResource {
     @Mutation
     public Tale updateTale(@Name("idOfTale") String id, Tale tale) {
         // TODO
-        return tale;
+        return null;
     }
 
     @Mutation
