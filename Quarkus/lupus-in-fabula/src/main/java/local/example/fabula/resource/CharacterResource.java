@@ -42,6 +42,12 @@ public class CharacterResource {
     }
 
     @Mutation
+    public Character partialUpdateCharacter(@Name("idOfCharacter") String id, Character character) {
+        // TODO
+        return null;
+    }
+
+    @Mutation
     public Character deleteCharacter(@Name("idOfCharacter") String id) {
         // TODO
         return null;
