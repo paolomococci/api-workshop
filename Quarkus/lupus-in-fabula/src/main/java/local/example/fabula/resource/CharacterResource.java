@@ -40,4 +40,10 @@ public class CharacterResource {
         // TODO
         return null;
     }
+
+    @Mutation
+    public Character deleteCharacter(@Name("idOfCharacter") String id) {
+        // TODO
+        return null;
+    }
 }
