@@ -42,6 +42,12 @@ public class TaleResource {
     }
 
     @Mutation
+    public Tale partialUpdateTale(@Name("idOfTale") String id, Tale tale) {
+        // TODO
+        return null;
+    }
+
+    @Mutation
     public Tale deleteTale(@Name("idOfTale") String id) {
         // TODO
         return null;
