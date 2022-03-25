@@ -42,6 +42,12 @@ public class AuthorResource {
     }
 
     @Mutation
+    public Author partialUpdateAuthor(@Name("idOfAuthor") String id, Author author) {
+        // TODO
+        return null;
+    }
+
+    @Mutation
     public Author deleteAuthor(@Name("idOfAuthor") String id) {
         // TODO
         return null;
