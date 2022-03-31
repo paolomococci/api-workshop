@@ -29,4 +29,8 @@ const movies = [
 
 /* resolvers is a technique for retrieving the types defined in the schema */
 
-
+const resolvers = {
+  Query: {
+    movies: () => movies,
+  },
+};
