@@ -11,3 +11,9 @@ npm i graphql
 ```
 
 now it is necessary to create and edit the file index.js
+
+## start
+
+```shell
+node index.js
+```
