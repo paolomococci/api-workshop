@@ -34,3 +34,13 @@ const resolvers = {
     movies: () => movies,
   },
 };
+
+/* server */
+
+const server = new ApolloServer({ typeDefs, resolvers});
+
+server.listen().then(
+  ({url}) => {
+    console.log(`server waiting for requests: ${url}`);
+  }
+);
