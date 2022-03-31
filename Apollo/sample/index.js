@@ -11,3 +11,18 @@ const typeDefs = gql`
     movies: [Movie]
   }
 `;
+
+/* dataset */
+
+const movies = [
+  {
+    title: 'Sample One',
+    director: 'John Doe',
+    producer: 'Jane Doe'
+  },
+  {
+    title: 'Sample One',
+    director: 'James Doe',
+    producer: 'Amy Doe'
+  },
+];
