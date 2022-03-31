@@ -6,4 +6,8 @@ const typeDefs = gql`
     director: String
     producer: String
   }
+
+  type Query {
+    movies: [Movie]
+  }
 `;
