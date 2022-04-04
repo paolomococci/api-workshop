@@ -9,3 +9,23 @@ npm init --yes
 npm install apollo-server graphql
 npm install prisma --save-dev
 ```
+
+### setup
+
+```shell
+npx prisma init
+```
+
+### migration of structure of data
+
+```shell
+npx prisma migrate dev
+```
+
+if there is any problem with the relationships between tables the following command can help
+
+```shell
+npx prisma format
+```
+
+## setup GraphQL resolvers to read and write data in the database
