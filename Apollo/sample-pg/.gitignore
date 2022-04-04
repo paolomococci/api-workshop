@@ -1,0 +1,5 @@
+/node_modules
+/nbproject
+HELP.md
+package-lock.json
+.env
