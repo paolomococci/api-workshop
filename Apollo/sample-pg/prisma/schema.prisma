@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Applicant {
+  id                       Int      @id @default(autoincrement())
+  email                    String   @unique @db.VarChar(255)
+  name                     String?  @db.VarChar(255)
+  surname                  String?  @db.VarChar(255)
+  username                 String?  @db.VarChar(255)
+  isRegistered             Boolean  @default(false)
+  applicantAcademyRelation Academy  @relation(fields: [academyId], references: [id])
+  academyId                Int
+  Ambit   Ambit? @relation(fields: [ambitId], references: [id])
+  ambitId Int?
+  registeredAt             DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+
+  @@map(name: "applicant")
+}
+
+model Ambit {
+  id           Int         @id @default(autoincrement())
+  name         String      @unique
+  description  String?     @db.VarChar(500)
+  applicants   Applicant[]
+  academies    Academy[]
+  registeredAt DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  @@map(name: "ambit")
+}
+
+model Tutor {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique @db.VarChar(255)
+  name         String?   @db.VarChar(255)
+  surname      String?   @db.VarChar(255)
+  username     String?   @db.VarChar(255)
+  isRegistered Boolean   @default(false)
+  academies    Academy[]
+  type         TutorType @default(FULLTIME)
+  registeredAt DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map(name: "tutor")
+}
+
+model Academy {
+  id            Int      @id @default(autoincrement())
+  code          String   @unique
+  title         String   @db.VarChar(255)
+  description   String?  @db.VarChar(500)
+  tutorRelation Tutor?   @relation(fields: [tutorId], references: [id])
+  tutorId       Int?
+  Applicant Applicant[]
+  Ambit     Ambit?      @relation(fields: [ambitId], references: [id])
+  ambitId   Int?
+  registeredAt  DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map(name: "academy")
+}
+
+enum TutorType {
+  FULLTIME
+  PARTTIME
+}
