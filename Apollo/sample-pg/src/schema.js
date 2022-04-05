@@ -15,6 +15,10 @@ type Applicant {
 
 type Ambit {
   id: ID!
+  name: String!
+  description: String
+  registeredAt: String
+  updatedAt: String
 }
 
 type Tutor {
