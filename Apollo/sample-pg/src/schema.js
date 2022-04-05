@@ -30,6 +30,7 @@ type Tutor {
   email: String!
   name: String
   surname: String
+  academies: [Academy]
   registeredAt: String
   updatedAt: String
 }
@@ -39,6 +40,9 @@ type Academy {
   code: String!
   title: String
   description: String
+  ambit: Ambit
+  tutor: Tutor
+  applicants: [Applicant]
   registeredAt: String
   updatedAt: String
 }
