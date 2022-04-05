@@ -7,6 +7,10 @@ type Applicant {
   email: String!
   name: String
   surname: String
+  username: String
+  isActive: Boolean
+  registeredAt: String
+  updatedAt: String
 }
 
 type Ambit {
