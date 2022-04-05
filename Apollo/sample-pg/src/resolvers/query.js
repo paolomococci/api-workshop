@@ -1,6 +1,6 @@
 const { prisma } = require('../database.js');
 
-const query {};
+const Query {};
 
 module.exports = {
   Query,
