@@ -32,6 +32,11 @@ type Tutor {
 
 type Academy {
   id: ID!
+  code: String!
+  title: String
+  description: String
+  registeredAt: String
+  updatedAt: String
 }
 
 type Query {}
