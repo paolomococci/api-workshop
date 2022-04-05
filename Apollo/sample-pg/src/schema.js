@@ -79,7 +79,10 @@ type Mutation {
   ): Ambit!
 }
 
-enum TutorType {}
+enum TutorType {
+  FULLTIME
+  PARTTIME
+}
 
 input CreateTutor {
   email: String!
