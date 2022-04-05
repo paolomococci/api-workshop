@@ -9,6 +9,8 @@ type Applicant {
   surname: String
   username: String
   isActive: Boolean
+  academy: Academy
+  ambit: Ambit
   registeredAt: String
   updatedAt: String
 }
@@ -17,6 +19,8 @@ type Ambit {
   id: ID!
   name: String!
   description: String
+  applicants: [Applicant]
+  academies: [Academy]
   registeredAt: String
   updatedAt: String
 }
