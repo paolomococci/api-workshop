@@ -59,10 +59,27 @@ type Query {
   tutor(id: ID!): Tutor
 }
 
-type Mutation {}
+type Mutation {
+  addApplicant(
+    email: String!,
+    name: String,
+    surname: String,
+    academyId: Int!
+  ): Applicant!
+  matriculate(id: ID): Applicant
+  addTutor(data: CreateTutor!): Tutor!
+  addAcademy(
+    code: String!,
+    title: String!,
+    tutorEmail: String
+  ): Academy!
+  addAmbit(
+    name: String!,
+    description: String
+  ): Ambit!
+}
 
 enum TutorType {}
-`
 
 input CreateTutor {
   email: String!
@@ -76,3 +93,4 @@ input CreateAcademy {
   title: String
   description: String
 }
+`
