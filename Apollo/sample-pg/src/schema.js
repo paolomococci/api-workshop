@@ -9,3 +9,13 @@ type Ambit {}
 type Tutor {}
 
 type Academy {}
+
+type Query {}
+
+type Mutation {}
+
+enum TutorTypr {}
+
+input CreateTutor {}
+
+input CreateAcademy {}
