@@ -2,7 +2,12 @@ const { gql } = require('apollo-server')
 
 const typeDefs = gql
 
-type Applicant {}
+type Applicant {
+  id: ID!
+  email: String!
+  name: String
+  surname: String
+}
 
 type Ambit {}
 
