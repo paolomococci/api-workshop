@@ -13,7 +13,7 @@ model Applicant {
   name                     String?  @db.VarChar(255)
   surname                  String?  @db.VarChar(255)
   username                 String?  @db.VarChar(255)
-  isRegistered             Boolean  @default(false)
+  isActive                 Boolean  @default(false)
   applicantAcademyRelation Academy  @relation(fields: [academyId], references: [id])
   academyId                Int
   Ambit   Ambit? @relation(fields: [ambitId], references: [id])
