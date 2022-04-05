@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server')
 
-const typeDefs = gql
+const typeDefs = gql `
 
 type Applicant {
   id: ID!
@@ -47,11 +47,21 @@ type Academy {
   updatedAt: String
 }
 
-type Query {}
+type Query {
+  actives: [Applicant!]
+  applicants: [Applicant!]
+  applicant(id: ID!): Applicant
+  ambits: [Ambit!]!
+  ambit(id: ID!): Ambit
+  academies: [Academy!]!
+  academy(id: ID!): Academy
+
+}
 
 type Mutation {}
 
-enum TutorTypr {}
+enum TutorType {}
+`
 
 input CreateTutor {
   email: String!
@@ -60,4 +70,8 @@ input CreateTutor {
   academies: [Createacademy]
 }
 
-input CreateAcademy {}
+input CreateAcademy {
+  code: String!
+  title: String
+  description: String
+}
