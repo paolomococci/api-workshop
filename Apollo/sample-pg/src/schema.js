@@ -9,11 +9,17 @@ type Applicant {
   surname: String
 }
 
-type Ambit {}
+type Ambit {
+  id: ID!
+}
 
-type Tutor {}
+type Tutor {
+  id: ID!
+}
 
-type Academy {}
+type Academy {
+  id: ID!
+}
 
 type Query {}
 
