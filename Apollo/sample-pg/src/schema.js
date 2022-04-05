@@ -23,6 +23,11 @@ type Ambit {
 
 type Tutor {
   id: ID!
+  email: String!
+  name: String
+  surname: String
+  registeredAt: String
+  updatedAt: String
 }
 
 type Academy {
