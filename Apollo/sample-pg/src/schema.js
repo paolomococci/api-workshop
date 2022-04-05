@@ -53,6 +53,11 @@ type Mutation {}
 
 enum TutorTypr {}
 
-input CreateTutor {}
+input CreateTutor {
+  email: String!
+  name: String
+  surname: String
+  academies: [Createacademy]
+}
 
 input CreateAcademy {}
