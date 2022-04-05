@@ -97,3 +97,7 @@ input CreateAcademy {
   description: String
 }
 `
+
+module.exports = {
+  typeDefs
+}
