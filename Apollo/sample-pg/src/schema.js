@@ -55,7 +55,8 @@ type Query {
   ambit(id: ID!): Ambit
   academies: [Academy!]!
   academy(id: ID!): Academy
-
+  tutors: [Tutor!]!
+  tutor(id: ID!): Tutor
 }
 
 type Mutation {}
