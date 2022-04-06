@@ -11,6 +11,9 @@ const Query {
   tutor: (parent, args) => {},
   tutors: (parent, args) => {},
   // Ambit
+  ambit: (parent, args) => {},
+  ambits: (parent, args) => {},
+  // Academy
 };
 
 module.exports = {
