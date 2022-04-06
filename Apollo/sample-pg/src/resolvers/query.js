@@ -31,7 +31,9 @@ const Query {
     return prisma.tutor.findAll({});
   },
   // Ambit
-  ambit: (parent, args) => {},
+  ambit: (parent, args) => {
+    return prisma.ambit.findById({});
+  },
   ambits: (parent, args) => {},
   // Academy
   academy: (parent, args) => {},
