@@ -56,8 +56,12 @@ const Academy = {
   code: (parent) => parent.code,
   title: (parent) => parent.title,
   description: (parent) => parent.description,
-  tutor: (parent, args) => {},
-  ambit: (parent, args) => {},
+  tutor: (parent, args) => {
+    return prisma.academy.find({});
+  },
+  ambit: (parent, args) => {
+    return prisma.academy.find({});
+  },
 };
 
 const resolvers {
