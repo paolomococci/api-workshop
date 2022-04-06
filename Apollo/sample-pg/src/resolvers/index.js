@@ -36,7 +36,11 @@ const Ambit = {
   name: (parent) => parent.name,
   description: (parent) => parent.description,
   applicants: (parent, args) => {
-    return prisma.ambit.find({});
+    return prisma.ambit.find({
+      where: {
+        id: parent.id
+      },
+    }).applicants();
   },
   academies: (parent, args) => {
     return prisma.ambit.find({});
