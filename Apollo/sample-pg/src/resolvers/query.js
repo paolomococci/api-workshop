@@ -10,7 +10,11 @@ const Query {
     });
   },
   applicant: (parent,args) => {
-    return prisma.applicant.findById({});
+    return prisma.applicant.findById({
+      where: {
+        id: Number(args.id)
+      },
+    });
   },
   applicants: (parent, args) => {},
   // Tutor
