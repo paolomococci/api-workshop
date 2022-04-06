@@ -28,7 +28,16 @@ const Mutation = {
   },
   // Tutor
   addTutor: (parent, args) => {
-    return prisma.tutor.create({});
+    return prisma.tutor.create({
+      data: {
+        email: args.data.email,
+        name: args.data.name,
+        surname: args.data.surname,
+        academies: {
+          create: args.data.academies,
+        },
+      },
+    });
   },
   // Ambit
   addAmbit: (parent, args) => {
