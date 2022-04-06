@@ -50,7 +50,17 @@ const Mutation = {
   },
   // Academy
   addAcademy: (parent, args) => {
-    return prisma.academy.create({});
+    return prisma.academy.create({
+      data: {
+        code: args.code,
+        title: args.title,
+        tutor: args.tutorEmail && {
+          connect: {
+            email: args.tutorEmail
+          },
+        },
+      },
+    });
   },
 };
 
