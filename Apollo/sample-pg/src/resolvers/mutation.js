@@ -14,7 +14,11 @@ const Mutation = {
   },
   // Ambit
   addAmbit: (parent, args) => {
-    reurn prisma.ambit.create({});
+    return prisma.ambit.create({});
+  },
+  // Academy
+  addAcademy: (parent, args) => {
+    return prisma.academy.create({});
   },
 };
 
