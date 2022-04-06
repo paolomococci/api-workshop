@@ -41,7 +41,12 @@ const Mutation = {
   },
   // Ambit
   addAmbit: (parent, args) => {
-    return prisma.ambit.create({});
+    return prisma.ambit.create({
+      data: {
+        name: args.name,
+        description: args.description,
+      },
+    });
   },
   // Academy
   addAcademy: (parent, args) => {
