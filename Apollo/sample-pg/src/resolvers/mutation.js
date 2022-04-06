@@ -43,6 +43,7 @@ const Mutation = {
   },
   // Ambit
   addAmbit: (parent, args) => {
+    console.log(parent, args)
     return prisma.ambit.create({
       data: {
         name: args.name,
