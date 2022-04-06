@@ -64,7 +64,11 @@ const Academy = {
     }).tutor();
   },
   ambit: (parent, args) => {
-    return prisma.academy.find({});
+    return prisma.academy.find({
+      where: {
+        id: parent.id
+      },
+    }).ambit();
   },
 };
 
