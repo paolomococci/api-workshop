@@ -18,6 +18,7 @@ const Mutation = {
     });
   },
   matriculate: (parent, args) => {
+    console.log(parent, args)
     return prisma.applicant.update({
       where: {
         id: Number(args.id)
