@@ -42,7 +42,9 @@ const Query {
     return prisma.ambit.findAll({});
   },
   // Academy
-  academy: (parent, args) => {},
+  academy: (parent, args) => {
+    return prisma.academy.findById({});
+  },
   academies: (parent, args) => {},
 };
 
