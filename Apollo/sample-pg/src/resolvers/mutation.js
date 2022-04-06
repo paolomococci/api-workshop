@@ -9,6 +9,9 @@ const Mutation = {
     return prisma.applicant.update({});
   },
   // Tutor
+  addTutor: (parent, args) => {
+    return prisma.tutor.create({});
+  },
 };
 
 module.exports = {
