@@ -8,6 +8,9 @@ const Query {
   applicant: (parent,args) => {},
   applicants: (parent, args) => {},
   // Tutor
+  tutor: (parent, args) => {},
+  tutors: (parent, args) => {},
+  // Ambit
 };
 
 module.exports = {
