@@ -16,7 +16,9 @@ const Query {
       },
     });
   },
-  applicants: (parent, args) => {},
+  applicants: (parent, args) => {
+    return prisma.applicant.findall({});
+  },
   // Tutor
   tutor: (parent, args) => {},
   tutors: (parent, args) => {},
