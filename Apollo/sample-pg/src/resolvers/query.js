@@ -17,10 +17,12 @@ const Query {
     });
   },
   applicants: (parent, args) => {
-    return prisma.applicant.findall({});
+    return prisma.applicant.findAll({});
   },
   // Tutor
-  tutor: (parent, args) => {},
+  tutor: (parent, args) => {
+
+  },
   tutors: (parent, args) => {},
   // Ambit
   ambit: (parent, args) => {},
