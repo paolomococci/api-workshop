@@ -53,6 +53,7 @@ const Mutation = {
   },
   // Academy
   addAcademy: (parent, args) => {
+    console.log(parent, args)
     return prisma.academy.create({
       data: {
         code: args.code,
