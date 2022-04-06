@@ -14,6 +14,8 @@ const Query {
   ambit: (parent, args) => {},
   ambits: (parent, args) => {},
   // Academy
+  academy: (parent, args) => {},
+  academies: (parent, args) => {},
 };
 
 module.exports = {
