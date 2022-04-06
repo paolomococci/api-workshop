@@ -3,7 +3,11 @@ const { prisma } = require('../database.js');
 const Query {
   // Applicant
   matriculation: (parent, args) => {
-    return prisma.applicant.findAll({});
+    return prisma.applicant.findAllActives({
+      where: {
+        isActive: true
+      },
+    });
   },
   applicant: (parent,args) => {},
   applicants: (parent, args) => {},
