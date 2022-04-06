@@ -30,6 +30,7 @@ type Tutor {
   email: String!
   name: String
   surname: String
+  isActive: Boolean
   academies: [Academy]
   registeredAt: String
   updatedAt: String
