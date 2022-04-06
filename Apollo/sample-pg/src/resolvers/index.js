@@ -38,7 +38,9 @@ const Ambit = {
   applicants: (parent, args) => {
     return prisma.ambit.find({});
   },
-  academies: (parent, args) => {},
+  academies: (parent, args) => {
+    return prisma.ambit.find({});
+  },
 };
 
 const Academy = {};
