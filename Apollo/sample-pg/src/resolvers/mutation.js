@@ -17,7 +17,14 @@ const Mutation = {
     });
   },
   matriculate: (parent, args) => {
-    return prisma.applicant.update({});
+    return prisma.applicant.update({
+      where: {
+        id: Number(args.id)
+      },
+      data: {
+        isActive: true,
+      },
+    });
   },
   // Tutor
   addTutor: (parent, args) => {
