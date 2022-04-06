@@ -32,7 +32,11 @@ const Query {
   },
   // Ambit
   ambit: (parent, args) => {
-    return prisma.ambit.findById({});
+    return prisma.ambit.findById({
+      where: {
+        id: Number(args.id)
+      },
+    });
   },
   ambits: (parent, args) => {
     return prisma.ambit.findAll({});
