@@ -23,7 +23,9 @@ const Query {
   tutor: (parent, args) => {
     return prisma.tutor.findById({});
   },
-  tutors: (parent, args) => {},
+  tutors: (parent, args) => {
+    return prisma.tutor.findAll({});
+  },
   // Ambit
   ambit: (parent, args) => {},
   ambits: (parent, args) => {},
