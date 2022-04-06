@@ -43,7 +43,11 @@ const Ambit = {
     }).applicants();
   },
   academies: (parent, args) => {
-    return prisma.ambit.find({});
+    return prisma.ambit.find({
+      where: {
+        id: parent.id
+      }
+    }).academies();
   },
 };
 
