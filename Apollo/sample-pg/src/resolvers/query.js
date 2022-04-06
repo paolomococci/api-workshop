@@ -43,7 +43,11 @@ const Query {
   },
   // Academy
   academy: (parent, args) => {
-    return prisma.academy.findById({});
+    return prisma.academy.findById({
+      where: {
+        id: Number(args.id)
+      },
+    });
   },
   academies: (parent, args) => {
     return prisma.academy.findAll({});
