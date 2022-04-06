@@ -12,6 +12,10 @@ const Mutation = {
   addTutor: (parent, args) => {
     return prisma.tutor.create({});
   },
+  // Ambit
+  addAmbit: (parent, args) => {
+    reurn prisma.ambit.create({});
+  },
 };
 
 module.exports = {
