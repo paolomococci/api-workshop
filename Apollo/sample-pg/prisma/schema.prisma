@@ -42,7 +42,7 @@ model Tutor {
   name         String?   @db.VarChar(255)
   surname      String?   @db.VarChar(255)
   username     String?   @db.VarChar(255)
-  isRegistered Boolean   @default(false)
+  isActive     Boolean   @default(false)
   academies    Academy[]
   type         TutorType @default(FULLTIME)
   registeredAt DateTime  @default(now())
