@@ -51,7 +51,14 @@ const Ambit = {
   },
 };
 
-const Academy = {};
+const Academy = {
+  id: (parent) => parent.id,
+  code: (parent) => parent.code,
+  title: (parent) => parent.title,
+  description: (parent) => parent.description,
+  tutor: (parent, args) => {},
+  ambit: (parent, args) => {},
+};
 
 const resolvers {
   Applicant,
