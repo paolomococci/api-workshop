@@ -45,7 +45,9 @@ const Query {
   academy: (parent, args) => {
     return prisma.academy.findById({});
   },
-  academies: (parent, args) => {},
+  academies: (parent, args) => {
+    return prisma.academy.findAll({});
+  },
 };
 
 module.exports = {
