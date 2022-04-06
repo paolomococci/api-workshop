@@ -17,7 +17,19 @@ const Applicant = {
   },
 };
 
-const Tutor = {};
+const Tutor = {
+  id: (parent) => parent.id,
+  email: (parent) => parent.email,
+  name: (parent) => parent.name,
+  surname: (parent) => parent.surname,
+  academies: (parent, args) => {
+    return prisma.tutor.find({
+      where: {
+        id: parent.id
+      },
+    }).academies();
+  },
+};
 
 const Ambit = {};
 
