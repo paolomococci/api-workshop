@@ -21,7 +21,11 @@ const Query {
   },
   // Tutor
   tutor: (parent, args) => {
-    return prisma.tutor.findById({});
+    return prisma.tutor.findById({
+      where: {
+        id: Number(args.id)
+      },
+    });
   },
   tutors: (parent, args) => {
     return prisma.tutor.findAll({});
