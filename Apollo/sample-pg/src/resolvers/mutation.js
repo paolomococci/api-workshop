@@ -3,6 +3,7 @@ const { prisma } = require('../database.js');
 const Mutation = {
   // Applicant
   addApplicant: (parent, args) => {
+    console.log(parent, args)
     return prisma.applicant.create({
       data: {
         email: args.email,
