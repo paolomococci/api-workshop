@@ -5,6 +5,8 @@ Example of access to data kept in a database.
 ## scaffolding
 
 ```shell
+mkdir sample-pg
+cd sample-pg
 npm init --yes
 npm install apollo-server graphql
 npm install prisma --save-dev
