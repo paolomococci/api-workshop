@@ -1,12 +1,18 @@
 {
   "name": "sample-pg",
   "version": "1.0.0",
-  "description": "data access example",
+  "description": "GraphQL API data access example",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "Node.js",
+    "PostgreSQL",
+    "Apollo Server",
+    "GraphQL",
+    "Prisma"
+  ],
   "author": "Paolo Mococci",
   "license": "MIT",
   "dependencies": {
