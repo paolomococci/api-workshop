@@ -30,6 +30,12 @@ if there is any problem with the relationships between tables the following comm
 npx prisma format
 ```
 
+and
+
+```shell
+npm i nodemon --save-dev
+```
+
 ## setup GraphQL resolvers to read and write data in the database
 
 ## start the server
