@@ -8,7 +8,7 @@ const Mutation = {
       data: {
         email: args.email,
         name: args.name,
-        surname: args.surname
+        surname: args.surname,
         applicantAcademyRelation: args.academyId && {
           connect: {
             id: args.academyId
