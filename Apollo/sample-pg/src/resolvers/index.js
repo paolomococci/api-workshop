@@ -72,7 +72,7 @@ const Academy = {
   },
 };
 
-const resolvers {
+const resolvers = {
   Applicant,
   Tutor,
   Ambit,
