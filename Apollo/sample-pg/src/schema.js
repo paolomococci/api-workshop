@@ -90,7 +90,7 @@ input CreateTutor {
   email: String!
   name: String
   surname: String
-  academies: [Createacademy]
+  academies: [CreateAcademy]
 }
 
 input CreateAcademy {
