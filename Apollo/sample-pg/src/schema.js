@@ -9,7 +9,7 @@ type Applicant {
   surname: String
   username: String
   isActive: Boolean
-  academy: Academy
+  applicantAcademyRelation: Academy
   ambit: Ambit
   registeredAt: String
   updatedAt: String
