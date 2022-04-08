@@ -59,6 +59,7 @@ type Query {
   academy(id: ID!): Academy
   tutors: [Tutor!]!
   tutor(id: ID!): Tutor
+  matriculation: Boolean
 }
 
 type Mutation {
