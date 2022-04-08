@@ -1,6 +1,6 @@
 const { prisma } = require('../database.js');
 
-const Query {
+const Query = {
   // Applicant
   matriculation: (parent, args) => {
     return prisma.applicant.findAllActives({
