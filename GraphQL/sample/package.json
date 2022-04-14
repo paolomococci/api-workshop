@@ -1,12 +1,16 @@
 {
   "name": "sample",
   "version": "1.0.0",
+  "keywords": [
+    "API",
+    "Node.js",
+    "GraphQL"
+  ],
+  "author": "Paolo Mococci",
+  "license": "MIT",
   "description": "example of GraphQL application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "Paolo Mococci",
-  "license": "MIT"
+  }
 }
