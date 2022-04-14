@@ -6,7 +6,11 @@ type Query {
   post: Post!
 }
 
-type Mutation {}
+type Mutation {
+  createUser(data: CreateUserInput!): User!
+  updateUser(id: ID!, data: UpdateUserInput!): User!
+  deleteUser(id: ID!): User!
+}
 
 type User {
   id: ID!
