@@ -6,3 +6,4 @@ import {
   IPostUpdate,
   IComment
 } from '../database/data'
+import { TResolvers } from './Query'
