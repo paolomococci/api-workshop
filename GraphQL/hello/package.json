@@ -1,7 +1,7 @@
 {
   "name": "hello",
   "version": "1.0.0",
-  "description": "",,
+  "description": "really basic example of using GraphQL",,
   "keywords": [
     "API",
     "GraphQL"
