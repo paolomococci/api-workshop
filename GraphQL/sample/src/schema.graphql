@@ -28,7 +28,12 @@ type CreatePostInput {}
 
 type UpdatePostInput {}
 
-type Comment {}
+type Comment {
+  id: ID!
+  text: String!
+  author: User!
+  post: Post!
+}
 
 type CreateCommentInput {}
 
