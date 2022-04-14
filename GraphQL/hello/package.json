@@ -1,9 +1,10 @@
 {
   "name": "hello",
   "version": "1.0.0",
-  "description": "really basic example of using GraphQL",,
+  "description": "really basic example of using GraphQL",
   "keywords": [
     "API",
+    "Node.js",
     "GraphQL"
   ],
   "author": "Paolo Mococci",
