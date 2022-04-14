@@ -11,3 +11,10 @@ const resolvers = {
     hello: () => 'Hello from sample query!',
   },
 }
+
+export const schema = makeExecutableSchema(
+  {
+    resolvers: [resolvers],
+    typeDefs: [typeDefinitions],
+  }
+)
