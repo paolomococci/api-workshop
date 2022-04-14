@@ -58,7 +58,9 @@ type CreateCommentInput {
   post: ID!
 }
 
-type UpdateCommentInput {}
+type UpdateCommentInput {
+  text: String
+}
 
 type PostSubscriptionPayload {}
 
