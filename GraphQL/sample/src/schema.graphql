@@ -62,7 +62,10 @@ type UpdateCommentInput {
   text: String
 }
 
-type Subscription {}
+type Subscription {
+  comment(postId: ID!): CommentSubscriptionPayload!
+  post: PostSubscriptionPayload!
+}
 
 type PostSubscriptionPayload {
   mutation: MutationType!
