@@ -17,7 +17,11 @@ type CreateUserInput {
   age: Int
 }
 
-type UpdateUserInput {}
+type UpdateUserInput {
+  name: String
+  email: String
+  age: Int
+}
 
 type Post {
   id: ID!
