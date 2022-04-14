@@ -5,7 +5,11 @@ export interface IUser {
   age?: number;
 }
 
-export interface IUserUpdate {}
+export interface IUserUpdate {
+  name?: string;
+  email?: string;
+  age?: number;
+}
 
 export interface IPost {}
 
