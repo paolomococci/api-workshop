@@ -1,4 +1,10 @@
-type Query {}
+type Query {
+  users(query: String): [User!]!
+  post(query: String): [Post!]!
+  comments: [Comment!]!
+  user: User!
+  post: Post!
+}
 
 type Mutation {}
 
