@@ -11,7 +11,13 @@ export interface IUserUpdate {
   age?: number;
 }
 
-export interface IPost {}
+export interface IPost {
+  id: string;
+  title: string;
+  body: string;
+  published: boolean;
+  author?: string;
+}
 
 export interface IPostUpdate {}
 
