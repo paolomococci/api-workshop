@@ -25,4 +25,5 @@ npm i uuid
 npm i @types/node
 npm i nodemon
 npm i ts-node
+npm i typescript
 ```
