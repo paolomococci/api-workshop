@@ -1,7 +1,8 @@
 import { PubSub } from 'graphql-yoga'
 import {
   IUser,
-  IPost
+  IPost,
+  data
 } from '../database/data'
 
 export type TResolvers<TParent, TArgs, TReturn> = (
