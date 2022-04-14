@@ -1,0 +1,33 @@
+type Query {}
+
+type Mutation {}
+
+type User {}
+
+type CreateUserInput {}
+
+type UpdateUserInput {}
+
+type Post {}
+
+type CreatePostInput {}
+
+type UpdatePostInput {}
+
+type Comment {}
+
+type CreateCommentInput {}
+
+type UpdateCommentInput {}
+
+type PostSubscriptionPayload {}
+
+type Subscription {}
+
+type PostSubscriptionPayload {}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
