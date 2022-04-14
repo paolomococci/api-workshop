@@ -32,7 +32,12 @@ type Post {
   comments: [Comment!]!
 }
 
-type CreatePostInput {}
+type CreatePostInput {
+  title: String!
+  body: String!
+  published: Boolean!
+  author: ID!
+}
 
 type UpdatePostInput {}
 
