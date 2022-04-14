@@ -18,3 +18,9 @@ npm i graphql-yoga
 npm i nexus
 npm i uuid
 ```
+
+## add some development dependencies
+
+```shell
+
+```
