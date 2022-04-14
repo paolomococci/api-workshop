@@ -39,7 +39,11 @@ type CreatePostInput {
   author: ID!
 }
 
-type UpdatePostInput {}
+type UpdatePostInput {
+  title: String
+  body: String
+  published: Boolean
+}
 
 type Comment {
   id: ID!
