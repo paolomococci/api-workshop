@@ -25,6 +25,11 @@ export interface IPostUpdate {
   published?: boolean;
 }
 
-export interface IComment {}
+export interface IComment {
+  id: string;
+  text: string;
+  author: string;
+  post: string;
+}
 
 export interface ICommentUpdate {}
