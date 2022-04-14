@@ -52,7 +52,11 @@ type Comment {
   post: Post!
 }
 
-type CreateCommentInput {}
+type CreateCommentInput {
+  text: String!
+  author: ID!
+  post: ID!
+}
 
 type UpdateCommentInput {}
 
