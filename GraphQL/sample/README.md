@@ -23,4 +23,5 @@ npm i uuid
 
 ```shell
 npm i @types/node
+npm i nodemon
 ```
