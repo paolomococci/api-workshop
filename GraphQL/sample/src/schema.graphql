@@ -69,7 +69,7 @@ type PostSubscriptionPayload {
 
 type Subscription {}
 
-type PostSubscriptionPayload {}
+type CommentSubscriptionPayload {}
 
 enum MutationType {
   CREATED
