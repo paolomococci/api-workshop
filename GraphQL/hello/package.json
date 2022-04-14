@@ -7,7 +7,7 @@
     "GraphQL"
   ],
   "author": "Paolo Mococci",
-  "license": "MIT"
+  "license": "MIT",
   "main": "index.js",
   "type": "module",
   "scripts": {
