@@ -43,3 +43,9 @@ let users: IUser[] = []
 let posts: IPost[] = []
 
 let comments: IComment[] = []
+
+export default {
+  users,
+  posts,
+  comments
+}
