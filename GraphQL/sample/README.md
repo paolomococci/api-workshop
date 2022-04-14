@@ -16,4 +16,5 @@ npm init --yes
 npm i @types/uuid
 npm i graphql-yoga
 npm i nexus
+npm i uuid
 ```
