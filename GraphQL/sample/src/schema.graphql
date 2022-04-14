@@ -10,6 +10,9 @@ type Mutation {
   createUser(data: CreateUserInput!): User!
   updateUser(id: ID!, data: UpdateUserInput!): User!
   deleteUser(id: ID!): User!
+  createPost(data: CreatePostInput!): Post!
+  updatePost(id: ID!, data:UpdatePostInput!): Post!
+  deletePost(id: ID!): Post!
 }
 
 type User {
