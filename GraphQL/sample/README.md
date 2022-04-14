@@ -22,5 +22,5 @@ npm i uuid
 ## add some development dependencies
 
 ```shell
-
+npm i @types/node
 ```
