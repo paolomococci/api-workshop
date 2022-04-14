@@ -37,3 +37,9 @@ export interface ICommentUpdate {
   author?: string;
   post?: string;
 }
+
+let users: IUser[] = []
+
+let posts: IPost[] = []
+
+let comments: IComment[] = []
