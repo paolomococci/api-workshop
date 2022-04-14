@@ -19,7 +19,11 @@ export interface IPost {
   author?: string;
 }
 
-export interface IPostUpdate {}
+export interface IPostUpdate {
+  title?: string;
+  body?: string;
+  published?: boolean;
+}
 
 export interface IComment {}
 
