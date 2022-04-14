@@ -2,14 +2,14 @@
   "name": "hello",
   "version": "1.0.0",
   "description": "",,
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "API",
+    "GraphQL"
+  ],
+  "author": "Paolo Mococci",
   "license": "MIT"
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
