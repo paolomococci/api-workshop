@@ -9,3 +9,9 @@ mkdir sample
 cd sample
 npm init --yes
 ```
+
+## add some dependencies
+
+```shell
+
+```
