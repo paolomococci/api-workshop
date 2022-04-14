@@ -32,4 +32,8 @@ export interface IComment {
   post: string;
 }
 
-export interface ICommentUpdate {}
+export interface ICommentUpdate {
+  text?: string;
+  author?: string;
+  post?: string;
+}
