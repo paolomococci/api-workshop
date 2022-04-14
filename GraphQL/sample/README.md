@@ -13,5 +13,5 @@ npm init --yes
 ## add some dependencies
 
 ```shell
-
+npm i @types/uuid
 ```
