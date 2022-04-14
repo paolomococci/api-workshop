@@ -13,17 +13,11 @@ npm init --yes
 ## add some dependencies
 
 ```shell
-npm i @types/uuid
-npm i graphql-yoga
-npm i nexus
-npm i uuid
+npm i @types/uuid graphql-yoga nexus uuid
 ```
 
 ## add some development dependencies
 
 ```shell
-npm i @types/node
-npm i nodemon
-npm i ts-node
-npm i typescript
+npm i @types/node nodemon ts-node typescript --save-dev
 ```
