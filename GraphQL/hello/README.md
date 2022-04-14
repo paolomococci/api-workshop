@@ -9,3 +9,8 @@ mkdir hello
 cd hello
 npm init --yes
 ```
+### add some dependencies
+
+```shell
+npm i graphql @graphql-yoga/node
+```
