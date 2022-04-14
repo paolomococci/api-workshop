@@ -5,3 +5,9 @@ const typeDefinitions =  `
     hello: String!
   }
 `
+
+const resolvers = {
+  Query: {
+    hello: () => 'Hello from sample query!',
+  },
+}
