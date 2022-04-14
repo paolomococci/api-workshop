@@ -15,7 +15,14 @@ type CreateUserInput {}
 
 type UpdateUserInput {}
 
-type Post {}
+type Post {
+  id: ID!
+  title: String!
+  body: String!
+  published: Boolean!
+  author: User!
+  comments: [Comment!]!
+}
 
 type CreatePostInput {}
 
