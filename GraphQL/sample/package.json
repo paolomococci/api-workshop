@@ -10,9 +10,8 @@
   "license": "MIT",
   "description": "example of GraphQL application",
   "main": "index.js",
-  "type": "module",
   "compilerOptions": {
-    "esModuleInterop": true
+    "module": "CommonJS"
   },
   "scripts": {
     "start": "nodemon --ext ts,graphql src/index.ts",
