@@ -21,3 +21,9 @@ npm i @types/uuid graphql-yoga nexus uuid
 ```shell
 npm i @types/node nodemon ts-node typescript --save-dev
 ```
+
+### to add dependencies, after modifying the package.json file, type
+
+```shell
+npm install
+```
