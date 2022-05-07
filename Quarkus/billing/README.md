@@ -5,7 +5,7 @@ Example of REST application developed thanks to the Active Record pattern.
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.8.2.Final:create -DprojectGroupId=local.example -DprojectArtifactId=billing -DclassName="local.example.billing.BillingResource" -Dpath="/billing" -Dextensions="quarkus-resteasy-reactive,quarkus-resteasy-reactive-jackson,quarkus-reactive-routes,quarkus-reactive-pg-client,quarkus-hibernate-reactive-panache" -DbuildTool=gradle
+mvn io.quarkus.platform:quarkus-maven-plugin:2.8.3.Final:create -DprojectGroupId=local.example -DprojectArtifactId=billing -DclassName="local.example.billing.BillingResource" -Dpath="/billing" -Dextensions="quarkus-resteasy-reactive,quarkus-resteasy-reactive-jackson,quarkus-reactive-routes,quarkus-reactive-pg-client,quarkus-hibernate-reactive-panache" -DbuildTool=gradle
 ```
 
 ## configurations
