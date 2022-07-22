@@ -10,7 +10,7 @@ Cicerone
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.10.2.Final:create -DprojectGroupId=local.example -DprojectArtifactId=lupus-in-fabula -Dextensions="resteasy,graphql" -DnoCode
+mvn io.quarkus.platform:quarkus-maven-plugin:2.10.3.Final:create -DprojectGroupId=local.example -DprojectArtifactId=lupus-in-fabula -Dextensions="resteasy,graphql" -DnoCode
 ```
 
 ## to run in development mode
