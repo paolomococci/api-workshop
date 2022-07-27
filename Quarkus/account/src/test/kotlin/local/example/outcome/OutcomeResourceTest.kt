@@ -20,4 +20,8 @@ class OutcomeResourceTest {
              .statusCode(200)
              .body(`is`("feedback reactive"))
     }
+
+    companion object {
+        private const val BASE_PATH = "/outcome"
+    }
 }
