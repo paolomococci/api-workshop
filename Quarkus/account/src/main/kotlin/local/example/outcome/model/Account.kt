@@ -47,7 +47,7 @@ class Account() {
     override fun equals(o: Any?): Boolean {
         if (this === o) return true
         if (o == null || javaClass != o.javaClass) return false
-        val that = o as AccountSample
+        val that = o as Account
         return accountNumber == that.accountNumber && customerNumber == that.customerNumber
     }
 
