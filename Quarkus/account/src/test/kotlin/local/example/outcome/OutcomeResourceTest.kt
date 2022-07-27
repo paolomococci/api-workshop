@@ -1,12 +1,11 @@
 package local.example.outcome
 
+import local.example.outcome.model.Account
+
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured
-import io.restassured.RestAssured.given
-import local.example.outcome.model.Account
-import org.apache.http.HttpStatus
 
-import org.hamcrest.CoreMatchers.`is`
+import org.apache.http.HttpStatus
 import org.hamcrest.MatcherAssert
 import org.hamcrest.collection.IsCollectionWithSize
 import org.hamcrest.collection.IsEmptyCollection
