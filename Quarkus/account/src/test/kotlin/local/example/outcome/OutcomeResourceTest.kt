@@ -34,6 +34,12 @@ class OutcomeResourceTest {
         Assertions.assertTrue(true)
     }
 
+    @Test
+    @Order(3)
+    fun testRead() {
+        Assertions.assertTrue(true)
+    }
+
     companion object {
         private const val BASE_PATH = "/outcome"
     }
