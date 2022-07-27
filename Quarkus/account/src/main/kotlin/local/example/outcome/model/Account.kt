@@ -21,4 +21,25 @@ class Account() {
         this.customerName = customerName
         this.balance = balance
     }
+
+    fun markOverstate() {
+        accountStatus = AccountStatus.OVERSTATE
+    }
+
+    fun removeOverstateStatus() {
+        accountStatus = AccountStatus.OPEN
+    }
+
+    fun close() {
+        accountStatus = AccountStatus.CLOSED
+        balance = BigDecimal.valueOf(0)
+    }
+
+    fun recedeFunds(amount: BigDecimal?) {
+        balance = balance!!.subtract(amount)
+    }
+
+    fun addFunds(amount: BigDecimal?) {
+        balance = balance!!.add(amount)
+    }
 }
