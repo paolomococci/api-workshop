@@ -46,6 +46,12 @@ class OutcomeResourceTest {
         Assertions.assertTrue(true)
     }
 
+    @Test
+    @Order(5)
+    fun testDeposit() {
+        Assertions.assertTrue(true)
+    }
+
     companion object {
         private const val BASE_PATH = "/outcome"
     }
