@@ -1,6 +1,7 @@
 package local.example.outcome.model
 
 import java.math.BigDecimal
+import java.util.*
 
 class Account() {
 
@@ -41,5 +42,19 @@ class Account() {
 
     fun addFunds(amount: BigDecimal?) {
         balance = balance!!.add(amount)
+    }
+
+    override fun equals(o: Any?): Boolean {
+        if (this === o) return true
+        if (o == null || javaClass != o.javaClass) return false
+        val that = o as AccountSample
+        return accountNumber == that.accountNumber && customerNumber == that.customerNumber
+    }
+
+    override fun hashCode(): Int {
+        return Objects.hash(
+            accountNumber,
+            customerNumber
+        )
     }
 }
