@@ -10,10 +10,7 @@ import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert
 import org.hamcrest.collection.IsCollectionWithSize
 import org.hamcrest.collection.IsEmptyCollection
-import org.junit.jupiter.api.MethodOrderer
-import org.junit.jupiter.api.Order
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestMethodOrder
+import org.junit.jupiter.api.*
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
@@ -29,6 +26,12 @@ class OutcomeResourceTest {
         val accounts = response.jsonPath().getList<Account>("$")
         MatcherAssert.assertThat(accounts, IsEmptyCollection.empty())
         MatcherAssert.assertThat(accounts, IsCollectionWithSize.hasSize(0))
+    }
+
+    @Test
+    @Order(2)
+    fun testCreate() {
+        Assertions.assertTrue(true)
     }
 
     companion object {
