@@ -7,12 +7,14 @@ import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 
 import org.apache.http.HttpStatus
+
 import org.hamcrest.CoreMatchers.notNullValue
-import org.hamcrest.MatcherAssert
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.collection.IsCollectionWithSize
 import org.hamcrest.collection.IsEmptyCollection
+
 import org.junit.jupiter.api.*
+
 import java.math.BigDecimal
 
 @QuarkusTest
