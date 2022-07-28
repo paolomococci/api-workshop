@@ -16,8 +16,4 @@ class OutcomeResource {
             LinkedHashMap<Account, Boolean>()
         )
     )
-
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    fun feedback() = "feedback reactive"
 }
