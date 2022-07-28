@@ -3,12 +3,13 @@ package local.example.outcome
 import local.example.outcome.model.Account
 
 import io.quarkus.test.junit.QuarkusTest
-import io.restassured.RestAssured
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 
 import org.apache.http.HttpStatus
+import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.MatcherAssert
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.collection.IsCollectionWithSize
 import org.hamcrest.collection.IsEmptyCollection
 import org.junit.jupiter.api.*
@@ -26,8 +27,8 @@ class OutcomeResourceTest {
             .then().statusCode(HttpStatus.SC_OK)
             .extract().response()
         val accounts = response.jsonPath().getList<Account>("$")
-        MatcherAssert.assertThat(accounts, IsEmptyCollection.empty())
-        MatcherAssert.assertThat(accounts, IsCollectionWithSize.hasSize(0))
+        assertThat(accounts, IsEmptyCollection.empty())
+        assertThat(accounts, IsCollectionWithSize.hasSize(0))
     }
 
     @Test
@@ -45,6 +46,7 @@ class OutcomeResourceTest {
             .then().statusCode(HttpStatus.SC_CREATED)
             .extract().`as`(Account::class.java)
         Assertions.assertTrue(true)
+        assertThat(retrieved, notNullValue())
     }
 
     @Test
