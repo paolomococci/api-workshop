@@ -36,7 +36,7 @@ class Account() {
         balance = BigDecimal.valueOf(0)
     }
 
-    fun recedeFunds(amount: BigDecimal?) {
+    fun withdrawFunds(amount: BigDecimal?) {
         balance = balance!!.subtract(amount)
     }
 
