@@ -8,6 +8,7 @@ import io.restassured.http.ContentType
 
 import org.apache.http.HttpStatus
 
+import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.collection.IsCollectionWithSize
@@ -49,6 +50,7 @@ class OutcomeResourceTest {
             .extract().`as`(Account::class.java)
         Assertions.assertTrue(true)
         assertThat(retrieved, notNullValue())
+        assertThat(retrieved, equalTo(account))
     }
 
     @Test
