@@ -10,6 +10,7 @@ import org.hamcrest.MatcherAssert
 import org.hamcrest.collection.IsCollectionWithSize
 import org.hamcrest.collection.IsEmptyCollection
 import org.junit.jupiter.api.*
+import java.math.BigDecimal
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
@@ -30,6 +31,12 @@ class OutcomeResourceTest {
     @Test
     @Order(2)
     fun testCreate() {
+        val account: Account = Account(
+            1234506789L,
+            9876543120L,
+            "John Doe",
+            BigDecimal(1300.00)
+        )
         Assertions.assertTrue(true)
     }
 
