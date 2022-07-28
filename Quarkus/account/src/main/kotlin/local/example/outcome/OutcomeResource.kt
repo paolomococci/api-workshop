@@ -28,6 +28,13 @@ class OutcomeResource {
     }
 
     @GET
+    @Path("/{accountNumber}")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun read() {
+
+    }
+
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun readAll() {
 
