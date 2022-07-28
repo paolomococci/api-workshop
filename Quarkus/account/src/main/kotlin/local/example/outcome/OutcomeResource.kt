@@ -35,15 +35,15 @@ class OutcomeResource {
 
     }
 
-    @PUT
-    @Path("{accountNumber}/withdrawal")
-    fun withdrawal() {
-
-    }
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun readAll() {
+
+    }
+
+    @PUT
+    @Path("{accountNumber}/withdrawal")
+    fun withdrawal() {
 
     }
 }
