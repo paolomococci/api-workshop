@@ -7,12 +7,11 @@ import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 
 import org.apache.http.HttpStatus
+import org.hamcrest.CoreMatchers.*
 
-import org.hamcrest.CoreMatchers.equalTo
-import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.collection.IsCollectionWithSize
-import org.hamcrest.collection.IsEmptyCollection
+import org.hamcrest.collection.IsCollectionWithSize.hasSize
+import org.hamcrest.collection.IsEmptyCollection.empty
 
 import org.junit.jupiter.api.*
 
@@ -30,8 +29,8 @@ class OutcomeResourceTest {
             .then().statusCode(HttpStatus.SC_OK)
             .extract().response()
         val accounts = response.jsonPath().getList<Account>("$")
-        assertThat(accounts, IsEmptyCollection.empty())
-        assertThat(accounts, IsCollectionWithSize.hasSize(0))
+        assertThat(accounts, empty())
+        assertThat(accounts, hasSize(0))
     }
 
     @Test
@@ -55,8 +54,14 @@ class OutcomeResourceTest {
 
     @Test
     @Order(3)
-    fun testRead() {
-        Assertions.assertTrue(true)
+    fun testAgainReadAll() {
+        val response = given()
+            .`when`()[BASE_PATH]
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().response()
+        val accounts = response.jsonPath().getList<Account>("$")
+        assertThat(accounts, not(empty()))
+        assertThat(accounts, hasSize(1))
     }
 
     @Test
