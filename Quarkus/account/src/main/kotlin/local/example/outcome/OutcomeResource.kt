@@ -46,4 +46,10 @@ class OutcomeResource {
     fun withdrawal() {
 
     }
+
+    @PUT
+    @Path("{accountNumber}/deposit")
+    fun deposit() {
+
+    }
 }
