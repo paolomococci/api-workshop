@@ -4,6 +4,8 @@ import local.example.outcome.model.Account
 
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured
+import io.restassured.RestAssured.given
+import io.restassured.http.ContentType
 
 import org.apache.http.HttpStatus
 import org.hamcrest.MatcherAssert
@@ -19,7 +21,7 @@ class OutcomeResourceTest {
     @Test
     @Order(1)
     fun testReadAll() {
-        val response = RestAssured.given()
+        val response = given()
             .`when`()[BASE_PATH]
             .then().statusCode(HttpStatus.SC_OK)
             .extract().response()
@@ -31,12 +33,17 @@ class OutcomeResourceTest {
     @Test
     @Order(2)
     fun testCreate() {
-        val account: Account = Account(
+        val account = Account(
             1234506789L,
             9876543120L,
             "John Doe",
             BigDecimal(1300.00)
         )
+        val retrieved: Account = given()
+            .contentType(ContentType.JSON).body(account)
+            .`when`().post(BASE_PATH)
+            .then().statusCode(HttpStatus.SC_CREATED)
+            .extract().`as`(Account::class.java)
         Assertions.assertTrue(true)
     }
 
