@@ -80,7 +80,17 @@ class OutcomeResourceTest {
     @Test
     @Order(5)
     fun testWithdraw() {
-        Assertions.assertTrue(true)
+        val retrieved = given()
+            .body(6.65).`when`().put(
+                "$BASE_PATH/{accountNumber}/withdrawal",
+                1234506789L
+            )
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().`as`(Account::class.java)
+        assertThat(
+            retrieved.balance,
+            equalTo(BigDecimal(1300.00).subtract(BigDecimal(6.65)))
+        )
     }
 
     @Test
