@@ -5,6 +5,7 @@ import local.example.outcome.model.Account
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
+import local.example.outcome.model.AccountStatus
 
 import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.*
@@ -66,12 +67,24 @@ class OutcomeResourceTest {
 
     @Test
     @Order(4)
+    fun testRead() {
+        val retrieved = given()
+            .`when`()["$BASE_PATH/{accountNumber}", 1234506789L]
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().`as`(Account::class.java)
+        assertThat(retrieved.customerName, equalTo("John Doe"))
+        assertThat(retrieved.balance, equalTo(BigDecimal(1300.00)))
+        assertThat(retrieved.accountStatus, equalTo(AccountStatus.OPEN))
+    }
+
+    @Test
+    @Order(5)
     fun testWithdraw() {
         Assertions.assertTrue(true)
     }
 
     @Test
-    @Order(5)
+    @Order(6)
     fun testDeposit() {
         Assertions.assertTrue(true)
     }
