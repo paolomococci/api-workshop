@@ -96,7 +96,24 @@ class OutcomeResourceTest {
     @Test
     @Order(6)
     fun testDeposit() {
-        Assertions.assertTrue(true)
+        val retrievedBeforeTheOperation = given()
+            .`when`()["$BASE_PATH/{accountNumber}", 1234506789L]
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().`as`(Account::class.java)
+
+        val retrieved = given()
+            .body(10.25).`when`().put(
+                "$BASE_PATH/{accountNumber}/deposit",
+                1234506789L
+            )
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().`as`(Account::class.java)
+        assertThat(
+            retrieved.balance,
+            equalTo(
+                retrievedBeforeTheOperation.balance?.add(BigDecimal(10.25))
+            )
+        )
     }
 
     companion object {
