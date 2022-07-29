@@ -7,20 +7,18 @@ import java.util.concurrent.atomic.AtomicLong
 
 class Account() {
 
-    var accountNumber: Long? = null
-    var customerNumber: Long? = null
-    var customerName: String? = null
+    lateinit var accountNumber: String
+    lateinit var customerNumber: String
+    var customerName: String = ""
     var balance: BigDecimal? = null
     var accountStatus = AccountStatus.OPEN
 
     constructor(
-        accountNumber: Long?,
-        customerNumber: Long?,
-        customerName: String?,
+        customerName: String,
         balance: BigDecimal?
     ) : this() {
-        this.accountNumber = accountNumber
-        this.customerNumber = customerNumber
+        this.accountNumber = this.generateID()
+        this.customerNumber = this.generateID()
         this.customerName = customerName
         this.balance = balance
     }
