@@ -35,8 +35,6 @@ class OutcomeResourceTest {
     @Order(2)
     fun testCreate() {
         val account = Account(
-            1234506789L,
-            9876543120L,
             "John Doe",
             BigDecimal(1300.00)
         )
