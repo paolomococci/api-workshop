@@ -50,7 +50,7 @@ class OutcomeResourceTest {
 
     @Test
     @Order(3)
-    fun testAgainReadAll() {
+    fun testAgainReadAll() {// to be reviewed
         val response = given()
             .`when`()[BASE_PATH]
             .then().statusCode(HttpStatus.SC_OK)
