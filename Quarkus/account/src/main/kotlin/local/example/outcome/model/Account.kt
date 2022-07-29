@@ -1,7 +1,9 @@
 package local.example.outcome.model
 
 import java.math.BigDecimal
+
 import java.util.*
+import java.util.concurrent.atomic.AtomicLong
 
 class Account() {
 
@@ -42,6 +44,10 @@ class Account() {
 
     fun addFunds(amount: BigDecimal?) {
         balance = balance!!.add(amount)
+    }
+
+    private fun generateID(): String {
+        return UUID.randomUUID().toString()
     }
 
     override fun equals(o: Any?): Boolean {
