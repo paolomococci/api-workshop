@@ -7,8 +7,8 @@ import java.util.concurrent.atomic.AtomicLong
 
 class Account() {
 
-    lateinit var accountNumber: String
-    lateinit var customerNumber: String
+    var accountNumber: String = this.generateID()
+    var customerNumber: String = this.generateID()
     var customerName: String = ""
     var balance: BigDecimal? = null
     var accountStatus = AccountStatus.OPEN
@@ -17,8 +17,6 @@ class Account() {
         customerName: String,
         balance: BigDecimal?
     ) : this() {
-        this.accountNumber = this.generateID()
-        this.customerNumber = this.generateID()
         this.customerName = customerName
         this.balance = balance
     }
