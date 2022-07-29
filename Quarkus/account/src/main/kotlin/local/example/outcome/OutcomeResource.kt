@@ -27,7 +27,7 @@ class OutcomeResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    fun create() {
+    fun create(account: Account) {
         // TODO
     }
 
