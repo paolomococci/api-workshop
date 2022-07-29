@@ -5,6 +5,7 @@ import local.example.outcome.model.Account
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
+import io.smallrye.common.constraint.Assert.assertTrue
 import local.example.outcome.model.AccountStatus
 
 import org.apache.http.HttpStatus
@@ -26,12 +27,8 @@ class OutcomeResourceTest {
     @Order(1)
     fun testReadAll() {
         val response = given()
-            .`when`()[BASE_PATH]
-            .then().statusCode(HttpStatus.SC_OK)
-            .extract().response()
-        val accounts = response.jsonPath().getList<Account>("$")
-        assertThat(accounts, empty())
-        assertThat(accounts, hasSize(0))
+            .`when`()[BASE_PATH].then().extract().response()
+        assertTrue(response.statusCode == HttpStatus.SC_OK)
     }
 
     @Test
