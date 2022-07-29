@@ -13,6 +13,7 @@ import javax.ws.rs.PATCH
 import javax.ws.rs.PUT
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
+import javax.ws.rs.core.Response
 
 @Path("/outcome")
 class OutcomeResource {
@@ -39,8 +40,10 @@ class OutcomeResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun readAll() {
-        // TODO
+    fun readAll(): Response? {
+        return if (
+            accounts.isEmpty()
+        ) Response.ok().build() else Response.ok(accounts).build()
     }
 
     @PUT
