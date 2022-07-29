@@ -27,44 +27,44 @@ class OutcomeResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     fun create() {
-
+        // TODO
     }
 
     @GET
     @Path("/{accountNumber}")
     @Produces(MediaType.APPLICATION_JSON)
     fun read() {
-
+        // TODO
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun readAll() {
-
+        // TODO
     }
 
     @PUT
     @Path("{accountNumber}/withdrawal")
     fun withdrawal() {
-
+        // TODO
     }
 
     @PUT
     @Path("{accountNumber}/deposit")
     fun deposit() {
-
+        // TODO
     }
 
     @PATCH
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     fun update() {
-
+        // TODO
     }
 
     @DELETE
     @Path("{accountNumber}")
     fun delete() {
-
+        // TODO
     }
 }
