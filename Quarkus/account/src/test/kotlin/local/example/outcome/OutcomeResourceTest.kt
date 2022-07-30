@@ -13,6 +13,10 @@ import org.hamcrest.collection.IsCollectionWithSize.hasSize
 import org.hamcrest.collection.IsEmptyCollection.empty
 import org.junit.jupiter.api.*
 import java.math.BigDecimal
+import java.math.MathContext
+
+
+
 
 
 @QuarkusTest
@@ -77,8 +81,8 @@ class OutcomeResourceTest {
 
     @Test
     @Order(5)
-    @Disabled
     fun testWithdraw() {
+        val mathContext = MathContext(6)
         val response = given()
             .`when`()[BASE_PATH]
             .then().statusCode(HttpStatus.SC_OK)
@@ -95,7 +99,9 @@ class OutcomeResourceTest {
             .extract().`as`(Account::class.java)
         assertThat(
             retrieved.balance,
-            equalTo(BigDecimal(1300.00).subtract(BigDecimal(6.65)))
+            equalTo(
+                BigDecimal(1300.00).subtract(BigDecimal(6.65)).round(mathContext)
+            )
         )
     }
 
