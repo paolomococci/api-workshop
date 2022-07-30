@@ -1,8 +1,8 @@
 package local.example.outcome
 
 import local.example.outcome.model.Account
-
 import java.util.*
+import java.util.function.Supplier
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
@@ -38,8 +38,16 @@ class OutcomeResource {
     @GET
     @Path("/{accountNumber}")
     @Produces(MediaType.APPLICATION_JSON)
-    fun read() {
-        // TODO
+    fun read(@PathParam("accountNumber") accountNumber: String): Account? {
+        val response = accounts.stream().filter {
+                account: Account -> account.accountNumber == accountNumber
+        }.findFirst()
+        return response.orElseThrow {
+            WebApplicationException(
+                "There is no account with ID: $accountNumber",
+                404
+            )
+        }
     }
 
     @PUT
