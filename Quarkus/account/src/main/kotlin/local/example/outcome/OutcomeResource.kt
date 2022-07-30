@@ -1,6 +1,7 @@
 package local.example.outcome
 
 import local.example.outcome.model.Account
+import java.math.BigDecimal
 import java.util.*
 import java.util.function.Supplier
 import javax.ws.rs.*
@@ -52,8 +53,13 @@ class OutcomeResource {
 
     @PUT
     @Path("{accountNumber}/withdrawal")
-    fun withdrawal() {
-        // TODO
+    fun withdrawal(
+        @PathParam("accountNumber") accountNumber: String,
+        amount: String
+    ): Response? {
+        val account = this.read(accountNumber)
+        account?.withdrawFunds(BigDecimal(amount))
+        return Response.ok(account).build()
     }
 
     @PUT
