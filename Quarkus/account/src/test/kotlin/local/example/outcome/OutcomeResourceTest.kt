@@ -52,7 +52,7 @@ class OutcomeResourceTest {
 
     @Test
     @Order(3)
-    fun testAgainReadAll() {// to be reviewed
+    fun testAgainReadAll() {
         val response = given()
             .`when`()[BASE_PATH]
             .then().statusCode(HttpStatus.SC_OK)
@@ -66,8 +66,13 @@ class OutcomeResourceTest {
     @Order(4)
     @Disabled
     fun testRead() {
+        val response = given()
+            .`when`()[BASE_PATH]
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().response()
+        val accounts = response.body.jsonPath().getList<Account>("$")
         val retrieved = given()
-            .`when`()["$BASE_PATH/{accountNumber}", 1234506789L]
+            .`when`()["$BASE_PATH/{accountNumber}", accounts[0].accountNumber]
             .then().statusCode(HttpStatus.SC_OK)
             .extract().`as`(Account::class.java)
         assertThat(retrieved.customerName, equalTo("John Doe"))
