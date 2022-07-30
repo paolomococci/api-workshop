@@ -64,8 +64,13 @@ class OutcomeResource {
 
     @PUT
     @Path("{accountNumber}/deposit")
-    fun deposit() {
-        // TODO
+    fun deposit(
+        @PathParam("accountNumber") accountNumber: String,
+        amount: String
+    ): Response? {
+        val account = this.read(accountNumber)
+        account?.addFunds(BigDecimal(amount))
+        return Response.ok(account).build()
     }
 
     @PATCH
