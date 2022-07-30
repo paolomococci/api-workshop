@@ -17,6 +17,14 @@ class OutcomeResource {
         )
     )
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    fun readAll(): Response? {
+        return if (
+            accounts.isEmpty()
+        ) Response.ok().build() else Response.ok(accounts).build()
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -31,14 +39,6 @@ class OutcomeResource {
     @Produces(MediaType.APPLICATION_JSON)
     fun read() {
         // TODO
-    }
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    fun readAll(): Response? {
-        return if (
-            accounts.isEmpty()
-        ) Response.ok().build() else Response.ok(accounts).build()
     }
 
     @PUT
