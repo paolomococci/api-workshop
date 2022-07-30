@@ -1,25 +1,19 @@
 package local.example.outcome
 
-import local.example.outcome.model.Account
-
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
-
 import io.smallrye.common.constraint.Assert.assertTrue
-
+import local.example.outcome.model.Account
 import local.example.outcome.model.AccountStatus
-
 import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.*
-
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.collection.IsCollectionWithSize.hasSize
 import org.hamcrest.collection.IsEmptyCollection.empty
-
 import org.junit.jupiter.api.*
-
 import java.math.BigDecimal
+
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
@@ -64,15 +58,15 @@ class OutcomeResourceTest {
 
     @Test
     @Order(4)
-    @Disabled
     fun testRead() {
         val response = given()
             .`when`()[BASE_PATH]
             .then().statusCode(HttpStatus.SC_OK)
             .extract().response()
         val accounts = response.body.jsonPath().getList<Account>("$")
+        val accountNumber: String = accounts.toString().substring(16, 52)
         val retrieved = given()
-            .`when`()["$BASE_PATH/{accountNumber}", accounts[0].accountNumber]
+            .`when`()["$BASE_PATH/{accountNumber}", accountNumber]
             .then().statusCode(HttpStatus.SC_OK)
             .extract().`as`(Account::class.java)
         assertThat(retrieved.customerName, equalTo("John Doe"))
