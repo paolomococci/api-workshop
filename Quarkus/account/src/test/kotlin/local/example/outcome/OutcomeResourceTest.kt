@@ -5,7 +5,9 @@ import local.example.outcome.model.Account
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
+
 import io.smallrye.common.constraint.Assert.assertTrue
+
 import local.example.outcome.model.AccountStatus
 
 import org.apache.http.HttpStatus
@@ -62,6 +64,7 @@ class OutcomeResourceTest {
 
     @Test
     @Order(4)
+    @Disabled
     fun testRead() {
         val retrieved = given()
             .`when`()["$BASE_PATH/{accountNumber}", 1234506789L]
@@ -74,6 +77,7 @@ class OutcomeResourceTest {
 
     @Test
     @Order(5)
+    @Disabled
     fun testWithdraw() {
         val retrieved = given()
             .body(6.65).`when`().put(
@@ -90,6 +94,7 @@ class OutcomeResourceTest {
 
     @Test
     @Order(6)
+    @Disabled
     fun testDeposit() {
         val retrievedBeforeTheOperation = given()
             .`when`()["$BASE_PATH/{accountNumber}", 1234506789L]
