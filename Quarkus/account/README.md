@@ -25,5 +25,21 @@ HTTP/1.1 201 Created
 Content-Type: application/json;charset=UTF-8
 content-length: 179
 
-{"accountNumber":"4789f685-13cd-4e45-92ce-9c7da6ce4500","customerNumber":"e7bee949-bf2e-4182-b0aa-043f416fedc3","customerName":"John Doe","balance":1300.00,"accountStatus":"OPEN"}
+{"accountNumber":"3816f557-a83b-4f2d-81ba-df52719ab791","customerNumber":"3560308d-2f9d-468f-9484-7ff0fdea7d08","customerName":"John Doe","balance":1300.00,"accountStatus":"OPEN"}
+```
+
+Now I try to get the data by adding the account identifier to the path:
+
+```shell
+curl -i -X GET http://127.0.0.1:8080/outcome/3816f557-a83b-4f2d-81ba-df52719ab791
+```
+
+getting:
+
+```text
+HTTP/1.1 200 OK
+content-length: 179
+Content-Type: application/json;charset=UTF-8
+
+{"accountNumber":"3816f557-a83b-4f2d-81ba-df52719ab791","customerNumber":"3560308d-2f9d-468f-9484-7ff0fdea7d08","customerName":"John Doe","balance":1300.00,"accountStatus":"OPEN"}
 ```
