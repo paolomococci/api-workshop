@@ -52,12 +52,14 @@ class OutcomeResourceTest {
 
     @Test
     @Order(3)
-    @Disabled
-    fun testAgainReadAll() {
+    fun testAgainReadAll() {// to be reviewed
         val response = given()
             .`when`()[BASE_PATH]
             .then().statusCode(HttpStatus.SC_OK)
             .extract().response()
+        val accounts = response.body.jsonPath().getList<Account>("$")
+        assertThat(accounts, not(empty()))
+        assertThat(accounts, hasSize(1))
     }
 
     @Test
