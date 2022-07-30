@@ -79,10 +79,17 @@ class OutcomeResourceTest {
     @Order(5)
     @Disabled
     fun testWithdraw() {
+        val response = given()
+            .`when`()[BASE_PATH]
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().response()
+        val accounts = response.body.jsonPath().getList<Account>("$")
+        val account: String = accounts.toString().substring(1, accounts.toString().length-1)
+        val accountNumber: String = account.substring(15, 51)
         val retrieved = given()
             .body(6.65).`when`().put(
                 "$BASE_PATH/{accountNumber}/withdrawal",
-                1234506789L
+                accountNumber
             )
             .then().statusCode(HttpStatus.SC_OK)
             .extract().`as`(Account::class.java)
