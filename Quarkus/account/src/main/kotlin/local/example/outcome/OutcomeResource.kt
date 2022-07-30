@@ -31,6 +31,7 @@ class OutcomeResource {
     fun create(account: Account): Response {
         if (account.customerName == null)
             throw WebApplicationException("Bad Request: the customer name was not specified", 400)
+        accounts.add(account)
         return Response.status(201).entity(account).build()
     }
 
