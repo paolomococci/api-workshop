@@ -107,7 +107,6 @@ class OutcomeResourceTest {
 
     @Test
     @Order(6)
-    @Disabled
     fun testDeposit() {
         val response = given()
             .`when`()[BASE_PATH]
