@@ -103,15 +103,25 @@ class OutcomeResourceTest {
     @Order(6)
     @Disabled
     fun testDeposit() {
+        val response = given()
+            .`when`()[BASE_PATH]
+            .then().statusCode(HttpStatus.SC_OK)
+            .extract().response()
+        val accounts = response.body.jsonPath().getList<Account>("$")
+        val account: String = accounts.toString().substring(1, accounts.toString().length-1)
+        val accountNumber: String = account.substring(15, 51)
         val retrievedBeforeTheOperation = given()
-            .`when`()["$BASE_PATH/{accountNumber}", 1234506789L]
+            .`when`()[
+                "$BASE_PATH/{accountNumber}",
+                accountNumber
+            ]
             .then().statusCode(HttpStatus.SC_OK)
             .extract().`as`(Account::class.java)
 
         val retrieved = given()
             .body(10.25).`when`().put(
                 "$BASE_PATH/{accountNumber}/deposit",
-                1234506789L
+                accountNumber
             )
             .then().statusCode(HttpStatus.SC_OK)
             .extract().`as`(Account::class.java)
