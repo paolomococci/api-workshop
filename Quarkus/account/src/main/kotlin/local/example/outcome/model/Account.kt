@@ -3,7 +3,6 @@ package local.example.outcome.model
 import java.math.BigDecimal
 
 import java.util.*
-import java.util.concurrent.atomic.AtomicLong
 
 class Account() {
 
