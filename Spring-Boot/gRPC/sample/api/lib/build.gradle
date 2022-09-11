@@ -11,6 +11,8 @@ repositories {
     mavenCentral()
 }
 
+def grpcVersion = ''
+
 dependencies {
 
 }
