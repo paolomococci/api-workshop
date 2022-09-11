@@ -14,6 +14,7 @@ repositories {
 dependencies {
     implementation 'io.grpc:grpc-protobuf:1.49.0'
     implementation 'io.grpc:grpc-stub:1.49.0'
+    implementation 'io.grpc:grpc-netty:1.49.0'
 }
 
 testing {
