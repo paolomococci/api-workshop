@@ -1,6 +1,11 @@
 plugins {
     id 'java'
+    id "com.google.protobuf" version "0.8.19"
 }
+
+group = 'local.example.sample'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
