@@ -11,10 +11,8 @@ repositories {
     mavenCentral()
 }
 
-def grpcVersion = ''
-
 dependencies {
-
+    implementation 'io.grpc:grpc-protobuf:1.49.0'
 }
 
 testing {
