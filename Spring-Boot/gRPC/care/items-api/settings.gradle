@@ -1,0 +1,2 @@
+rootProject.name = 'items-api'
+include('lib')
