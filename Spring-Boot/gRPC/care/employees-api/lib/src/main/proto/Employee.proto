@@ -28,14 +28,14 @@ message Employee {
     BEGINNER = 3;
     TRAINEE = 4;
   }
-  map<string, int32> level = 8;
+  Level level = 8;
   enum Status {
     ACTIVE = 0;
     TRANSFER = 1;
     HOLIDAYS= 2;
     INDISPOSITION = 3;
   }
-  map<string, int32> status = 9;
+  Status status = 9;
 }
 message EmployeeCreateResponse {
   int64 id = 1;
