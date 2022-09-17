@@ -17,3 +17,9 @@ gradle init
 ```shell
 ./gradlew clean
 ```
+
+### in the end
+
+```shell
+./gradlew build
+```
