@@ -29,6 +29,10 @@ message Employee {
     TRAINEE = 4;
   }
   map<string, int32> level = 8;
+  enum Status {
+    ACTIVE = 0;
+  }
+  map<string, int32> status = 9;
 }
 message EmployeeCreateResponse {
   int64 id = 1;
