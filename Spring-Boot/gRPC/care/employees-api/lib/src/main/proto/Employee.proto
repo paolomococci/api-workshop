@@ -23,3 +23,6 @@ message Employee {
     string postalIndexNumber = 6;
   }
 }
+message EmployeeCreateResponse {
+  int64 id = 1;
+}
