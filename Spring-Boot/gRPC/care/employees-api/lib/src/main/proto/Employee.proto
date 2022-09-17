@@ -28,7 +28,7 @@ message Employee {
     BEGINNER = 3;
     TRAINEE = 4;
   }
-  map<string, int32> nominees = 8;
+  map<string, int32> level = 8;
 }
 message EmployeeCreateResponse {
   int64 id = 1;
