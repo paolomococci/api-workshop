@@ -22,6 +22,10 @@ message Employee {
     string country = 5;
     string postalIndexNumber = 6;
   }
+  enum Level {
+    MASTER = 0;
+  }
+  map<string, int32> nominees = 8;
 }
 message EmployeeCreateResponse {
   int64 id = 1;
