@@ -49,3 +49,11 @@ sourceSets {
         }
     }
 }
+
+task cleanProtoGen {
+    doFirst {
+        delete('src/main/grpc')
+        delete('src/main/java')
+    }
+}
+clean.dependsOn cleanProtoGen
