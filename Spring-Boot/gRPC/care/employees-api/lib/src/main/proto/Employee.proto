@@ -24,6 +24,9 @@ message Employee {
   }
   enum Level {
     MASTER = 0;
+    EXPERT = 1;
+    BEGINNER = 3;
+    TRAINEE = 4;
   }
   map<string, int32> nominees = 8;
 }
