@@ -6,3 +6,8 @@
 gradle init
 ```
 
+## I type the following commands
+
+```shell
+./gradlew task
+```
