@@ -40,3 +40,9 @@ protobuf {
         }
     }
 }
+
+sourceSets {
+    main {
+        proto {}
+    }
+}
