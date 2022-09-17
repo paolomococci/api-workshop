@@ -11,3 +11,9 @@ gradle init
 ```shell
 ./gradlew task
 ```
+
+### to then clean
+
+```shell
+./gradlew clean
+```
