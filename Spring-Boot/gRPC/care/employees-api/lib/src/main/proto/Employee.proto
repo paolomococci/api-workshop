@@ -26,3 +26,6 @@ message Employee {
 message EmployeeCreateResponse {
   int64 id = 1;
 }
+service EmployeeService {
+  rpc Create(Employee) returns (EmployeeCreateResponse);
+}
