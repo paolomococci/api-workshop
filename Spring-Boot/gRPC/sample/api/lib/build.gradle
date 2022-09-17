@@ -56,4 +56,5 @@ task cleanProtoGen {
         delete('src/main/java')
     }
 }
+
 clean.dependsOn cleanProtoGen
