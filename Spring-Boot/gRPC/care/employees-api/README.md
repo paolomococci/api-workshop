@@ -3,6 +3,8 @@
 ## scaffolding
 
 ```shell
+mkdir employees-api
+cd employees-api
 gradle init
 ```
 
