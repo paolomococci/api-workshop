@@ -7,5 +7,12 @@ option java_multiple_files = true;
 import "google/protobuf/timestamp.proto";
 
 message Employee {
+  int64 id = 1;
+  google.protobuf.Timestamp created = 2;
+  string name = 3;
+  string surname = 4;
+  int64 departmentId = 5;
+  string task = 6;
+  double salary = 7;
   message Address {}
 }
