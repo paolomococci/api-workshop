@@ -40,3 +40,12 @@ protobuf {
         }
     }
 }
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'src/main/grpc'
+            srcDir 'src/main/java'
+        }
+    }
+}
