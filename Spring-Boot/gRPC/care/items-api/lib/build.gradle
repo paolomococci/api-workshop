@@ -41,3 +41,14 @@ protobuf {
         }
     }
 }
+
+sourceSets {
+    main {
+        proto {
+            // default:
+            //srcDir 'src/main/proto'
+            srcDir 'src/main/grpc'
+            srcDir 'src/main/java'
+        }
+    }
+}
