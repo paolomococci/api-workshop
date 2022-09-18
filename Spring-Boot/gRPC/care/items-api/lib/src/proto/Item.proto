@@ -10,3 +10,6 @@ message Item {}
 message ItemCreateResponse {
   int64 id = 1;
 }
+service ItemService {
+  rpc Create(Item) returns (ItemCreateResponse);
+}
