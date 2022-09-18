@@ -22,7 +22,11 @@ message Employee {
     string country = 5;
     string postalIndexNumber = 6;
   }
-  message EContacts {}
+  message EContacts {
+    string phone = 1;
+    string mobile =2;
+    string email = 3;
+  }
   enum Level {
     MASTER = 0;
     EXPERT = 1;
