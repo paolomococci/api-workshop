@@ -25,6 +25,11 @@ public final class EmployeeOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_local_example_care_employee_api_v1_Employee_Address_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_local_example_care_employee_api_v1_Employee_EContact_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_local_example_care_employee_api_v1_Employee_EContact_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_local_example_care_employee_api_v1_EmployeeCreateResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -40,7 +45,7 @@ public final class EmployeeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\016Employee.proto\022\"local.example.care.emp" +
       "loyee.api.v1\032\037google/protobuf/timestamp." +
-      "proto\"\222\004\n\010Employee\022\n\n\002id\030\001 \001(\003\022+\n\007create" +
+      "proto\"\314\004\n\010Employee\022\n\n\002id\030\001 \001(\003\022+\n\007create" +
       "d\030\002 \001(\0132\032.google.protobuf.Timestamp\022\014\n\004n" +
       "ame\030\003 \001(\t\022\017\n\007surname\030\004 \001(\t\022\024\n\014department" +
       "Id\030\005 \001(\003\022\014\n\004task\030\006 \001(\t\022\016\n\006salary\030\007 \001(\001\022A" +
@@ -50,16 +55,17 @@ public final class EmployeeOuterClass {
       "mployee.Status\032q\n\007Address\022\r\n\005civic\030\001 \001(\t" +
       "\022\016\n\006street\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\022\r\n\005state\030" +
       "\004 \001(\t\022\017\n\007country\030\005 \001(\t\022\031\n\021postalIndexNum" +
-      "ber\030\006 \001(\t\":\n\005Level\022\n\n\006MASTER\020\000\022\n\n\006EXPERT" +
-      "\020\001\022\014\n\010BEGINNER\020\003\022\013\n\007TRAINEE\020\004\"C\n\006Status\022" +
-      "\n\n\006ACTIVE\020\000\022\014\n\010TRANSFER\020\001\022\014\n\010HOLIDAYS\020\002\022" +
-      "\021\n\rINDISPOSITION\020\003\"$\n\026EmployeeCreateResp" +
-      "onse\022\n\n\002id\030\001 \001(\0032\205\001\n\017EmployeeService\022r\n\006" +
-      "Create\022,.local.example.care.employee.api" +
-      ".v1.Employee\032:.local.example.care.employ" +
-      "ee.api.v1.EmployeeCreateResponseB+\n\'loca" +
-      "l.example.care.employee.api.grpc.v1P\001b\006p" +
-      "roto3"
+      "ber\030\006 \001(\t\0328\n\010EContact\022\r\n\005phone\030\001 \001(\t\022\016\n\006" +
+      "mobile\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\":\n\005Level\022\n\n\006" +
+      "MASTER\020\000\022\n\n\006EXPERT\020\001\022\014\n\010BEGINNER\020\003\022\013\n\007TR" +
+      "AINEE\020\004\"C\n\006Status\022\n\n\006ACTIVE\020\000\022\014\n\010TRANSFE" +
+      "R\020\001\022\014\n\010HOLIDAYS\020\002\022\021\n\rINDISPOSITION\020\003\"$\n\026" +
+      "EmployeeCreateResponse\022\n\n\002id\030\001 \001(\0032\205\001\n\017E" +
+      "mployeeService\022r\n\006Create\022,.local.example" +
+      ".care.employee.api.v1.Employee\032:.local.e" +
+      "xample.care.employee.api.v1.EmployeeCrea" +
+      "teResponseB+\n\'local.example.care.employe" +
+      "e.api.grpc.v1P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -78,6 +84,12 @@ public final class EmployeeOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_local_example_care_employee_api_v1_Employee_Address_descriptor,
         new java.lang.String[] { "Civic", "Street", "City", "State", "Country", "PostalIndexNumber", });
+    internal_static_local_example_care_employee_api_v1_Employee_EContact_descriptor =
+      internal_static_local_example_care_employee_api_v1_Employee_descriptor.getNestedTypes().get(1);
+    internal_static_local_example_care_employee_api_v1_Employee_EContact_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_local_example_care_employee_api_v1_Employee_EContact_descriptor,
+        new java.lang.String[] { "Phone", "Mobile", "Email", });
     internal_static_local_example_care_employee_api_v1_EmployeeCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_local_example_care_employee_api_v1_EmployeeCreateResponse_fieldAccessorTable = new
