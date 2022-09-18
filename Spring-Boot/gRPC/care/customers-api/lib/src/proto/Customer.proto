@@ -24,6 +24,11 @@ message Customer {
     string mobile =2;
     string email = 3;
   }
+  enum Status {
+    ACTIVE = 0;
+    IDLE = 1;
+  }
+  Status status = 5;
 }
 message CustomerCreateResponse {
   int64 id = 1;
