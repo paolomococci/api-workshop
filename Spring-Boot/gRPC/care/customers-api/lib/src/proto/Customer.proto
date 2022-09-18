@@ -11,6 +11,14 @@ message Customer {
   google.protobuf.Timestamp created = 2;
   string name = 3;
   string surname = 4;
+  message Address {
+    string civic = 1;
+    string street = 2;
+    string city = 3;
+    string state = 4;
+    string country = 5;
+    string postalIndexNumber = 6;
+  }
 }
 message CustomerCreateResponse {
   int64 id = 1;
