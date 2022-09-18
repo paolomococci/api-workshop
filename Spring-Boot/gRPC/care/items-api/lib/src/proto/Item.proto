@@ -9,7 +9,7 @@ import "google/protobuf/timestamp.proto";
 message Item {
   int64 id = 1;
   google.protobuf.Timestamp created = 2;
-  string name = 3;
+  string denomination = 3;
   string description = 4;
   string code = 5;
   double price = 6;
