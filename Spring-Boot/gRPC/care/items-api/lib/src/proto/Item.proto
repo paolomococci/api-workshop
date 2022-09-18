@@ -15,7 +15,9 @@ message Item {
   double price = 6;
   string quantity = 7;
   bool stockOut = 8;
-  message Storage {}
+  message Storage {
+    string positioning = 1;
+  }
 }
 message ItemCreateResponse {
   int64 id = 1;
