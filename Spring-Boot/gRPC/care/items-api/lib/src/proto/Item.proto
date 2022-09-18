@@ -18,6 +18,11 @@ message Item {
   message Storage {
     string positioning = 1;
   }
+  enum Availability {
+    AVAILABLE = 0;
+    ARRIVING = 1;
+    OUT_OF_STOCK = 2;
+  } map<string, int32> availability = 9;
 }
 message ItemCreateResponse {
   int64 id = 1;
