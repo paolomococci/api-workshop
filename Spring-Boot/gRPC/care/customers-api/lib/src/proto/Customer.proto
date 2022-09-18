@@ -6,7 +6,12 @@ option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";
 
-message Customer {}
+message Customer {
+  int64 id = 1;
+  google.protobuf.Timestamp created = 2;
+  string name = 3;
+  string surname = 4;
+}
 message CustomerCreateResponse {
   int64 id = 1;
 }
