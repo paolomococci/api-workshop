@@ -10,3 +10,6 @@ message Customer {}
 message CustomerCreateResponse {
   int64 id = 1;
 }
+service CustomerService {
+  rpc Create(Customer) returns (CustomerCreateResponse);
+}
