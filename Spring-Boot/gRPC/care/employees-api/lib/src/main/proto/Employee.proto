@@ -22,7 +22,7 @@ message Employee {
     string country = 5;
     string postalIndexNumber = 6;
   }
-  message EContacts {
+  message EContact {
     string phone = 1;
     string mobile =2;
     string email = 3;
