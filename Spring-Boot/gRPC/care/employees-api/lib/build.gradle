@@ -28,12 +28,12 @@ tasks.named('test') {
 protobuf {
     generatedFilesBaseDir = "$projectDir/src"
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.21.6'
+        //artifact = 'com.google.protobuf:protoc:3.21.6'
+        artifact = 'com.google.protobuf:protoc:4.0.0-rc-2'
     }
     plugins {
         grpc {
-            //artifact = 'com.google.protobuf:protoc:3.21.6'
-            artifact = 'com.google.protobuf:protoc:4.0.0-rc-2'
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.49.1'
         }
     }
     generateProtoTasks {
