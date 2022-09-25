@@ -3,6 +3,11 @@ plugins {
     id "com.google.protobuf" version "0.8.19"
 }
 
+group = 'local.example.care'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
 repositories {
     mavenCentral()
 }
