@@ -129,8 +129,6 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
-    } catch (com.google.protobuf.UninitializedMessageException e) {
-      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -360,8 +358,6 @@ private static final long serialVersionUID = 0L;
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
-      } catch (com.google.protobuf.UninitializedMessageException e) {
-        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -435,7 +431,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(positioning_)) {
+      if (!getPositioningBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, positioning_);
       }
       unknownFields.writeTo(output);
@@ -447,7 +443,7 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(positioning_)) {
+      if (!getPositioningBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, positioning_);
       }
       size += unknownFields.getSerializedSize();
@@ -1095,7 +1091,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean containsAvailability(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     return internalGetAvailability().getMap().containsKey(key);
   }
   /**
@@ -1122,7 +1118,7 @@ private static final long serialVersionUID = 0L;
   public int getAvailabilityOrDefault(
       java.lang.String key,
       int defaultValue) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetAvailability().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -1134,7 +1130,7 @@ private static final long serialVersionUID = 0L;
 
   public int getAvailabilityOrThrow(
       java.lang.String key) {
-    if (key == null) { throw new NullPointerException("map key"); }
+    if (key == null) { throw new java.lang.NullPointerException(); }
     java.util.Map<java.lang.String, java.lang.Integer> map =
         internalGetAvailability().getMap();
     if (!map.containsKey(key)) {
@@ -1163,19 +1159,19 @@ private static final long serialVersionUID = 0L;
     if (created_ != null) {
       output.writeMessage(2, getCreated());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denomination_)) {
+    if (!getDenominationBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, denomination_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (!getDescriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+    if (!getCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, code_);
     }
-    if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+    if (price_ != 0D) {
       output.writeDouble(6, price_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quantity_)) {
+    if (!getQuantityBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, quantity_);
     }
     if (stockOut_ != false) {
@@ -1204,20 +1200,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCreated());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(denomination_)) {
+    if (!getDenominationBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, denomination_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+    if (!getDescriptionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+    if (!getCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, code_);
     }
-    if (java.lang.Double.doubleToRawLongBits(price_) != 0) {
+    if (price_ != 0D) {
       size += com.google.protobuf.CodedOutputStream
         .computeDoubleSize(6, price_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(quantity_)) {
+    if (!getQuantityBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, quantity_);
     }
     if (stockOut_ != false) {
@@ -2181,7 +2177,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean containsAvailability(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       return internalGetAvailability().getMap().containsKey(key);
     }
     /**
@@ -2208,7 +2204,7 @@ private static final long serialVersionUID = 0L;
     public int getAvailabilityOrDefault(
         java.lang.String key,
         int defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetAvailability().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
@@ -2220,7 +2216,7 @@ private static final long serialVersionUID = 0L;
 
     public int getAvailabilityOrThrow(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       java.util.Map<java.lang.String, java.lang.Integer> map =
           internalGetAvailability().getMap();
       if (!map.containsKey(key)) {
@@ -2240,7 +2236,7 @@ private static final long serialVersionUID = 0L;
 
     public Builder removeAvailability(
         java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       internalGetMutableAvailability().getMutableMap()
           .remove(key);
       return this;
@@ -2259,7 +2255,7 @@ private static final long serialVersionUID = 0L;
     public Builder putAvailability(
         java.lang.String key,
         int value) {
-      if (key == null) { throw new NullPointerException("map key"); }
+      if (key == null) { throw new java.lang.NullPointerException(); }
       
       internalGetMutableAvailability().getMutableMap()
           .put(key, value);
