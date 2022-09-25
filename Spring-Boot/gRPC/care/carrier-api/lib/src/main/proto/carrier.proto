@@ -24,5 +24,7 @@ message Carrier {
     string email = 3;
   }
 }
-message CarrierCreateResponse {}
+message CarrierCreateResponse {
+  int64 id = 1;
+}
 service CarrierService {}
