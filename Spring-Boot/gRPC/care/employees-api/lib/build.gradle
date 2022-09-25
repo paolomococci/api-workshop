@@ -28,7 +28,6 @@ tasks.named('test') {
 protobuf {
     generatedFilesBaseDir = "$projectDir/src"
     protoc {
-        //artifact = 'com.google.protobuf:protoc:3.21.6'
         artifact = 'com.google.protobuf:protoc:21.0-rc-1'
     }
     plugins {
