@@ -98,6 +98,8 @@ private static final long serialVersionUID = 0L;
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
+    } catch (com.google.protobuf.UninitializedMessageException e) {
+      throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
@@ -401,6 +403,8 @@ private static final long serialVersionUID = 0L;
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -664,22 +668,22 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getCivicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(civic_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, civic_);
       }
-      if (!getStreetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(street_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, street_);
       }
-      if (!getCityBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, city_);
       }
-      if (!getStateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, state_);
       }
-      if (!getCountryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(country_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, country_);
       }
-      if (!getPostalIndexNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalIndexNumber_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, postalIndexNumber_);
       }
       unknownFields.writeTo(output);
@@ -691,22 +695,22 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getCivicBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(civic_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, civic_);
       }
-      if (!getStreetBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(street_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, street_);
       }
-      if (!getCityBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(city_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, city_);
       }
-      if (!getStateBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(state_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, state_);
       }
-      if (!getCountryBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(country_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, country_);
       }
-      if (!getPostalIndexNumberBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(postalIndexNumber_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, postalIndexNumber_);
       }
       size += unknownFields.getSerializedSize();
@@ -1662,6 +1666,8 @@ private static final long serialVersionUID = 0L;
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
+      } catch (com.google.protobuf.UninitializedMessageException e) {
+        throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
@@ -1811,13 +1817,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getPhoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, phone_);
       }
-      if (!getMobileBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mobile_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mobile_);
       }
-      if (!getEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
       }
       unknownFields.writeTo(output);
@@ -1829,13 +1835,13 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (!getPhoneBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(phone_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, phone_);
       }
-      if (!getMobileBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mobile_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mobile_);
       }
-      if (!getEmailBytes().isEmpty()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
       }
       size += unknownFields.getSerializedSize();
@@ -2565,10 +2571,10 @@ private static final long serialVersionUID = 0L;
     if (created_ != null) {
       output.writeMessage(2, getCreated());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
     }
-    if (!getSurnameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(surname_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, surname_);
     }
     if (status_ != local.example.care.customer.api.grpc.v1.Customer.Status.ACTIVE.getNumber()) {
@@ -2591,10 +2597,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getCreated());
     }
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
     }
-    if (!getSurnameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(surname_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, surname_);
     }
     if (status_ != local.example.care.customer.api.grpc.v1.Customer.Status.ACTIVE.getNumber()) {
