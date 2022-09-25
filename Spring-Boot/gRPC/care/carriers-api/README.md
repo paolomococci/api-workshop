@@ -3,8 +3,8 @@
 ## scaffolding
 
 ```shell
-mkdir carrier-api
-cd carrier-api
+mkdir carriers-api
+cd carriers-api
 gradle init
 ```
 
