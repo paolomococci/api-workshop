@@ -18,6 +18,11 @@ message Carrier {
     string country = 5;
     string postalIndexNumber = 6;
   }
+  message EContact {
+    string phone = 1;
+    string mobile =2;
+    string email = 3;
+  }
 }
 message CarrierCreateResponse {}
 service CarrierService {}
