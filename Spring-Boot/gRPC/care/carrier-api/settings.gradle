@@ -1,2 +1,0 @@
-rootProject.name = 'carrier-api'
-include('lib')
