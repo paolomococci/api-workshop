@@ -27,4 +27,6 @@ message Carrier {
 message CarrierCreateResponse {
   int64 id = 1;
 }
-service CarrierService {}
+service CarrierService {
+  rpc Create(Carrier) returns (CarrierCreateResponse);
+}
