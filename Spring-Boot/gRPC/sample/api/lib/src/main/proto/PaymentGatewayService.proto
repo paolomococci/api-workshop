@@ -4,4 +4,16 @@ package local.example.sample.api.grpc.v1;
 option java_package = "local.example.sample.api.grpc.v1";
 option java_multiple_files = true;
 
-service ChargeService {}
+service ChargeService {
+
+}
+
+message CreateChargeReq {}
+
+message UpdateChargeReq {}
+
+message CaptureChargeReq {}
+
+message ChargeId {}
+
+message CustomerId {}
