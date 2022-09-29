@@ -8,11 +8,17 @@ service ChargeService {
   rpc Create(CreateChargeReq) returns (CreateChargeReq);
 }
 
-message CreateChargeReq {}
+message CreateChargeReq {
+  message Response {
+    Charge charge = 1;
+  }
+}
 
 message UpdateChargeReq {}
 
 message CaptureChargeReq {}
+
+message Charge {}
 
 message ChargeId {}
 
