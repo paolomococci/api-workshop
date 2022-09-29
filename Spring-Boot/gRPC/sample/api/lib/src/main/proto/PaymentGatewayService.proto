@@ -5,7 +5,7 @@ option java_package = "local.example.sample.api.grpc.v1";
 option java_multiple_files = true;
 
 service ChargeService {
-  rpc Create(CreateChargeReq) returns (CreateChargeReq);
+  rpc Create(CreateChargeReq) returns (CreateChargeReq.Response);
 }
 
 message CreateChargeReq {
