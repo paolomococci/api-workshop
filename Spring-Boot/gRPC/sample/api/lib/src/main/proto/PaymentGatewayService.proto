@@ -9,6 +9,13 @@ service ChargeService {
 }
 
 message CreateChargeReq {
+  uint32 amount = 1;
+  string currency = 2;
+  string customerId = 3;
+  string description = 4;
+  string receiptEmail = 5;
+  string sourceId = 6;
+  string statementDescriptor = 7;
   message Response {
     Charge charge = 1;
   }
