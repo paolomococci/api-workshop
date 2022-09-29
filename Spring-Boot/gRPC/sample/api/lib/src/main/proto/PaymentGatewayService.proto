@@ -60,6 +60,8 @@ message Charge {
   string sourceId = 27;
 }
 
+message Address {}
+
 message BillingDetails {}
 
 message PaymentMethodDetails {}
