@@ -136,4 +136,9 @@ message ChargeId {
   }
 }
 
-message CustomerId {}
+message CustomerId {
+  string id = 1;
+  message Response {
+    repeated Charge charge = 1;
+  }
+}
