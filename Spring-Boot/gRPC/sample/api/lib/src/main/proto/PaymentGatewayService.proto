@@ -30,19 +30,6 @@ service SourceService {}
 
 // Messages
 
-message CreateChargeReq {
-  uint32 amount = 1;
-  string currency = 2;
-  string customerId = 3;
-  string description = 4;
-  string receiptEmail = 5;
-  string sourceId = 6;
-  string statementDescriptor = 7;
-  message Response {
-    Charge charge = 1;
-  }
-}
-
 message CaptureChargeReq {
   string chargeId = 1;
   uint32 amount = 2;
@@ -124,6 +111,19 @@ message Card {
 
 message ChargeId {
   string id = 1;
+  message Response {
+    Charge charge = 1;
+  }
+}
+
+message CreateChargeReq {
+  uint32 amount = 1;
+  string currency = 2;
+  string customerId = 3;
+  string description = 4;
+  string receiptEmail = 5;
+  string sourceId = 6;
+  string statementDescriptor = 7;
   message Response {
     Charge charge = 1;
   }
