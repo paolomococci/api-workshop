@@ -157,7 +157,7 @@ message BillingDetails {
   string phone = 4;
 }
 
-message MakeCreditTransfer {
+message CreditTransferData {
   string accountNumber = 1;
   string routingNumber = 2;
   string fingerprint = 3;
