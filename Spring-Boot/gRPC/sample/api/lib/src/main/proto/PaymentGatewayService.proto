@@ -89,6 +89,8 @@ message Address {
   string postalCode = 8;
 }
 
+message Card {}
+
 message BillingDetails {
   Address address = 1;
   string email = 2;
