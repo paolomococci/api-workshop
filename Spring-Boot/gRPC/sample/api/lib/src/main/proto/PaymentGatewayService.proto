@@ -137,6 +137,8 @@ message BillingDetails {
   string phone = 4;
 }
 
+message MakeCreditTransfer {}
+
 message PaymentMethodDetails {
   Card card = 1;
   string type = 2;
