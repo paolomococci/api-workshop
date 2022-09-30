@@ -165,6 +165,8 @@ message SampleBrandAccount {
   string id = 1;
 }
 
+message Source {}
+
 message SourceId {}
 
 message UpdateSourceReq {}
