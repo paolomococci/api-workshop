@@ -26,6 +26,7 @@ service ChargeService {
   rpc Create(CreateChargeReq) returns (CreateChargeReq.Response);
   rpc Retrieve(ChargeId) returns (ChargeId.Response);
   rpc Update(UpdateChargeReq) returns (UpdateChargeReq.Response);
+  rpc Capture(CaptureChargeReq) returns (CaptureChargeReq.Response);
 }
 
 service SourceService {}
