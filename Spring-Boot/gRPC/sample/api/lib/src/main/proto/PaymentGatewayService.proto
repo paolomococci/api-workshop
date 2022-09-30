@@ -129,7 +129,19 @@ message CreateChargeReq {
   }
 }
 
-message CreateSourceReq {}
+message CreateSourceReq {
+  string type = 1;
+  uint32 amount = 2;
+  string currency = 3;
+  Owner owner = 4;
+  string statementDescriptor = 5;
+  Flow flow = 6;
+  Receiver receiver = 7;
+  Usage usage = 8;
+  message Response {
+    Source source = 1;
+  }
+}
 
 message CustomerId {
   string id = 1;
