@@ -24,6 +24,7 @@ enum Usage {
 
 service ChargeService {
   rpc Create(CreateChargeReq) returns (CreateChargeReq.Response);
+  rpc Retrieve(ChargeId) returns (ChargeId.Response);
 }
 
 service SourceService {}
