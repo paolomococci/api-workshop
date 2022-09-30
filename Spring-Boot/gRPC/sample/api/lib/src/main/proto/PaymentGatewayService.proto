@@ -60,7 +60,16 @@ message Charge {
   string sourceId = 27;
 }
 
-message Address {}
+message Address {
+  string id = 1;
+  string number = 2;
+  string residency = 3;
+  string street = 4;
+  string city = 5;
+  string state = 6;
+  string country = 7;
+  string postalCode = 8;
+}
 
 message BillingDetails {}
 
