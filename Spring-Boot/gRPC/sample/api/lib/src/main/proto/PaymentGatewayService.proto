@@ -30,16 +30,6 @@ service SourceService {}
 
 // Messages
 
-message CaptureChargeReq {
-  string chargeId = 1;
-  uint32 amount = 2;
-  string receiptEmail = 3;
-  string statementDescriptor = 4;
-  message Response {
-    Charge charge = 1;
-  }
-}
-
 message Charge {
   string id = 1;
   uint32 amount = 2;
@@ -91,6 +81,16 @@ message AttachOrDetachReq {
   string customerId = 2;
   message Response {
     Source source = 1;
+  }
+}
+
+message CaptureChargeReq {
+  string chargeId = 1;
+  uint32 amount = 2;
+  string receiptEmail = 3;
+  string statementDescriptor = 4;
+  message Response {
+    Charge charge = 1;
   }
 }
 
