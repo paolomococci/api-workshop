@@ -235,7 +235,12 @@ message Source {
   Usage usage = 12;
 }
 
-message SourceId {}
+message SourceId {
+  string id = 1;
+  message Response {
+    Source source = 1;
+  }
+}
 
 message UpdateChargeReq {
   string chargeId = 1;
