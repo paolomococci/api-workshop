@@ -157,7 +157,16 @@ message BillingDetails {
 
 message MakeCreditTransfer {}
 
-message Owner {}
+message Owner {
+  Address address = 1;
+  string email = 2;
+  string name = 3;
+  string phone = 4;
+  Address verifiedAddress = 5;
+  string verifiedEmail = 6;
+  string verifiedName = 7;
+  string verifiedPhone = 8;
+}
 
 message PaymentMethodDetails {
   Card card = 1;
