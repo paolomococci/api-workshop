@@ -121,7 +121,13 @@ message PaymentMethodDetails {
   SampleBrandAccount sampleBrandAccount = 3;
 }
 
-message Refund {}
+message Refund {
+  string id = 1;
+  uint32 amount = 2;
+  string fee = 3;
+  google.protobuf.Timestamp created = 4;
+  string currency = 5;
+}
 
 message ChargeId {}
 
