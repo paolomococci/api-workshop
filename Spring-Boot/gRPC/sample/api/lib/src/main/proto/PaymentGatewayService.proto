@@ -6,9 +6,13 @@ option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";
 
-enum Flow {}
+enum Flow {
+  REDIRECT = 0;
+}
 
-enum Usage {}
+enum Usage {
+  REUSABLE = 0;
+}
 
 service ChargeService {
   rpc Create(CreateChargeReq) returns (CreateChargeReq.Response);
