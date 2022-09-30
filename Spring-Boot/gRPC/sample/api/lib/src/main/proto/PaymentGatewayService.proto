@@ -101,6 +101,8 @@ message Address {
   string postalCode = 8;
 }
 
+message AttachOrDetachReq {}
+
 message Card {
   string id = 1;
   string name = 2;
