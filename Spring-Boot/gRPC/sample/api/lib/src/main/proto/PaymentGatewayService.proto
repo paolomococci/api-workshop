@@ -252,4 +252,11 @@ message UpdateChargeReq {
   }
 }
 
-message UpdateSourceReq {}
+message UpdateSourceReq {
+  string sourceId = 1;
+  uint32 amount = 2;
+  Owner owner = 3;
+  message Response {
+    Source source = 1;
+  }
+}
