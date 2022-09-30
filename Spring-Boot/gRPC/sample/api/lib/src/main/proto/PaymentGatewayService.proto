@@ -33,7 +33,15 @@ message UpdateChargeReq {
   }
 }
 
-message CaptureChargeReq {}
+message CaptureChargeReq {
+  string chargeId = 1;
+  uint32 amount = 2;
+  string receiptEmail = 3;
+  string statementDescriptor = 4;
+  message Response {
+    Charge charge = 1;
+  }
+}
 
 message Charge {
   string id = 1;
