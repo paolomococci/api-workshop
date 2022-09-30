@@ -15,6 +15,7 @@ enum Flow {
 
 enum Usage {
   REUSABLE = 0;
+  SINGLE_USE = 1;
 }
 
 service ChargeService {
