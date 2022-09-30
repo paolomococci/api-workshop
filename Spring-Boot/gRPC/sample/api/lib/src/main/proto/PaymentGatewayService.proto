@@ -6,6 +6,8 @@ option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";
 
+// Enums
+
 enum Flow {
   REDIRECT = 0;
   RECEIVER = 1;
@@ -18,11 +20,15 @@ enum Usage {
   SINGLE_USE = 1;
 }
 
+// Services
+
 service ChargeService {
   rpc Create(CreateChargeReq) returns (CreateChargeReq.Response);
 }
 
 service SourceService {}
+
+// Messages
 
 message CreateChargeReq {
   uint32 amount = 1;
