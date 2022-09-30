@@ -34,6 +34,7 @@ service SourceService {
   rpc Create(CreateSourceReq) returns (CreateSourceReq.Response);
   rpc Retrieve(SourceId) returns (SourceId.Response);
   rpc Update(UpdateSourceReq) returns (UpdateSourceReq.Response);
+  rpc Attach(AttachOrDetachReq) returns (AttachOrDetachReq.Response);
 }
 
 // Messages
