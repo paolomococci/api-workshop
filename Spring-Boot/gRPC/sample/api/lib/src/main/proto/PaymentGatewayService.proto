@@ -182,7 +182,24 @@ message PaymentMethodDetails {
   SampleBrandAccount sampleBrandAccount = 3;
 }
 
-message Receiver {}
+message Receiver {
+  string address = 1;
+  uint32 amountCharged = 2;
+  uint32 amountReceived = 3;
+  uint32 amountReturned = 4;
+  enum RefundAttributesMethod {
+    EMAIL = 0;
+    MANUAL = 1;
+    NONE = 2;
+  }
+  RefundAttributesMethod refundAttributesMethod = 5;
+  enum RefundAttributeStatus {
+    MISSING = 0;
+    REQUESTED = 1;
+    AVAILABLE = 2;
+  }
+  RefundAttributeStatus refundAttributesStatus = 6;
+}
 
 message Refund {
   string id = 1;
