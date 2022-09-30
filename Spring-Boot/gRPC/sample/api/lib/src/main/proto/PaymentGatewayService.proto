@@ -35,6 +35,7 @@ service SourceService {
   rpc Retrieve(SourceId) returns (SourceId.Response);
   rpc Update(UpdateSourceReq) returns (UpdateSourceReq.Response);
   rpc Attach(AttachOrDetachReq) returns (AttachOrDetachReq.Response);
+  rpc Detach(AttachOrDetachReq) returns (AttachOrDetachReq.Response);
 }
 
 // Messages
