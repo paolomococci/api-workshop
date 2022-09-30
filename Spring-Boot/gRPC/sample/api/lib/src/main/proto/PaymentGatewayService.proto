@@ -116,8 +116,18 @@ message Card {
   string customer = 12;
 }
 
-message SampleBrandAccount {
+message ChargeId {
   string id = 1;
+  message Response {
+    Charge charge = 1;
+  }
+}
+
+message CustomerId {
+  string id = 1;
+  message Response {
+    repeated Charge charge = 1;
+  }
 }
 
 message BillingDetails {
@@ -141,16 +151,6 @@ message Refund {
   string currency = 5;
 }
 
-message ChargeId {
+message SampleBrandAccount {
   string id = 1;
-  message Response {
-    Charge charge = 1;
-  }
-}
-
-message CustomerId {
-  string id = 1;
-  message Response {
-    repeated Charge charge = 1;
-  }
 }
