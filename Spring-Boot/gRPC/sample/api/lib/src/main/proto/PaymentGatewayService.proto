@@ -139,6 +139,8 @@ message BillingDetails {
 
 message MakeCreditTransfer {}
 
+message Owner {}
+
 message PaymentMethodDetails {
   Card card = 1;
   string type = 2;
