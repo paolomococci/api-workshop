@@ -89,7 +89,12 @@ message Address {
   string postalCode = 8;
 }
 
-message BillingDetails {}
+message BillingDetails {
+  Address address = 1;
+  string email = 2;
+  string name = 3;
+  string phone = 4;
+}
 
 message PaymentMethodDetails {}
 
