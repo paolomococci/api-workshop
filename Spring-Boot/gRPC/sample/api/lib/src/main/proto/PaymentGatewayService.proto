@@ -129,6 +129,11 @@ message Refund {
   string currency = 5;
 }
 
-message ChargeId {}
+message ChargeId {
+  string id = 1;
+  message Response {
+    Charge charge = 1;
+  }
+}
 
 message CustomerId {}
