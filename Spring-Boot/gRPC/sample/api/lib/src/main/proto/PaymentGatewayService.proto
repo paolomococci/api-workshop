@@ -147,6 +147,8 @@ message PaymentMethodDetails {
   SampleBrandAccount sampleBrandAccount = 3;
 }
 
+message Receiver {}
+
 message Refund {
   string id = 1;
   uint32 amount = 2;
