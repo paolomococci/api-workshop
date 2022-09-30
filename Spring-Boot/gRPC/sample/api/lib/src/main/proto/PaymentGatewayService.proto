@@ -195,7 +195,19 @@ message Source {
   uint64 created = 4;
   string currency = 5;
   Flow flow = 6;
-
+  Owner owner = 7;
+  Receiver receiver = 8;
+  string statementDescriptor = 9;
+  enum Status {
+    CANCELLED = 0;
+    CHARGEABLE = 1;
+    CONSUMED = 2;
+    FAILED = 3;
+    PENDING = 4;
+  }
+  Status status = 10;
+  string type = 11;
+  Usage usage = 12;
 }
 
 message SourceId {}
