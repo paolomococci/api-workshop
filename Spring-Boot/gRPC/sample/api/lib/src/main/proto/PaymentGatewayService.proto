@@ -22,6 +22,8 @@ service ChargeService {
   rpc Create(CreateChargeReq) returns (CreateChargeReq.Response);
 }
 
+service SourceService {}
+
 message CreateChargeReq {
   uint32 amount = 1;
   string currency = 2;
