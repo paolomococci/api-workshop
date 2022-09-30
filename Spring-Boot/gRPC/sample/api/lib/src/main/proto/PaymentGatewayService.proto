@@ -89,7 +89,20 @@ message Address {
   string postalCode = 8;
 }
 
-message Card {}
+message Card {
+  string id = 1;
+  string name = 2;
+  Address address = 3;
+  string brand = 4;
+  string country = 5;
+  uint32 expMonth = 6;
+  uint32 expYear = 7;
+  string fingerprint = 8;
+  string funding = 9;
+  uint32 installments = 10;
+  string last4 = 11;
+  string customer = 12;
+}
 
 message BillingDetails {
   Address address = 1;
