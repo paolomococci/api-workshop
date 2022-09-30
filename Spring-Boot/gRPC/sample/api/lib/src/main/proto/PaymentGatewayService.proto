@@ -8,6 +8,9 @@ import "google/protobuf/timestamp.proto";
 
 enum Flow {
   REDIRECT = 0;
+  RECEIVER = 1;
+  CODE_VERIFICATION = 2;
+  NONE = 3;
 }
 
 enum Usage {
