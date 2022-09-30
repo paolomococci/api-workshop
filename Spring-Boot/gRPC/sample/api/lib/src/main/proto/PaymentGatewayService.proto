@@ -104,6 +104,8 @@ message Card {
   string customer = 12;
 }
 
+message SampleBrandAccount {}
+
 message BillingDetails {
   Address address = 1;
   string email = 2;
@@ -111,7 +113,10 @@ message BillingDetails {
   string phone = 4;
 }
 
-message PaymentMethodDetails {}
+message PaymentMethodDetails {
+  Card card = 1;
+  string type = 2;
+}
 
 message Refund {}
 
