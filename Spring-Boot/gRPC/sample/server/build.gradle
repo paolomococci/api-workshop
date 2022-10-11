@@ -17,6 +17,7 @@ dependencies {
 	implementation("io.grpc:grpc-protobuf:${grpcVersion}")
 	implementation("io.grpc:grpc-stub:${grpcVersion}")
 	implementation("io.grpc:grpc-netty:${grpcVersion}")
+	implementation 'com.google.api.grpc:googleapis-common-protos:0.0.3'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
