@@ -14,6 +14,9 @@ repositories {
 }
 
 dependencies {
+	implementation("io.grpc:grpc-protobuf:${grpcVersion}")
+	implementation("io.grpc:grpc-stub:${grpcVersion}")
+	implementation("io.grpc:grpc-netty:${grpcVersion}")
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
