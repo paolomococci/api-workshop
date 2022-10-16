@@ -1,0 +1,2 @@
+rootProjectName = 'sample'
+include 'sample-api', 'sample-server', 'sample-client'
