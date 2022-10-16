@@ -1,2 +1,5 @@
 rootProject.name = 'sample'
-include 'sample-api', 'sample-server', 'sample-client'
+
+include 'sample-api'
+include 'sample-server'
+include 'sample-client'
