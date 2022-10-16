@@ -1,2 +1,2 @@
-rootProjectName = 'sample'
+rootProject.name = 'sample'
 include 'sample-api', 'sample-server', 'sample-client'
