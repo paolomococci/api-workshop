@@ -76,3 +76,15 @@ Source package (default: spread.api): local.example.spread.api
 ```shell
 
 ```
+
+### server project
+
+```shell
+
+```
+
+### client project
+
+```shell
+
+```
