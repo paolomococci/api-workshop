@@ -24,14 +24,18 @@ Enter selection (default: Groovy) [1..2] 1
 Project name (default: spread):
 ```
 
-### API project
+### now it's time to create the directories for the subprojects
 
 ```shell
 mkdir spread-api
 mkdir spread-app
 mkdir spread-srv
 mkdir spread-clt
+```
 
+### API project
+
+```shell
 cd spread-api
 gradle init
 
@@ -65,4 +69,10 @@ Enter selection (default: JUnit Jupiter) [1..4] 4
 
 Project name (default: spread-api):
 Source package (default: spread.api): local.example.spread.api
+```
+
+### application project
+
+```shell
+
 ```
