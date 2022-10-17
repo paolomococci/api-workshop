@@ -2,6 +2,8 @@
 
 ## scaffolding
 
+### root project
+
 ```shell
 mkdir spread
 cd spread
@@ -21,6 +23,8 @@ Enter selection (default: Groovy) [1..2] 1
 
 Project name (default: spread):
 ```
+
+### API project
 
 ```shell
 mkdir spread-api
