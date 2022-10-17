@@ -199,3 +199,27 @@ Enter selection (default: JUnit Jupiter) [1..4] 4
 Project name (default: spread-srv):
 Source package (default: spread.srv): local.example.spread.server
 ```
+
+## it's time to check from the project root directory
+
+```shell
+gradle projects
+
+> Task :projects
+
+------------------------------------------------------------
+Root project 'spread'
+------------------------------------------------------------
+
+Root project 'spread'
++--- Project ':spread-api'
++--- Project ':spread-app'
++--- Project ':spread-cli'
+\--- Project ':spread-srv'
+
+To see a list of the tasks of a project, run gradle <project-path>:tasks
+For example, try running gradle :spread-api:tasks
+
+BUILD SUCCESSFUL in 530ms
+1 actionable task: 1 executed
+```
