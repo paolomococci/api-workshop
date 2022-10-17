@@ -1,3 +1,6 @@
 rootProject.name = 'spread'
 
 include 'spread-api'
+include 'spread-app'
+include 'spread-cli'
+include 'spread-srv'
