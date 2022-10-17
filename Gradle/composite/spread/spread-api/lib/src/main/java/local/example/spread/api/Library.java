@@ -4,6 +4,11 @@
 package local.example.spread.api;
 
 public class Library {
+
+    public String someString() {
+        return "Some string from Library class!";
+    }
+
     public boolean someLibraryMethod() {
         return true;
     }
