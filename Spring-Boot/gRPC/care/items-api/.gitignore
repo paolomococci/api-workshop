@@ -4,6 +4,7 @@
 gradlew
 gradlew.bat
 /.idea
+bin/
 HELP.md
 
 # Ignore Gradle build output directory
