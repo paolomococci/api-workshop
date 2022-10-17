@@ -1,0 +1,11 @@
+# Ignore directories
+.gradle
+gradle
+.idea
+build
+bin
+
+# Ignore files
+HELP.md
+gradlew
+gradlew.bat
