@@ -14,7 +14,7 @@ class OutcomeResourceTest {
           .`when`().get("/outcome")
           .then()
              .statusCode(200)
-             .body(`is`("Hello from RESTEasy Reactive"))
+             .body(`is`("--> sample feedback <--"))
     }
 
 }
