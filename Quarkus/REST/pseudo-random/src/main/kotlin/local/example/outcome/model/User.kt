@@ -1,3 +1,3 @@
 package local.example.outcome.model
 
-class User() {}
+data class User() {}
