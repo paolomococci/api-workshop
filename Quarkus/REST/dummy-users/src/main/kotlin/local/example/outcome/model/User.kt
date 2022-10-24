@@ -1,10 +1,10 @@
 package local.example.outcome.model
 
 data class User(
-    login: UserLogin,
-    name: UserName,
-    email: String,
-    phone: String,
-    cell: String,
-    picture: UserPicture
+    var login: UserLogin?,
+    var name: UserName?,
+    var email: String?,
+    var phone: String?,
+    var cell: String?,
+    var picture: UserPicture?
 ) {}
