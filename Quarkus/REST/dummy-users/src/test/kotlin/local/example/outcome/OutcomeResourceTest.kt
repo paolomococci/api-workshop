@@ -31,9 +31,9 @@ class OutcomeResourceTest {
     companion object {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
-            "{\"login\":{\"uuid\":\"c066898d-828a-4af8-bc52-f3d1d06156d9\"},\"name\":{\"title\":\"\",\"first\":\"\",\"second\":\"\"},\"email\":\"\",\"phone\":\"\",\"cell\":\"\",\"picture\":{\"large\":\"\",\"medium\":\"\",\"thumbnail\":\"\"}}"
+            "{\"name\":{\"title\":\"developer\",\"first\":\"John\",\"second\":\"Doe\"},\"email\":\"john.doe@example.local\",\"phone\":\"032165497\",\"cell\":\"3210456789\",\"picture\":{\"large\":\"\",\"medium\":\"\",\"thumbnail\":\"\"}}"
         private const val JSON_OUTCOME =
-            "[{\"login\":{\"uuid\":\"c066898d-828a-4af8-bc52-f3d1d06156d9\"},\"name\":{\"title\":\"\",\"first\":\"\",\"second\":\"\"},\"email\":\"\",\"phone\":\"\",\"cell\":\"\",\"picture\":{\"large\":\"\",\"medium\":\"\",\"thumbnail\":\"\"}}]"
+            "[{\"login\":{\"uuid\":\"c066898d-828a-4af8-bc52-f3d1d06156d9\"},\"name\":{\"title\":\"developer\",\"first\":\"John\",\"second\":\"Doe\"},\"email\":\"john.doe@example.local\",\"phone\":\"032165497\",\"cell\":\"3210456789\",\"picture\":{\"large\":\"\",\"medium\":\"\",\"thumbnail\":\"\"}}]"
     }
 
 }
