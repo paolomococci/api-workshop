@@ -1,7 +1,7 @@
 package local.example.outcome.model
 
 data class User(
-    val login: UserLogin = UserLogin(),
+    val login: UserLogin?,
     var name: UserName?,
     var email: String?,
     var phone: String?,
