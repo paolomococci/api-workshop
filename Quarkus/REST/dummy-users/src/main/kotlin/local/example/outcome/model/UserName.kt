@@ -1,7 +1,7 @@
 package local.example.outcome.model
 
 data class UserName(
-    title: String,
-    first: String,
-    second: String
+    var title: String?,
+    var first: String?,
+    var second: String?
 ) {}
