@@ -12,3 +12,45 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.13.3.Final:create -DprojectGroupI
 gradle quarkusDev
 ```
 
+## Now I try the application with some shell commands
+
+```shell
+curl -i http://127.0.0.1:8090/outcome
+```
+
+Getting:
+
+```text
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 0
+```
+
+Now I try to log the data of a fictitious user into the system:
+
+```shell
+curl -d '{"name":{"title":"developer","first":"John","second":"Doe"},"email":"john.doe@example.local","phone":"032165497","cell":"3210456789","picture":{"large":"","medium":"","thumbnail":""}}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8090/outcome
+```
+
+Getting:
+
+```text
+[{"login":{"uuid":"5478d7f4-d75f-41d2-9b98-117438d99685"},"name":{"title":"developer","first":"John","second":"Doe"},"email":"john.doe@example.local","phone":"032165497","cell":"3210456789","picture":{"large":"","medium":"","thumbnail":""}}]
+```
+
+Finally, I try to ask for a list of fictitious users registered so far.
+
+```shell
+curl -i http://127.0.0.1:8090/outcome
+```
+
+Which naturally amounts to only one:
+
+```text
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+content-length: 241
+
+[{"login":{"uuid":"5478d7f4-d75f-41d2-9b98-117438d99685"},"name":{"title":"developer","first":"John","second":"Doe"},"email":"john.doe@example.local","phone":"032165497","cell":"3210456789","picture":{"large":"","medium":"","thumbnail":""}}]
+```
