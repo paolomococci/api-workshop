@@ -1,5 +1,7 @@
 package local.example.outcome.model
 
 data class UserName(
-    // TODO
+    title: String,
+    first: String,
+    second: String
 ) {}
