@@ -1,5 +1,5 @@
 package local.example.outcome.model
 
 data class UserLogin(
-    uuid: String
+    var uuid: String?
 ) {}
