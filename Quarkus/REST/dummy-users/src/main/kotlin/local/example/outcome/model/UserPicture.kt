@@ -1,5 +1,7 @@
 package local.example.outcome.model
 
 data class UserPicture(
-    // TODO
+    large: String,
+    medium: String,
+    thumbnail: String
 ) {}
