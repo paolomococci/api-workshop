@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test
 class OutcomeResourceTest {
 
     @Test
-    fun testReadEndpoint() {
+    fun testReadAllEndpoint() {
         given()
           .`when`().get(BASE_PATH)
           .then().statusCode(HttpStatus.SC_OK)
