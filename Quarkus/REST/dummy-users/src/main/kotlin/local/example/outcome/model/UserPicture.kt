@@ -4,4 +4,4 @@ data class UserPicture(
     var large: String?,
     var medium: String?,
     var thumbnail: String?
-) {}
+)
