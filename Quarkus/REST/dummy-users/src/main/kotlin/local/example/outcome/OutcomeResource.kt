@@ -19,7 +19,9 @@ class OutcomeResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    fun read(): Response? {
-        return Response.ok().build()
+    fun readAll(): Response? {
+        return if (
+            users.isEmpty()
+        ) Response.ok().build() else Response.ok(users).build()
     }
 }
