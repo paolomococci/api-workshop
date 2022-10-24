@@ -8,7 +8,6 @@ import io.restassured.RestAssured.given
 import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.equalTo
 
-import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Test
 
 @QuarkusTest
