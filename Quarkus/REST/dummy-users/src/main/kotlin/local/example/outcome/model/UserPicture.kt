@@ -1,7 +1,7 @@
 package local.example.outcome.model
 
 data class UserPicture(
-    large: String,
-    medium: String,
-    thumbnail: String
+    var large: String?,
+    var medium: String?,
+    var thumbnail: String?
 ) {}
