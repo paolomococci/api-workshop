@@ -17,19 +17,34 @@ class OutcomeResource {
         )
     )
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    fun readAll(): Response? {
-        return if (
-            users.isEmpty()
-        ) Response.ok().build() else Response.ok(users).build()
-    }
-
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     fun create(user: User): Set<User?>? {
         users.add(user)
         return users
+    }
+
+    @GET
+    @Path("/{uuid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun read(@PathParam("uuid") uuid: String): User? {
+        val response = users.stream().filter {
+                account: User -> account.login.uuid == uuid
+        }.findFirst()
+        return response.orElseThrow {
+            WebApplicationException(
+                "There is no account with ID: $uuid",
+                404
+            )
+        }
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    fun readAll(): Response? {
+        return if (
+            users.isEmpty()
+        ) Response.ok().build() else Response.ok(users).build()
     }
 }
