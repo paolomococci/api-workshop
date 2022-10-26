@@ -82,11 +82,11 @@ class OutcomeResource {
         )
         if (user.name != null)
             account.name = user.name
-        if (user.email != null)
+        if (user.email != "")
             account.email = user.email
-        if (user.phone != null)
+        if (user.phone != "")
             account.phone = user.phone
-        if (user.cell != null)
+        if (user.cell != "")
             account.cell = user.cell
         if (user.picture != null)
             account.picture = user.picture
