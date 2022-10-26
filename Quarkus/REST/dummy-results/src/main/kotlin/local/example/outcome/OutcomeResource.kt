@@ -1,6 +1,7 @@
 package local.example.outcome
 
 import local.example.outcome.model.Account
+import local.example.outcome.model.User
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
@@ -11,6 +12,12 @@ import javax.ws.rs.core.Response
 class OutcomeResource {
 
     private val account: Account = Account()
+
+    init {
+        for (i in 1..10) {
+            this.account.users!!.add(User())
+        }
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
