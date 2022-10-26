@@ -1,4 +1,6 @@
 package local.example.outcome.model
 
-class Street {
-}
+data class Street(
+    var number: Int?,
+    var name: String?
+)
