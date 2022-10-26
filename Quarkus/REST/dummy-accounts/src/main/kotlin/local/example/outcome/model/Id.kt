@@ -1,4 +1,6 @@
 package local.example.outcome.model
 
-class Id {
-}
+data class Id(
+    var name: String?,
+    var value: String?
+)
