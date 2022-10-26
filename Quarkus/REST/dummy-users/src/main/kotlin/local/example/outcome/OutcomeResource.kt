@@ -67,4 +67,29 @@ class OutcomeResource {
         account.picture = user.picture
         return Response.ok(account).build()
     }
+
+    @PATCH
+    @Path("/{uuid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    fun partialUpdate(
+        @PathParam("uuid") uuid: String,
+        user: User
+    ): Response? {
+        val account = this.read(uuid) ?: throw WebApplicationException(
+            "There is no account with ID: $uuid",
+            404
+        )
+        if (user.name != null)
+            account.name = user.name
+        if (user.email != null)
+            account.email = user.email
+        if (user.phone != null)
+            account.phone = user.phone
+        if (user.cell != null)
+            account.cell = user.cell
+        if (user.picture != null)
+            account.picture = user.picture
+        return Response.ok(account).build()
+    }
 }
