@@ -47,4 +47,15 @@ class OutcomeResource {
             users.isEmpty()
         ) Response.ok().build() else Response.ok(users).build()
     }
+
+    @PUT
+    @Path("/{uuid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    fun update(
+        @PathParam("uuid") uuid: String,
+        user: User
+    ): Response? {
+        return TODO("Provide the return value")
+    }
 }
