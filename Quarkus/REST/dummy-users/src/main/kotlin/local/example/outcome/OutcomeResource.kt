@@ -92,4 +92,13 @@ class OutcomeResource {
             account.picture = user.picture
         return Response.ok(account).build()
     }
+
+    @DELETE
+    @Path("/{uuid}")
+    fun delete(@PathParam("uuid") uuid: String): Response? {
+        users.removeIf {
+                user -> user.login.uuid == uuid
+        }
+        return Response.noContent().build()
+    }
 }
