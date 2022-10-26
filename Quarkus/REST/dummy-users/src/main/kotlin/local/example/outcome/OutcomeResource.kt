@@ -69,4 +69,13 @@ class OutcomeResource {
     ): Response? {
         return TODO("Provide the return value")
     }
+
+    @DELETE
+    @Path("/{uuid}")
+    fun delete(
+        @PathParam("uuid") uuid: String,
+        user: User
+    ): Response? {
+        return TODO("Provide the return value")
+    }
 }
