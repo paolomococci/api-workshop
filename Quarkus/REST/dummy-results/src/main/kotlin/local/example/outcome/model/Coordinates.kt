@@ -1,4 +1,6 @@
 package local.example.outcome.model
 
-class Coordinates {
-}
+data class Coordinates(
+    var latitude: String?,
+    var longitude: String?
+)
