@@ -1,3 +1,10 @@
 package local.example.outcome.model
 
-class Result() {}
+import java.util.*
+
+class Result {
+    val results: MutableSet<User>? = Collections.newSetFromMap(
+        Collections.synchronizedMap(
+            LinkedHashMap<User, Boolean>()
+        ))
+}
