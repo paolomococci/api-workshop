@@ -1,4 +1,6 @@
 package local.example.outcome.model
 
-class Timezone {
-}
+data class Timezone(
+    var offset: String?,
+    var description: String?
+)
