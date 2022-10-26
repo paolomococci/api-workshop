@@ -1,4 +1,7 @@
 package local.example.outcome.model
 
-class Name {
-}
+data class Name(
+    var title: String?,
+    var first: String?,
+    var second: String?
+)
