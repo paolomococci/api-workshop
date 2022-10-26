@@ -56,26 +56,15 @@ class OutcomeResource {
         @PathParam("uuid") uuid: String,
         user: User
     ): Response? {
-        return TODO("Provide the return value")
-    }
-
-    @PATCH
-    @Path("/{uuid}")
-    @Produces(MediaType.APPLICATION_JSON)
-    @Consumes(MediaType.APPLICATION_JSON)
-    fun partialUpdate(
-        @PathParam("uuid") uuid: String,
-        user: User
-    ): Response? {
-        return TODO("Provide the return value")
-    }
-
-    @DELETE
-    @Path("/{uuid}")
-    fun delete(
-        @PathParam("uuid") uuid: String,
-        user: User
-    ): Response? {
-        return TODO("Provide the return value")
+        val account = this.read(uuid) ?: throw WebApplicationException(
+            "There is no account with ID: $uuid",
+            404
+        )
+        account.name = user.name
+        account.email = user.email
+        account.phone = user.phone
+        account.cell = user.cell
+        account.picture = user.picture
+        return Response.ok(account).build()
     }
 }
