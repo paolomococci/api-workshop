@@ -1,4 +1,6 @@
 package local.example.outcome.model
 
-class Dob {
-}
+data class Dob(
+    var date: String?,
+    var age: Int?
+)
