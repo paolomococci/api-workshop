@@ -1,4 +1,7 @@
 package local.example.outcome.model
 
-class Picture {
-}
+data class Picture(
+    var large: String?,
+    var medium: String?,
+    var thumbnail: String?
+)
