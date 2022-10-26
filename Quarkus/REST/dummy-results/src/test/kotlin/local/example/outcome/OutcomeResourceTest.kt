@@ -9,12 +9,11 @@ import org.junit.jupiter.api.Test
 class OutcomeResourceTest {
 
     @Test
-    fun testHelloEndpoint() {
+    fun testFeedbackEndpoint() {
         given()
           .`when`().get("/outcome")
           .then()
              .statusCode(200)
-             .body(`is`("Hello from RESTEasy Reactive"))
+             .body(`is`("--> feedback <--"))
     }
-
 }
