@@ -58,4 +58,15 @@ class OutcomeResource {
     ): Response? {
         return TODO("Provide the return value")
     }
+
+    @PATCH
+    @Path("/{uuid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    fun partialUpdate(
+        @PathParam("uuid") uuid: String,
+        user: User
+    ): Response? {
+        return TODO("Provide the return value")
+    }
 }
