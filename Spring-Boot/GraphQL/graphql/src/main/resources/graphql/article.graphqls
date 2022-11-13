@@ -14,3 +14,7 @@ type Author {
     nickname: String
     articles: [Article]
 }
+
+type Query {
+    recentArticles(count: Int, offset: Int): [Article]!
+}
