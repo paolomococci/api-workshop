@@ -6,3 +6,11 @@ type Article {
     author: String!
     reviewer: String!
 }
+
+type Author {
+    id: ID
+    name: String!
+    surname: String!
+    nickname: String
+    articles: [Article]
+}
