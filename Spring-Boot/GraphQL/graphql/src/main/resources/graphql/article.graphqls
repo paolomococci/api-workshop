@@ -16,7 +16,10 @@ type Author {
 }
 
 type Query {
-    recentArticles(count: Int, offset: Int): [Article]!
+    recentArticles(
+        count: Int,
+        offset: Int
+    ): [Article]!
 }
 
 type Mutation {
