@@ -18,3 +18,12 @@ type Author {
 type Query {
     recentArticles(count: Int, offset: Int): [Article]!
 }
+
+type Mutation {
+    createArticle(
+        title: String!,
+        text: String!,
+        category: String,
+        authorId: String!
+    ): Article!
+}
