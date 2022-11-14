@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,4 +20,5 @@ public class Author {
     private String name;
     private String surname;
     private String nickname;
+    private List<Article> articles;
 }
