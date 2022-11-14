@@ -1,13 +1,18 @@
 package local.example.graphql.controller;
 
-import local.example.graphql.repo.AuthorRepo;
+import local.example.graphql.model.Article;
+import local.example.graphql.model.Author;
+import local.example.graphql.repo.ArticleRepo;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
+
+import java.util.List;
 
 @Controller
 public class AuthorController {
-    private final AuthorRepo authorRepo;
+    private final ArticleRepo articleRepo;
 
-    public AuthorController(AuthorRepo authorRepo) {
-        this.authorRepo = authorRepo;
+    public AuthorController(ArticleRepo articleRepo) {
+        this.articleRepo = articleRepo;
     }
 }
