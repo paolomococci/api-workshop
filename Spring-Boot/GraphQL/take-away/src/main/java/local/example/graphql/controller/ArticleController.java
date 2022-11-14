@@ -39,4 +39,9 @@ public class ArticleController {
     public Author author(Article article) {
         return this.authorRepo.getAuthor(article.getAuthorId());
     }
+
+    @SchemaMapping(typeName = "Article", field = "reviewer")
+    public Author reviewer(Article article) {
+        return this.authorRepo.getAuthor(article.getAuthorId());
+    }
 }
