@@ -5,6 +5,7 @@ import local.example.graphql.model.Author;
 import local.example.graphql.repo.ArticleRepo;
 import local.example.graphql.repo.AuthorRepo;
 import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
@@ -43,5 +44,10 @@ public class ArticleController {
     @SchemaMapping(typeName = "Article", field = "reviewer")
     public Author reviewer(Article article) {
         return this.authorRepo.getAuthor(article.getAuthorId());
+    }
+
+    @MutationMapping
+    public Article create() {
+        return null;
     }
 }
