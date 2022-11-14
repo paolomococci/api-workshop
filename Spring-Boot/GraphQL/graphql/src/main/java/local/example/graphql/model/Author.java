@@ -19,4 +19,5 @@ public class Author {
     private String name;
     private String surname;
     private String nickname;
+    private Article[] articles;
 }
