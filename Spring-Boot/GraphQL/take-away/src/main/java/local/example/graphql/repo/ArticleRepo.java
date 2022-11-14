@@ -27,5 +27,7 @@ public class ArticleRepo {
         ).collect(Collectors.toList());
     }
 
-    public void save(Article article) {}
+    public void save(Article article) {
+        this.articles.add(article);
+    }
 }
