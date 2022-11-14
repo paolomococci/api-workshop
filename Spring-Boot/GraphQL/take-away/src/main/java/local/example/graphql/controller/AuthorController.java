@@ -15,4 +15,9 @@ public class AuthorController {
     public AuthorController(ArticleRepo articleRepo) {
         this.articleRepo = articleRepo;
     }
+
+    @SchemaMapping
+    public List<Article> articles(Author author) {
+        return this.articleRepo.getArticlesOfAuthor(author.getId());
+    }
 }
