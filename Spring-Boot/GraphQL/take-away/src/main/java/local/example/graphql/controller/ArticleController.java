@@ -60,6 +60,7 @@ public class ArticleController {
         article.setText(text);
         article.setCategory(category);
         article.setAuthorId(authorId);
-        return null;
+        this.articleRepo.save(article);
+        return article;
     }
 }
