@@ -1,5 +1,6 @@
 package local.example.graphql.repository;
 
+import local.example.graphql.model.Author;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,5 +16,17 @@ public class AuthorRepositoryTests {
     @Test
     void contextTest() {
         assertThat(authorRepository).isNotNull();
+    }
+
+    @Test
+    void createTest() {
+        Author author = new Author();
+        author.setName("John");
+        author.setSurname("Doe");
+        author.setNickname("jolly");
+        assertThat(author.getId()).isGreaterThanOrEqualTo(0);
+        assertThat(author.getName()).isEqualTo("John");
+        assertThat(author.getSurname()).isEqualTo("Doe");
+        assertThat(author.getNickname()).isEqualTo("jolly");
     }
 }
