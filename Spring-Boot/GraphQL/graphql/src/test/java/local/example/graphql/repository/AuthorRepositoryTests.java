@@ -29,6 +29,6 @@ public class AuthorRepositoryTests {
         assertThat(author.getName()).isEqualTo("John");
         assertThat(author.getSurname()).isEqualTo("Doe");
         assertThat(author.getNickname()).isEqualTo("jolly");
-        assertThat(authorRepository.count()).isEqualTo(1L);
+        assertThat(authorRepository.count()).isGreaterThanOrEqualTo(1L);
     }
 }
