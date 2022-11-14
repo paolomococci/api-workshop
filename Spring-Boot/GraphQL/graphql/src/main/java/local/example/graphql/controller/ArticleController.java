@@ -47,7 +47,9 @@ public class ArticleController {
     @MutationMapping
     public Article createArticle(
             @Argument String title,
-            @Argument String text
+            @Argument String text,
+            @Argument String category,
+            @Argument String authorId
     ) {
         // TODO
         return null;
