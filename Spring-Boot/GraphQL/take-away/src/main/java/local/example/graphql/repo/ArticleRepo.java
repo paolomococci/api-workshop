@@ -17,4 +17,8 @@ public class ArticleRepo {
     ) {
         return null;
     }
+
+    public List<Article> getArticlesOfAuthor(String authorId) {
+        return null;
+    }
 }
