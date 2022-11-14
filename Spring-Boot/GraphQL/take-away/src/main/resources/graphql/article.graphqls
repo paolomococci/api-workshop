@@ -3,8 +3,8 @@ type Article {
     title: String!
     text: String!
     category: String
-    author: Author!
-    reviewer: Author!
+    author: Author
+    reviewer: Author
 }
 
 type Author {
@@ -12,7 +12,7 @@ type Author {
     name: String!
     surname: String!
     nickname: String
-    articles: [Article]!
+    articles: [Article]
 }
 
 type Query {
