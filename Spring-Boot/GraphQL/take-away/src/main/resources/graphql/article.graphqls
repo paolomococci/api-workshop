@@ -1,0 +1,32 @@
+type Article {
+    id: ID!
+    title: String!
+    text: String!
+    category: String
+    author: String!
+    reviewer: String!
+}
+
+type Author {
+    id: ID!
+    name: String!
+    surname: String!
+    nickname: String
+    articles: [Article]
+}
+
+type Query {
+    recentArticles(
+        count: Int,
+        offset: Int
+    ): [Article]!
+}
+
+type Mutation {
+    createArticle(
+        title: String!,
+        text: String!,
+        category: String,
+        authorId: String!
+    ): Article!
+}
