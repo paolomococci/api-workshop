@@ -20,4 +20,5 @@ public class Article {
     private String text;
     private String category;
     private int authorId;
+    private int reviewerId;
 }
