@@ -1,6 +1,7 @@
 package local.example.graphql.controller;
 
 import local.example.graphql.model.Article;
+import local.example.graphql.model.Author;
 import local.example.graphql.repository.ArticleRepository;
 import local.example.graphql.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,10 @@ public class ArticleController {
             @Argument int offset
     ) {
         return articleRepository.findRecentArticles(count, offset);
+    }
+
+    @SchemaMapping
+    public Author author(Article article) {
+        return  authorRepository.findById(article.getAuthorId()).get();
     }
 }
