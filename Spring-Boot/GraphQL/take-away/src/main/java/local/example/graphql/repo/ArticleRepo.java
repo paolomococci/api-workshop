@@ -21,4 +21,6 @@ public class ArticleRepo {
     public List<Article> getArticlesOfAuthor(String authorId) {
         return null;
     }
+
+    public void save(Article article) {}
 }
