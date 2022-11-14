@@ -32,6 +32,9 @@ public class AuthorController {
     ) {
         Author author = new Author();
         author.setId(UUID.randomUUID().toString());
+        author.setName(name);
+        author.setSurname(surname);
+        author.setNickname(nickname);
         return null;
     }
 }
