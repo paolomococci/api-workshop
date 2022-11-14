@@ -24,6 +24,8 @@ public class ArticleRepositoryTests {
         article.setTitle("some title");
         article.setText("sample text");
         article.setCategory("some category");
+        article.setAuthorId(1);
+        article.setReviewerId(2);
         articleRepository.save(article);
         assertThat(article.getId()).isGreaterThanOrEqualTo(0);
         assertThat(articleRepository.count()).isGreaterThanOrEqualTo(1L);
