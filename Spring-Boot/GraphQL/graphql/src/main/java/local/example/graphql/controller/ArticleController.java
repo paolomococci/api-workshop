@@ -33,4 +33,9 @@ public class ArticleController {
     public Author author(Article article) {
         return  authorRepository.findById(article.getAuthorId()).get();
     }
+
+    @SchemaMapping(typeName = "Post", field = "reviewer")
+    public Author reviewer(Article article) {
+        return  authorRepository.findById(article.getAuthorId()).get();
+    }
 }
