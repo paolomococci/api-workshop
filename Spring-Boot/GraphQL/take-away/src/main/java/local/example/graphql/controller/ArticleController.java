@@ -27,6 +27,9 @@ public class ArticleController {
             @Argument int count,
             @Argument int offset
     ) {
-        return null;
+        return this.articleRepo.getRecentArticles(
+                count,
+                offset
+        );
     }
 }
