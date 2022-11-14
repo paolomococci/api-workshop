@@ -23,4 +23,11 @@ public class AuthorController {
     public List<Article> authors(Author author) {
         return articleRepository.findArticleByAuthorId(author.getId());
     }
+
+    @SchemaMapping
+    public Author author(Author author) {
+        if (authorRepository.findById(author.getId()).isPresent())
+            return  authorRepository.findById(author.getId()).get();
+        return new Author();
+    }
 }
