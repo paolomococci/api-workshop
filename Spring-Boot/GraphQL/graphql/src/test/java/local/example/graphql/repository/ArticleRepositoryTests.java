@@ -21,6 +21,7 @@ public class ArticleRepositoryTests {
     @Test
     void createTest() {
         Article article = new Article();
+
         articleRepository.save(article);
         assertThat(article.getId()).isGreaterThanOrEqualTo(0);
         assertThat(articleRepository.count()).isGreaterThanOrEqualTo(1L);
