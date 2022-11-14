@@ -16,4 +16,8 @@ public class AuthorRepo {
                 author -> id.equals(author.getId())
         ).findFirst().orElseThrow(RuntimeException::new);
     }
+
+    public void save(Author author) {
+        this.authors.add(author);
+    }
 }
