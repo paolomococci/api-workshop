@@ -10,4 +10,11 @@ public class ArticleRepo {
     public ArticleRepo(List<Article> articles) {
         this.articles = articles;
     }
+
+    public List<Article> getRecentArticles(
+            int count,
+            int offset
+    ) {
+        return null;
+    }
 }
