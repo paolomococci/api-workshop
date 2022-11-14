@@ -47,7 +47,12 @@ public class ArticleController {
     }
 
     @MutationMapping
-    public Article create() {
+    public Article create(
+            @Argument String title,
+            @Argument String text,
+            @Argument String category,
+            @Argument String authorId
+    ) {
         return null;
     }
 }
