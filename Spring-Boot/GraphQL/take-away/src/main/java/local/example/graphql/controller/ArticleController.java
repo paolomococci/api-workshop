@@ -1,8 +1,13 @@
 package local.example.graphql.controller;
 
+import local.example.graphql.model.Article;
 import local.example.graphql.repo.ArticleRepo;
 import local.example.graphql.repo.AuthorRepo;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
+
+import java.util.List;
 
 @Controller
 public class ArticleController {
@@ -15,5 +20,13 @@ public class ArticleController {
     ) {
         this.authorRepo = authorRepo;
         this.articleRepo = articleRepo;
+    }
+
+    @QueryMapping
+    public List<Article> recentArticles(
+            @Argument int count,
+            @Argument int offset
+    ) {
+        return null;
     }
 }
