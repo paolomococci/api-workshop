@@ -1,5 +1,5 @@
 type Article {
-    id: ID!
+    id: Int!
     title: String!
     text: String!
     category: String
@@ -8,7 +8,7 @@ type Article {
 }
 
 type Author {
-    id: ID
+    id: Int!
     name: String!
     surname: String!
     nickname: String
