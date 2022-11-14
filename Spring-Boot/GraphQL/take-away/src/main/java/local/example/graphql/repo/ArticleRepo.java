@@ -22,7 +22,9 @@ public class ArticleRepo {
     }
 
     public List<Article> getArticlesOfAuthor(String authorId) {
-        return null;
+        return articles.stream().filter(
+                article -> authorId.equals(article.getAuthorId())
+        ).collect(Collectors.toList());
     }
 
     public void save(Article article) {}
