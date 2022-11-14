@@ -3,8 +3,8 @@ type Article {
     title: String!
     text: String!
     category: String
-    author: String!
-    reviewer: String!
+    author: Int!
+    reviewer: Int!
 }
 
 type Author {
