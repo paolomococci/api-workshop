@@ -12,6 +12,7 @@ import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class ArticleController {
@@ -51,7 +52,13 @@ public class ArticleController {
             @Argument String category,
             @Argument String authorId
     ) {
-        // TODO
-        return null;
+        Article article = new Article();
+        article.setId(UUID.randomUUID().toString());
+        article.setTitle(title);
+        article.setText(text);
+        article.setCategory(category);
+        article.setAuthorId(authorId);
+        articleRepository.save(article);
+        return article;
     }
 }
