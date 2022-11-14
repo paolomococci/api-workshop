@@ -8,8 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ArticleRepository
-        extends CrudRepository<Article, String> {
-    List<Article> findArticleByAuthorId(String id);
-
-    List<Article> findRecentArticles(int count, int offset);
+        extends CrudRepository<Article, Integer> {
 }
