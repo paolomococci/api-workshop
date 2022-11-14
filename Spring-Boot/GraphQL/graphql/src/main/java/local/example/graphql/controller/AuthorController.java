@@ -11,7 +11,6 @@ import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 public class AuthorController {
@@ -24,7 +23,8 @@ public class AuthorController {
 
     @SchemaMapping
     public List<Article> authors(Author author) {
-        return articleRepository.findArticleByAuthorId(author.getId());
+        //return articleRepository.findArticleByAuthorId(author.getId());
+        return null;
     }
 
     @SchemaMapping
@@ -41,7 +41,6 @@ public class AuthorController {
             @Argument String nickname
     ) {
         Author author = new Author();
-        author.setId(UUID.randomUUID().toString());
         author.setName(name);
         author.setSurname(surname);
         author.setNickname(nickname);
