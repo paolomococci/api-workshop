@@ -14,6 +14,9 @@ import java.util.List;
 public class AuthorController {
 
     @Autowired
+    private AuthorRepository authorRepository;
+
+    @Autowired
     private ArticleRepository articleRepository;
 
     @SchemaMapping
