@@ -56,6 +56,10 @@ public class ArticleController {
     ) {
         Article article = new Article();
         article.setId(UUID.randomUUID().toString());
+        article.setTitle(title);
+        article.setText(text);
+        article.setCategory(category);
+        article.setAuthorId(authorId);
         return null;
     }
 }
