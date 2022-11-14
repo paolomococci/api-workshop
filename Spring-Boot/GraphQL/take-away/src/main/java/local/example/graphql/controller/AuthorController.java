@@ -9,6 +9,7 @@ import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 public class AuthorController {
@@ -29,6 +30,8 @@ public class AuthorController {
             @Argument String surname,
             @Argument String nickname
     ) {
+        Author author = new Author();
+        author.setId(UUID.randomUUID().toString());
         return null;
     }
 }
