@@ -31,7 +31,7 @@ public class AuthorController {
     }
 
     @MutationMapping
-    public Author create(
+    public Author createAuthor(
             @Argument String name,
             @Argument String surname,
             @Argument String nickname
