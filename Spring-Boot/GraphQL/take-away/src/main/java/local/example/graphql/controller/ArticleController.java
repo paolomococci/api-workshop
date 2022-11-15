@@ -48,7 +48,7 @@ public class ArticleController {
     }
 
     @MutationMapping
-    public Article create(
+    public Article createArticle(
             @Argument String title,
             @Argument String text,
             @Argument String category,
