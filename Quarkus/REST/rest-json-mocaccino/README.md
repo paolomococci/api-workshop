@@ -1,7 +1,7 @@
 # rest-json-mocaccino
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.16.4.Final:create \
+mvn io.quarkus.platform:quarkus-maven-plugin:2.16.5.Final:create \
     -DprojectGroupId=mocaccino \
     -DprojectArtifactId=rest-json-mocaccino \
     -DprojectVersion=1.0.0-SNAPSHOT \
